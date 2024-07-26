@@ -30,4 +30,4 @@ jobs:
       env:
         HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
         HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
-      run: python export_and_upload.py
+      run: python main.py

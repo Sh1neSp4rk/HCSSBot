@@ -1,11 +1,10 @@
 name: Export and Upload Excel
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-      - cron: '0 0 * * *'  # Runs daily at midnight UTC
+    - cron: '0 0 * * *' # Run daily at midnight
+  workflow_dispatch:
+
 
 jobs:
   export_and_upload:

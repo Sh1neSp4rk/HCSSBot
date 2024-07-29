@@ -1,0 +1,27 @@
+name: Selenium Test
+
+on: [push]
+
+jobs:
+  run-selenium:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install selenium
+
+      - name: Run Selenium script
+        env:
+          HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
+          HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
+        run: |
+          python your_selenium_script.py

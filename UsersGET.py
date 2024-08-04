@@ -1,8 +1,8 @@
 # UsersGET.py
 import logging
 from TokenGET import get_token
-from ProgressBars import fetch_data_with_progress, fetch_paginated_data_with_progress
-from DataSaver import save_data
+from progress_bars import fetch_data_with_progress, fetch_paginated_data_with_progress
+from data_saver import save_data
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')

@@ -12,6 +12,8 @@ def main():
 
     business_units, roles, subscription_groups, jobs, users = fetch_all_data()
 
+    attachments = []
+
     if business_units:
         logging.info(f"Fetched business units: {business_units}")
         business_unit_id = business_units[0].get('id')
@@ -20,23 +22,29 @@ def main():
         if roles:
             logging.info(f"Fetched roles: {roles}")
             save_data(roles, 'roles_data.csv', 'csv')
+            attachments.append('roles_data.csv')
 
         if subscription_groups:
             logging.info(f"Fetched subscription groups: {subscription_groups}")
             save_data(subscription_groups, 'subscription_groups_data.csv', 'csv')
+            attachments.append('subscription_groups_data.csv')
 
         if jobs:
             logging.info(f"Fetched jobs: {jobs}")
             save_data(jobs, 'jobs_data.csv', 'csv')
+            attachments.append('jobs_data.csv')
 
         if users:
             logging.info(f"Fetched users: {users}")
             save_data(users, 'users_data.csv', 'csv')
+            attachments.append('users_data.csv')
 
-        subject = "API Data Export"
-        body = "Please find attached the data export from the API."
-        attachment_file = "users_data.csv"
-        send_email(subject, body, attachment_file)
+        recipient_email = os.getenv('TARGET_EMAIL')
+        if recipient_email:
+            send_email(attachments, recipient_email)
+        else:
+            logging.error("No recipient email address found in .env")
+
     else:
         logging.error("No business units found")
 

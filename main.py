@@ -1,7 +1,7 @@
 import argparse
 import os
-from EndpointCalls.UsersGET import fetch_all_users_data
-from EndpointCalls.TokenGET import get_access_token
+from EndpointCalls.users_get import fetch_all_users_data
+from EndpointCalls.token_get import get_access_token
 from Tools.data_saver import save_data
 from Tools.email_sender import send_email
 from dotenv import load_dotenv

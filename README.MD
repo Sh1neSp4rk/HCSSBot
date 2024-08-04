@@ -115,4 +115,4 @@ Contains the function to send an email with the data file as an attachment.
 Contains the function to display progress bars for API calls.
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+I dunno

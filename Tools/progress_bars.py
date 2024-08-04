@@ -1,4 +1,4 @@
-# ProgressBars.py
+# Tools/ProgressBars.py
 import requests
 from tqdm import tqdm
 import logging

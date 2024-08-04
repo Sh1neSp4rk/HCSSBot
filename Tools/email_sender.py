@@ -1,3 +1,4 @@
+# Tools/email_sender.py
 import smtplib
 import os
 from email.mime.multipart import MIMEMultipart

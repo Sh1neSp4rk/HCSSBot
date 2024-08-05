@@ -21,11 +21,6 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def get_last_successful_date(function_name):
-    # Placeholder for fetching last successful date from logs or storage
-    # Replace this with actual implementation to read the last successful date
-    return None
-
 def get_Skills_skills(offset=0, forceall=False):
     url = "https://api.hcssapps.com/skills/api/v1/skills"
     date_after_utc = get_last_successful_date("get_Skills_skills") if not forceall else None

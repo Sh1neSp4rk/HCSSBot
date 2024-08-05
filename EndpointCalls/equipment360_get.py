@@ -33,7 +33,10 @@ def get_EquipmentE360_business_units(file_type):
     set_last_successful_date(logger, 'business_units')
     return [unit['id'] for unit in data['results']]
 
-def get_EquipmentE360_fuel_costs(file_type, business_unit_ids):
+def get_EquipmentE360_fuel_costs(file_type, business_unit_ids=None):
+    if not business_unit_ids:
+        business_unit_ids = get_EquipmentE360_business_units(file_type)
+
     url = "https://api.hcssapps.com/e360/api/v1/costs/fuel"
     start_date = get_last_successful_date_from_log(logger, 'fuel_costs')  # Fetching last successful date
     end_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -48,13 +51,14 @@ def get_EquipmentE360_fuel_costs(file_type, business_unit_ids):
     set_last_successful_date(logger, 'fuel_costs')
     return data
 
-def get_EquipmentE360_work_order_costs(file_type, business_unit_ids):
+def get_EquipmentE360_work_order_costs(file_type, business_unit_ids=None):
+    if not business_unit_ids:
+        business_unit_ids = get_EquipmentE360_business_units(file_type)
+
     url = "https://api.hcssapps.com/e360/api/v1/costs/workOrders"
     all_data = []
     for unit_id in business_unit_ids:
-        params = {
-            "businessUnitId": unit_id,
-        }
+        params = {"businessUnitId": unit_id}
         logger.info(f"Fetching Work Order Costs for Business Unit ID: {unit_id}")
         data = fetch_data(url, params=params)
         all_data.extend(data.get('results', []))
@@ -64,7 +68,10 @@ def get_EquipmentE360_work_order_costs(file_type, business_unit_ids):
     set_last_successful_date(logger, 'work_order_costs')
     return all_data
 
-def get_EquipmentE360_work_order_details(file_type, business_unit_ids):
+def get_EquipmentE360_work_order_details(file_type, business_unit_ids=None):
+    if not business_unit_ids:
+        business_unit_ids = get_EquipmentE360_business_units(file_type)
+
     url = "https://api.hcssapps.com/e360/api/v1/costs/workOrdersExtended"
     all_data = []
     for unit_id in business_unit_ids:

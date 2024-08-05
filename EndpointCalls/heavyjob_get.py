@@ -1,3 +1,4 @@
+# EndpointCalls/heavyjob_get.py
 import requests
 import logging
 from datetime import datetime
@@ -15,9 +16,12 @@ def log_request(url, params=None, method='GET'):
 
 def log_response(response):
     logging.info(f"Response Status Code: {response.status_code}")
-    logging.info(f"Response Data: {response.json()}")
+    try:
+        logging.info(f"Response Data: {response.json()}")
+    except ValueError:
+        logging.info("Response Data: Non-JSON Response")
 
-def get_HeavyJob_businessunits(token):
+def get_HeavyJob_business_units(token):
     url = "https://api.hcssapps.com/heavyjob/api/v1/businessUnits"
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, method='GET')
@@ -25,31 +29,31 @@ def get_HeavyJob_businessunits(token):
     log_response(response)
     return response.json()
 
-def get_HeavyJob_jobs(token, business_unit_id):
+def get_HeavyJob_jobs(token):
     url = "https://api.hcssapps.com/heavyjob/api/v1/jobs"
-    query = {"businessUnitId": business_unit_id}
+    query = {}
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, params=query, method='GET')
     response = requests.get(url, headers=headers, params=query)
     log_response(response)
     return response.json()
 
-def get_HeavyJob_jobcosts(token, job_id, effective_date, start_date):
+def get_HeavyJob_jobcosts(token, job_id, start_date):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/jobs/{job_id}/costs"
-    query = {"effectiveDate": effective_date, "startDate": start_date}
+    query = {"startDate": start_date}
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, params=query, method='GET')
     response = requests.get(url, headers=headers, params=query)
     log_response(response)
     return response.json()
 
-def get_HeavyJob_costcodes(token, accounting_template_name, job_id, business_unit_id, cost_code_id, limit=1000, cursor=None):
+def get_HeavyJob_costcodes(token, business_unit_id=None, limit=1000, cursor=None):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
     url = "https://api.hcssapps.com/heavyjob/api/v1/costCodes"
     query = {
-        "accountingTemplateName": accounting_template_name,
-        "jobId": job_id,
-        "businessUnitId": business_unit_id,
-        "costCodeId": cost_code_id,
         "limit": limit,
         "cursor": cursor
     }
@@ -59,12 +63,14 @@ def get_HeavyJob_costcodes(token, accounting_template_name, job_id, business_uni
     log_response(response)
     return response.json()
 
-def get_HeavyJob_jobemployees(token, business_unit_id, job_id, employee_id=None, limit=1000, cursor=None):
+def get_HeavyJob_jobemployees(token, job_id, limit=1000, cursor=None):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
     url = "https://api.hcssapps.com/heavyjob/api/v1/jobEmployees"
     query = {
-        "businessUnitId": business_unit_id,
         "jobId": job_id,
-        "employeeId": employee_id,
         "limit": limit,
         "cursor": cursor
     }
@@ -74,12 +80,14 @@ def get_HeavyJob_jobemployees(token, business_unit_id, job_id, employee_id=None,
     log_response(response)
     return response.json()
 
-def get_HeavyJob_jobequipment(token, business_unit_id, job_id, equipment_id=None, limit=1000, cursor=None):
+def get_HeavyJob_jobequipment(token, job_id, limit=1000, cursor=None):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
     url = "https://api.hcssapps.com/heavyjob/api/v1/jobEquipment"
     query = {
-        "businessUnitId": business_unit_id,
         "jobId": job_id,
-        "equipmentId": equipment_id,
         "limit": limit,
         "cursor": cursor
     }
@@ -98,7 +106,11 @@ def get_HeavyJob_jobmaterials(token, job_id, is_discontinued="false", is_deleted
     log_response(response)
     return response.json()
 
-def get_HeavyJob_materials(token, business_unit_id, is_deleted="false"):
+def get_HeavyJob_materials(token, business_unit_id=None, is_deleted="false"):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
     url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/costTypes/material"
     query = {"isDeleted": is_deleted}
     headers = {"Authorization": f"Bearer {token}"}
@@ -107,16 +119,11 @@ def get_HeavyJob_materials(token, business_unit_id, is_deleted="false"):
     log_response(response)
     return response.json()
 
-def get_HeavyJob_timecards(token, job_id, foreman_id=None, employee_id=None, start_date=None, end_date=None, modified_since=None, only_tm="false", cursor=None, limit=1000):
+def get_HeavyJob_timecards(token, job_id, modified_since=None, cursor=None, limit=1000):
     url = "https://api.hcssapps.com/heavyjob/api/v1/timeCardInfo"
     query = {
         "jobId": job_id,
-        "foremanId": foreman_id,
-        "employeeId": employee_id,
-        "startDate": start_date,
-        "endDate": end_date,
         "modifiedSince": modified_since,
-        "onlyTM": only_tm,
         "cursor": cursor,
         "limit": limit
     }
@@ -126,24 +133,15 @@ def get_HeavyJob_timecards(token, job_id, foreman_id=None, employee_id=None, sta
     log_response(response)
     return response.json()
 
-def get_HeavyJob_user(token, user_id):
-    url = f"https://api.hcssapps.com/heavyjob/api/v1/users/{user_id}"
-    headers = {"Authorization": f"Bearer {token}"}
-    log_request(url, method='GET')
-    response = requests.get(url, headers=headers)
-    log_response(response)
-    return response.json()
+def get_HeavyJob_diaries(token, start_date, business_unit_id=None, cursor=None, limit=0):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
 
-def get_HeavyJob_diaries(token, business_unit_id, job_ids, job_tag_ids, foreman_ids, job_status, start_date, end_date, cursor=None, limit=0):
     url = "https://api.hcssapps.com/heavyjob/api/v1/diaries/search"
     payload = {
         "businessUnitId": business_unit_id,
-        "jobIds": job_ids,
-        "jobTagIds": job_tag_ids,
-        "foremanIds": foreman_ids,
-        "jobStatus": job_status,
         "startDate": start_date,
-        "endDate": end_date,
         "cursor": cursor,
         "limit": limit
     }
@@ -156,13 +154,13 @@ def get_HeavyJob_diaries(token, business_unit_id, job_ids, job_tag_ids, foreman_
     log_response(response)
     return response.json()
 
-def get_HeavyJob_employees(token, business_unit_id, accounting_template_name="string", is_active="true", is_deleted="false", is_foreman="true", include_historical_foreman="true"):
+def get_HeavyJob_employees(token, include_historical_foreman="true", business_unit_id=None):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
     url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/employees"
     query = {
-        "accountingTemplateName": accounting_template_name,
-        "isActive": is_active,
-        "isDeleted": is_deleted,
-        "isForeman": is_foreman,
         "includeHistoricalForeman": include_historical_foreman
     }
     headers = {"Authorization": f"Bearer {token}"}
@@ -171,72 +169,55 @@ def get_HeavyJob_employees(token, business_unit_id, accounting_template_name="st
     log_response(response)
     return response.json()
 
-def get_HeavyJob_equipment_types(token, business_unit_id):
-    url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/equipment/types"
+def get_HeavyJob_equipment_types(token, business_unit_id=None):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
+    url = "https://api.hcssapps.com/heavyjob/api/v1/equipment/types"
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, method='GET')
     response = requests.get(url, headers=headers)
     log_response(response)
     return response.json()
 
-def get_HeavyJob_equipment(token, business_unit_id, accounting_template_name="string"):
-    url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/equipment"
-    query = {
-        "accountingTemplateName": accounting_template_name,
-        "isActive": "true",
-        "isDeleted": "false"
+def get_HeavyJob_equipment(token, business_unit_id=None):
+    if not business_unit_id:
+        business_units = get_HeavyJob_business_units(token)
+        business_unit_id = business_units[0]['id'] if business_units else None
+
+    url = "https://api.hcssapps.com/heavyjob/api/v1/equipment"
+    params = {"businessUnitId": business_unit_id}
+    headers = {"Authorization": f"Bearer {token}"}
+    log_request(url, params=params, method='GET')
+    response = requests.get(url, headers=headers, params=params)
+    log_response(response)
+    return response.json()
+
+def get_HeavyJob_equipmenthours(token):
+    url = "https://api.hcssapps.com/heavyjob/api/v1/equipment/hours"
+    start_date = get_last_successful_date_from_log(logger, 'equipment_hours')  # Fetching last successful date
+    end_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+    params = {
+        "startDate": start_date or '1900-01-01T00:00:00Z',  # Default to an old date if not found
+        "endDate": end_date
     }
     headers = {"Authorization": f"Bearer {token}"}
-    log_request(url, params=query, method='GET')
-    response = requests.get(url, headers=headers, params=query)
+    log_request(url, params=params, method='GET')
+    response = requests.get(url, headers=headers, params=params)
     log_response(response)
     return response.json()
 
-def get_HeavyJob_equipmenthours(token, business_unit_id, equipment_ids, modified_since, linked_employee_ids, job_ids, job_tag_ids, foreman_ids, start_date, end_date, cursor=None, limit=500):
-    url = "https://api.hcssapps.com/heavyjob/api/v1/hours/equipment"
-    payload = {
-        "businessUnitId": business_unit_id,
-        "includeAllJobs": True,
-        "equipmentIds": equipment_ids,
-        "modifiedSince": modified_since,
-        "linkedEmployeeIds": linked_employee_ids,
-        "jobIds": job_ids,
-        "jobTagIds": job_tag_ids,
-        "foremanIds": foreman_ids,
-        "startDate": start_date,
-        "endDate": end_date,
-        "cursor": cursor,
-        "limit": limit
+def get_HeavyJob_employeehours(token):
+    url = "https://api.hcssapps.com/heavyjob/api/v1/employee/hours"
+    start_date = get_last_successful_date_from_log(logger, 'employee_hours')  # Fetching last successful date
+    end_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+    params = {
+        "startDate": start_date or '1900-01-01T00:00:00Z',  # Default to an old date if not found
+        "endDate": end_date
     }
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
-    }
-    log_request(url, params=payload, method='POST')
-    response = requests.post(url, json=payload, headers=headers)
-    log_response(response)
-    return response.json()
-
-def get_HeavyJob_employeehours(token, business_unit_id, modified_since, employee_ids, job_ids, job_tag_ids, foreman_ids, start_date, end_date, cursor=None, limit=500):
-    url = "https://api.hcssapps.com/heavyjob/api/v1/hours/employees"
-    payload = {
-        "businessUnitId": business_unit_id,
-        "includeAllJobs": True,
-        "modifiedSince": modified_since,
-        "employeeIds": employee_ids,
-        "jobIds": job_ids,
-        "jobTagIds": job_tag_ids,
-        "foremanIds": foreman_ids,
-        "startDate": start_date,
-        "endDate": end_date,
-        "cursor": cursor,
-        "limit": limit
-    }
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
-    }
-    log_request(url, params=payload, method='POST')
-    response = requests.post(url, json=payload, headers=headers)
+    headers = {"Authorization": f"Bearer {token}"}
+    log_request(url, params=params, method='GET')
+    response = requests.get(url, headers=headers, params=params)
     log_response(response)
     return response.json()

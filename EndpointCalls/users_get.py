@@ -31,7 +31,23 @@ def get_Users_business_units():
         logging.error(f"Error fetching business units: {response.status_code}")
         return None
 
-def get_Users_jobs(business_unit_id):
+def get_Users_jobs(business_unit_id=None):
+    if business_unit_id is None:
+        # Fetch business units if ID is not provided
+        business_units = get_Users_business_units()
+        if not business_units:
+            logging.error("No business units found.")
+            return None
+        all_jobs = []
+        # Iterate over all business units and fetch jobs
+        for unit in business_units:
+            unit_id = unit.get('id')
+            if unit_id:
+                jobs = get_Users_jobs(business_unit_id=unit_id)
+                if jobs:
+                    all_jobs.extend(jobs)
+        return all_jobs
+
     endpoint = "https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit"
     params = {"businessUnitId": business_unit_id}
     logging.info(f"Fetching jobs for business unit ID: {business_unit_id} from {endpoint}")
@@ -74,16 +90,50 @@ def get_Users_subscription_groups():
         logging.error(f"Error fetching subscription groups: {response.status_code}")
         return None
 
-def get_Users_users(business_unit_id, page_size=50):
-    endpoint = "https://api.hcssapps.com/users/api/v1/Users"
-    logging.info(f"Fetching users for business unit ID: {business_unit_id} with page size: {page_size}")
+def fetch_users_for_business_unit(business_unit_id, page_size, offset):
+    endpoint = f"https://api.hcssapps.com/users/api/v1/Users"
+    params = {
+        "businessUnitId": business_unit_id,
+        "pageSize": page_size,
+        "offset": offset
+    }
+    logging.info(f"Fetching users for business unit ID: {business_unit_id} from {endpoint} with offset {offset}")
     headers = get_headers()
     if headers is None:
         return None
-    response = fetch_paginated_data_with_progress(endpoint, headers, business_unit_id, page_size)
-    logging.info(f"Response code for users: {response.status_code}")
+    response = fetch_data_with_progress(endpoint, headers, params)
     if response.status_code == 200:
-        return response.json().get('results', [])
+        return response.json()
     else:
         logging.error(f"Error fetching users: {response.status_code}")
         return None
+
+def get_Users_users(business_unit_id=None, page_size=50, all_users=None):
+    if all_users is None:
+        all_users = []
+
+    # If business_unit_id is not provided, fetch all business units
+    if business_unit_id is None:
+        business_units = get_Users_business_units()
+        if not business_units:
+            logging.error("No business units found.")
+            return None
+        # Iterate over all business units
+        for unit in business_units:
+            unit_id = unit.get('id')
+            if unit_id:
+                get_Users_users(business_unit_id=unit_id, page_size=page_size, all_users=all_users)
+        return all_users
+
+    # Fetch users for the specific business unit
+    offset = 0
+    while True:
+        response = fetch_users_for_business_unit(business_unit_id, page_size, offset)
+        if not response or not response.get('users'):
+            break
+        users = response.get('users')
+        all_users.extend(users)
+        offset += page_size
+        logging.info(f"Fetched {len(users)} users from business unit {business_unit_id}, offset {offset}")
+
+    return all_users

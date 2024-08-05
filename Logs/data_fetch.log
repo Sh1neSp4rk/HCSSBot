@@ -1,0 +1,74 @@
+2024-08-05 07:54:00,179 - DEBUG - Using selector: EpollSelector
+2024-08-05 07:56:01,616 - DEBUG - Using selector: EpollSelector
+2024-08-05 07:58:45,138 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:01:22,585 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:01:22,587 - INFO - Starting Data Fetching
+2024-08-05 08:01:22,587 - INFO - Fetching jobs for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit
+2024-08-05 08:01:22,588 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:01:22,751 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 08:01:22,752 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit with params {'businessUnitId': 'xlsx'}
+2024-08-05 08:01:22,753 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:01:24,724 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx HTTP/1.1" 400 None
+2024-08-05 08:01:24,724 - ERROR - An error occurred: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx
+2024-08-05 08:01:52,198 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:01:52,199 - INFO - Starting Data Fetching
+2024-08-05 08:01:52,200 - ERROR - An error occurred: get_Users_roles() takes 0 positional arguments but 1 was given
+2024-08-05 08:02:06,644 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:02:06,645 - INFO - Starting Data Fetching
+2024-08-05 08:02:06,645 - ERROR - An error occurred: get_Users_business_units() takes 0 positional arguments but 1 was given
+2024-08-05 08:02:13,219 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:04:44,950 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:04:44,951 - INFO - Starting Data Fetching
+2024-08-05 08:04:44,951 - ERROR - An error occurred: get_HeavyJob_jobs() missing 1 required positional argument: 'business_unit_id'
+2024-08-05 08:06:56,839 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:08:25,243 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:08:25,244 - INFO - Starting Data Fetching
+2024-08-05 08:08:25,244 - ERROR - An error occurred: get_HeavyJob_jobs() missing 1 required positional argument: 'business_unit_id'
+2024-08-05 08:10:02,338 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:10:02,339 - INFO - Starting Data Fetching
+2024-08-05 08:10:02,339 - INFO - Fetching jobs for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit
+2024-08-05 08:10:02,341 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:10:02,540 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 08:10:02,541 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit with params {'businessUnitId': 'xlsx'}
+2024-08-05 08:10:02,542 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:10:02,654 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx HTTP/1.1" 400 None
+2024-08-05 08:10:02,655 - ERROR - An error occurred: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx
+2024-08-05 08:11:14,014 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:11:14,015 - INFO - Starting main function with arguments: Namespace(f='get_Users_jobs', ft='xlsx', e='mikelamble@hotmail.com', rl=0.8)
+2024-08-05 08:11:14,015 - INFO - Timestamp: 2024-08-05 08:11:14
+2024-08-05 08:11:14,016 - INFO - Starting Data Fetching
+2024-08-05 08:11:14,016 - INFO - Running function: get_Users_jobs with file type: xlsx
+2024-08-05 08:11:14,016 - INFO - Fetching jobs for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit
+2024-08-05 08:11:14,017 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:11:14,130 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 08:11:14,131 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit with params {'businessUnitId': 'xlsx'}
+2024-08-05 08:11:14,132 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:11:14,432 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx HTTP/1.1" 400 None
+2024-08-05 08:11:14,433 - ERROR - An error occurred: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx
+2024-08-05 08:11:14,433 - INFO - Files cleaned up. Timestamp: 2024-08-05 08:11:14
+2024-08-05 08:16:14,877 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:16:14,878 - INFO - Starting Data Fetching for get_Users_jobs
+2024-08-05 08:16:14,878 - INFO - Fetching jobs for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit
+2024-08-05 08:16:14,880 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:16:15,010 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 08:16:15,011 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit with params {'businessUnitId': 'xlsx'}
+2024-08-05 08:16:15,012 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:16:15,142 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx HTTP/1.1" 400 None
+2024-08-05 08:16:15,143 - ERROR - An error occurred while running get_Users_jobs: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx
+2024-08-05 08:24:18,035 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:27:35,689 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:29:41,732 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:29:41,733 - INFO - Starting Data Fetching for get_Users_jobs
+2024-08-05 08:29:41,733 - INFO - Fetching jobs for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit
+2024-08-05 08:29:41,735 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:29:41,878 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 08:29:41,879 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit with params {'businessUnitId': 'xlsx'}
+2024-08-05 08:29:41,880 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 08:29:42,032 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx HTTP/1.1" 400 None
+2024-08-05 08:29:42,032 - ERROR - An error occurred while running get_Users_jobs: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx
+2024-08-05 08:33:01,096 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:33:01,097 - INFO - Starting Data Fetching for get_Users_jobs
+2024-08-05 08:33:01,097 - ERROR - An error occurred while running get_Users_jobs: name 'get_Users_business_units' is not defined
+2024-08-05 08:41:04,103 - DEBUG - Using selector: EpollSelector
+2024-08-05 08:41:04,104 - INFO - Starting Data Fetching for get_Users_users
+2024-08-05 08:41:04,104 - ERROR - An error occurred while running get_Users_users: name 'get_Users_business_units' is not defined

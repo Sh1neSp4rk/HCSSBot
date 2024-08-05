@@ -5,7 +5,7 @@ This package contains modules for interacting with various HCSS APIs.
 Each module is responsible for fetching and processing data from specific endpoints.
 """
 
-from .equipmentE360_get import (
+from .equipment360_get import (
     get_EquipmentE360_business_units,
     get_EquipmentE360_fuel_costs,
     get_EquipmentE360_work_order_costs,
@@ -18,7 +18,7 @@ from .heavybidestimates_get import (
     get_HeavyBidEstimates_partitions,
 )
 from .heavyjob_get import (
-    get_HeavyJob_businessunits,
+    get_HeavyJob_business_units,
     get_HeavyJob_jobs,
     get_HeavyJob_jobcosts,
     get_HeavyJob_costcodes,
@@ -27,7 +27,6 @@ from .heavyjob_get import (
     get_HeavyJob_jobmaterials,
     get_HeavyJob_materials,
     get_HeavyJob_timecards,
-    get_HeavyJob_user,
     get_HeavyJob_diaries,
     get_HeavyJob_employees,
     get_HeavyJob_equipment_types,
@@ -37,7 +36,6 @@ from .heavyjob_get import (
 )
 from .safety_get import (
     get_Safety_incidents,
-    get_Safety_incidentsV2,
     get_Safety_meetings,
 )
 from .setups_get import (
@@ -75,7 +73,7 @@ __all__ = [
     "get_HeavyBidEstimates_partitions",
     
     # HeavyJob
-    "get_HeavyJob_businessunits",
+    "get_HeavyJob_business_units",
     "get_HeavyJob_jobs",
     "get_HeavyJob_jobcosts",
     "get_HeavyJob_costcodes",
@@ -84,7 +82,6 @@ __all__ = [
     "get_HeavyJob_jobmaterials",
     "get_HeavyJob_materials",
     "get_HeavyJob_timecards",
-    "get_HeavyJob_user",
     "get_HeavyJob_diaries",
     "get_HeavyJob_employees",
     "get_HeavyJob_equipment_types",
@@ -94,7 +91,6 @@ __all__ = [
     
     # Safety
     "get_Safety_incidents",
-    "get_Safety_incidentsV2",
     "get_Safety_meetings",
     
     # Setups

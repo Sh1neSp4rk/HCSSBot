@@ -7,58 +7,15 @@ from Tools.data_saver import save_data
 from Tools.cleanup_files import cleanup_files
 from Tools.email_sender import send_email
 
-# Import all functions from EndpointCalls
-from EndpointCalls import (
-    get_EquipmentE360_business_units,
-    get_EquipmentE360_fuel_costs,
-    get_EquipmentE360_work_order_costs,
-    get_EquipmentE360_work_order_details,
-    get_EquipmentE360_custom_fields,
-    get_EquipmentE360_custom_field_categories,
-    get_HeavyBidEstimates_business_units,
-    get_HeavyBidEstimates_partitions,
-    get_HeavyJob_businessunits,
-    get_HeavyJob_jobs,
-    get_HeavyJob_jobcosts,
-    get_HeavyJob_costcodes,
-    get_HeavyJob_jobemployees,
-    get_HeavyJob_jobequipment,
-    get_HeavyJob_jobmaterials,
-    get_HeavyJob_materials,
-    get_HeavyJob_timecards,
-    get_HeavyJob_user,
-    get_HeavyJob_diaries,
-    get_HeavyJob_employees,
-    get_HeavyJob_equipment_types,
-    get_HeavyJob_equipment,
-    get_HeavyJob_equipmenthours,
-    get_HeavyJob_employeehours,
-    get_Safety_incidents,
-    get_Safety_incidentsV2,
-    get_Safety_meetings,
-    get_Setups_accounting_templates,
-    get_Setups_business_units,
-    get_Setups_jobs,
-    get_Setups_equipment,
-    get_Setups_employees,
-    get_Skills_skills,
-    get_Skills_employeeskills,
-    get_Telematics_equipment,
-    get_token,
-    get_Users_business_units,
-    get_Users_jobs,
-    get_Users_roles,
-    get_Users_subscription_groups,
-    get_Users_users,
-)
+# Import the FUNCTION_MAP from function_map.py
+from EndpointCalls.function_map import FUNCTION_MAP
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Run specific API endpoint functions.")
-    parser.add_argument('--function', type=str, help='Name of the function to run', required=True)
-    parser.add_argument('--file_type', type=str, default="xlsx", help='File type for saving data')
+    parser.add_argument('--function', type=str, help='Name of the function to run (or leave empty to run all get_ functions)')
+    parser.add_argument('--filetype', type=str, default="xlsx", help='File type for saving data')
     parser.add_argument('--email', type=str, default=os.getenv("TARGET_EMAIL"), help='Recipient email address')
-    parser.add_argument('--rate_limit', type=float, default=0.8, help='Rate limit percentage')
-    
+    parser.add_argument('--ratelimit', type=float, default=0.8, help='Rate limit percentage')
     return parser.parse_args()
 
 async def main():
@@ -66,37 +23,46 @@ async def main():
     logger = setup_logger()
 
     # Fetch environment variables and arguments
-    file_type = args.file_type
+    file_type = args.filetype
     recipient_email = args.email
-    rate_limit_percentage = args.rate_limit
+    rate_limit_percentage = args.ratelimit
 
-    # Get the function to run from the arguments
-    function_to_run = getattr(globals(), args.function, None)
-    
-    if function_to_run is None:
-        print(f"Function '{args.function}' not found.")
-        return
+    # Get the list of functions to run
+    functions_to_run = {}
+
+    if args.function:
+        # If a specific function is provided, get that one
+        function_to_run = FUNCTION_MAP.get(args.function)
+        if function_to_run is None:
+            print(f"Function '{args.function}' not found.")
+            return
+        functions_to_run = {args.function: function_to_run}
+    else:
+        # If no function is provided, get all functions starting with 'get_'
+        functions_to_run = {name: func for name, func in FUNCTION_MAP.items() if name.startswith('get_')}
 
     rate_limiter = RateLimiter(rate_limit_percentage)
-    
-    try:
-        log_process_start(logger, "Data Fetching")
 
-        # Run the specified function
-        data = function_to_run(file_type)
-        filename = save_data(data, args.function, file_type)
-        
-        log_process_completion(logger, "Data Fetching")
-        
-        log_process_start(logger, "Sending Email")
-        send_email([filename], recipient_email)
-        log_process_completion(logger, "Sending Email")
+    for func_name, function_to_run in functions_to_run.items():
+        try:
+            log_process_start(logger, f"Data Fetching for {func_name}")
 
-    except Exception as e:
-        log_error(logger, f"An error occurred: {e}")
+            # Call the function without worrying about business unit IDs here
+            data = function_to_run(file_type)
+            
+            filename = save_data(data, func_name, file_type)
+            
+            log_process_completion(logger, f"Data Fetching for {func_name}")
+            
+            log_process_start(logger, f"Sending Email for {func_name}")
+            send_email([filename], recipient_email)
+            log_process_completion(logger, f"Sending Email for {func_name}")
 
-    finally:
-        cleanup_files("Files")
+        except Exception as e:
+            log_error(logger, f"An error occurred while running {func_name}: {e}")
+
+        finally:
+            cleanup_files("Files")
 
 if __name__ == "__main__":
     asyncio.run(main())

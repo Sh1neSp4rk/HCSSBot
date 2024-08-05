@@ -21,7 +21,7 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def get_heavybidestimates_business_units():
+def get_HeavyBidEstimates_business_units():
     url = "https://api.hcssapps.com/heavybidestimates/api/v1/BusinessUnits"
     token = get_token()
     if not token:
@@ -42,7 +42,7 @@ def get_heavybidestimates_business_units():
     log_function_completion("get_heavybidestimates_business_units", start_time)
     return data
 
-def get_heavybidestimates_partitions():
+def get_HeavyBidEstimates_partitions():
     url = "https://api.hcssapps.com/heavybidestimates/api/v1/Partitions"
     token = get_token()
     if not token:

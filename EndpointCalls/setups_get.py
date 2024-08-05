@@ -21,7 +21,7 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def get_accounting_templates(business_unit_code):
+def get_Setups_accounting_templates(business_unit_code):
     url = "https://api.hcssapps.com/setups/api/v1/AccountingTemplate"
     query = {"businessUnitCode": business_unit_code}
     token = get_token()
@@ -43,7 +43,7 @@ def get_accounting_templates(business_unit_code):
     log_function_completion("get_accounting_templates", start_time)
     return data
 
-def get_business_units():
+def get_Setups_business_units():
     url = "https://api.hcssapps.com/setups/api/v1/BusinessUnit"
     token = get_token()
     if not token:
@@ -64,7 +64,7 @@ def get_business_units():
     log_function_completion("get_business_units", start_time)
     return data
 
-def get_jobs(business_unit_code, accounting_template_name=""):
+def get_Setups_jobs(business_unit_code, accounting_template_name=""):
     url = "https://api.hcssapps.com/setups/api/v1/Job"
     query = {
         "businessUnitCode": business_unit_code,
@@ -89,7 +89,7 @@ def get_jobs(business_unit_code, accounting_template_name=""):
     log_function_completion("get_jobs", start_time)
     return data
 
-def get_equipment(business_unit_code, accounting_template_name=""):
+def get_Setups_equipment(business_unit_code, accounting_template_name=""):
     url = "https://api.hcssapps.com/setups/api/v1/Equipment"
     query = {
         "businessUnitCode": business_unit_code,
@@ -114,7 +114,7 @@ def get_equipment(business_unit_code, accounting_template_name=""):
     log_function_completion("get_equipment", start_time)
     return data
 
-def get_employees(business_unit_code, accounting_template_name="", include_deleted=False):
+def get_Setups_employees(business_unit_code, accounting_template_name="", include_deleted=False):
     url = "https://api.hcssapps.com/setups/api/v1/Employee"
     query = {
         "businessUnitCode": business_unit_code,

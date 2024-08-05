@@ -6,7 +6,7 @@ from datetime import datetime
 logging.basicConfig(filename='Logs/safety_get.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_incidents(token, modified_after=None, created_after=None, incident_date_after=None, incident_date_before=None, limit=0, offset=0):
+def get_Safety_incidents(token, modified_after=None, created_after=None, incident_date_after=None, incident_date_before=None, limit=0, offset=0):
     url = "https://api.hcssapps.com/safety/v1/incidents"
     query = {
         "modifiedAfterUtc": modified_after,
@@ -28,7 +28,7 @@ def get_incidents(token, modified_after=None, created_after=None, incident_date_
         logging.error(f"Error fetching incidents data: {e}")
         raise
 
-def get_incident_details(token, incident_id):
+def get_Safety_incidentsV2(token, incident_id):
     url = f"https://api.hcssapps.com/safety/v2/incidents/{incident_id}"
     query = {"excludeForms": "true"}
     headers = {"Authorization": f"Bearer {token}"}
@@ -43,7 +43,7 @@ def get_incident_details(token, incident_id):
         logging.error(f"Error fetching details for incident ID {incident_id}: {e}")
         raise
 
-def get_meetings(token, job_id=None, recorder_id=None, business_unit_id=None, employee_id=None, start_date=None, end_date=None, skip=0, take=0):
+def get_Safety_meetings(token, job_id=None, recorder_id=None, business_unit_id=None, employee_id=None, start_date=None, end_date=None, skip=0, take=0):
     url = "https://api.hcssapps.com/safety/v1/meetings"
     query = {
         "jobId": job_id,

@@ -17,7 +17,7 @@ def log_response(response):
     logging.info(f"Response Status Code: {response.status_code}")
     logging.info(f"Response Data: {response.json()}")
 
-def get_heavyjob_businessunits(token):
+def get_HeavyJob_businessunits(token):
     url = "https://api.hcssapps.com/heavyjob/api/v1/businessUnits"
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, method='GET')
@@ -25,7 +25,7 @@ def get_heavyjob_businessunits(token):
     log_response(response)
     return response.json()
 
-def get_heavyjob_jobs(token, business_unit_id):
+def get_HeavyJob_jobs(token, business_unit_id):
     url = "https://api.hcssapps.com/heavyjob/api/v1/jobs"
     query = {"businessUnitId": business_unit_id}
     headers = {"Authorization": f"Bearer {token}"}
@@ -34,7 +34,7 @@ def get_heavyjob_jobs(token, business_unit_id):
     log_response(response)
     return response.json()
 
-def get_heavyjob_jobcosts(token, job_id, effective_date, start_date):
+def get_HeavyJob_jobcosts(token, job_id, effective_date, start_date):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/jobs/{job_id}/costs"
     query = {"effectiveDate": effective_date, "startDate": start_date}
     headers = {"Authorization": f"Bearer {token}"}
@@ -43,7 +43,7 @@ def get_heavyjob_jobcosts(token, job_id, effective_date, start_date):
     log_response(response)
     return response.json()
 
-def get_heavyjob_costcodes(token, accounting_template_name, job_id, business_unit_id, cost_code_id, limit=1000, cursor=None):
+def get_HeavyJob_costcodes(token, accounting_template_name, job_id, business_unit_id, cost_code_id, limit=1000, cursor=None):
     url = "https://api.hcssapps.com/heavyjob/api/v1/costCodes"
     query = {
         "accountingTemplateName": accounting_template_name,
@@ -59,7 +59,7 @@ def get_heavyjob_costcodes(token, accounting_template_name, job_id, business_uni
     log_response(response)
     return response.json()
 
-def get_heavyjob_jobemployees(token, business_unit_id, job_id, employee_id=None, limit=1000, cursor=None):
+def get_HeavyJob_jobemployees(token, business_unit_id, job_id, employee_id=None, limit=1000, cursor=None):
     url = "https://api.hcssapps.com/heavyjob/api/v1/jobEmployees"
     query = {
         "businessUnitId": business_unit_id,
@@ -74,7 +74,7 @@ def get_heavyjob_jobemployees(token, business_unit_id, job_id, employee_id=None,
     log_response(response)
     return response.json()
 
-def get_heavyjob_jobequipment(token, business_unit_id, job_id, equipment_id=None, limit=1000, cursor=None):
+def get_HeavyJob_jobequipment(token, business_unit_id, job_id, equipment_id=None, limit=1000, cursor=None):
     url = "https://api.hcssapps.com/heavyjob/api/v1/jobEquipment"
     query = {
         "businessUnitId": business_unit_id,
@@ -89,7 +89,7 @@ def get_heavyjob_jobequipment(token, business_unit_id, job_id, equipment_id=None
     log_response(response)
     return response.json()
 
-def get_heavyjob_jobmaterials(token, job_id, is_discontinued="false", is_deleted="false"):
+def get_HeavyJob_jobmaterials(token, job_id, is_discontinued="false", is_deleted="false"):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/jobs/{job_id}/costTypes/jobMaterial"
     query = {"isDiscontinued": is_discontinued, "isDeleted": is_deleted}
     headers = {"Authorization": f"Bearer {token}"}
@@ -98,7 +98,7 @@ def get_heavyjob_jobmaterials(token, job_id, is_discontinued="false", is_deleted
     log_response(response)
     return response.json()
 
-def get_heavyjob_materials(token, business_unit_id, is_deleted="false"):
+def get_HeavyJob_materials(token, business_unit_id, is_deleted="false"):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/costTypes/material"
     query = {"isDeleted": is_deleted}
     headers = {"Authorization": f"Bearer {token}"}
@@ -107,7 +107,7 @@ def get_heavyjob_materials(token, business_unit_id, is_deleted="false"):
     log_response(response)
     return response.json()
 
-def get_heavyjob_timecards(token, job_id, foreman_id=None, employee_id=None, start_date=None, end_date=None, modified_since=None, only_tm="false", cursor=None, limit=1000):
+def get_HeavyJob_timecards(token, job_id, foreman_id=None, employee_id=None, start_date=None, end_date=None, modified_since=None, only_tm="false", cursor=None, limit=1000):
     url = "https://api.hcssapps.com/heavyjob/api/v1/timeCardInfo"
     query = {
         "jobId": job_id,
@@ -126,7 +126,7 @@ def get_heavyjob_timecards(token, job_id, foreman_id=None, employee_id=None, sta
     log_response(response)
     return response.json()
 
-def get_heavyjob_user(token, user_id):
+def get_HeavyJob_user(token, user_id):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/users/{user_id}"
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, method='GET')
@@ -134,7 +134,7 @@ def get_heavyjob_user(token, user_id):
     log_response(response)
     return response.json()
 
-def get_heavyjob_diaries(token, business_unit_id, job_ids, job_tag_ids, foreman_ids, job_status, start_date, end_date, cursor=None, limit=0):
+def get_HeavyJob_diaries(token, business_unit_id, job_ids, job_tag_ids, foreman_ids, job_status, start_date, end_date, cursor=None, limit=0):
     url = "https://api.hcssapps.com/heavyjob/api/v1/diaries/search"
     payload = {
         "businessUnitId": business_unit_id,
@@ -156,7 +156,7 @@ def get_heavyjob_diaries(token, business_unit_id, job_ids, job_tag_ids, foreman_
     log_response(response)
     return response.json()
 
-def get_heavyjob_employees(token, business_unit_id, accounting_template_name="string", is_active="true", is_deleted="false", is_foreman="true", include_historical_foreman="true"):
+def get_HeavyJob_employees(token, business_unit_id, accounting_template_name="string", is_active="true", is_deleted="false", is_foreman="true", include_historical_foreman="true"):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/employees"
     query = {
         "accountingTemplateName": accounting_template_name,
@@ -171,7 +171,7 @@ def get_heavyjob_employees(token, business_unit_id, accounting_template_name="st
     log_response(response)
     return response.json()
 
-def get_heavyjob_equipment_types(token, business_unit_id):
+def get_HeavyJob_equipment_types(token, business_unit_id):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/equipment/types"
     headers = {"Authorization": f"Bearer {token}"}
     log_request(url, method='GET')
@@ -179,7 +179,7 @@ def get_heavyjob_equipment_types(token, business_unit_id):
     log_response(response)
     return response.json()
 
-def get_heavyjob_equipment(token, business_unit_id, accounting_template_name="string"):
+def get_HeavyJob_equipment(token, business_unit_id, accounting_template_name="string"):
     url = f"https://api.hcssapps.com/heavyjob/api/v1/businessUnits/{business_unit_id}/equipment"
     query = {
         "accountingTemplateName": accounting_template_name,
@@ -192,7 +192,7 @@ def get_heavyjob_equipment(token, business_unit_id, accounting_template_name="st
     log_response(response)
     return response.json()
 
-def get_heavyjob_equipmenthours(token, business_unit_id, equipment_ids, modified_since, linked_employee_ids, job_ids, job_tag_ids, foreman_ids, start_date, end_date, cursor=None, limit=500):
+def get_HeavyJob_equipmenthours(token, business_unit_id, equipment_ids, modified_since, linked_employee_ids, job_ids, job_tag_ids, foreman_ids, start_date, end_date, cursor=None, limit=500):
     url = "https://api.hcssapps.com/heavyjob/api/v1/hours/equipment"
     payload = {
         "businessUnitId": business_unit_id,
@@ -217,7 +217,7 @@ def get_heavyjob_equipmenthours(token, business_unit_id, equipment_ids, modified
     log_response(response)
     return response.json()
 
-def get_heavyjob_employeehours(token, business_unit_id, modified_since, employee_ids, job_ids, job_tag_ids, foreman_ids, start_date, end_date, cursor=None, limit=500):
+def get_HeavyJob_employeehours(token, business_unit_id, modified_since, employee_ids, job_ids, job_tag_ids, foreman_ids, start_date, end_date, cursor=None, limit=500):
     url = "https://api.hcssapps.com/heavyjob/api/v1/hours/employees"
     payload = {
         "businessUnitId": business_unit_id,

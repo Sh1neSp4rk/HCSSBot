@@ -17,7 +17,7 @@ def get_headers():
         return None
     return {"Authorization": f"Bearer {token}"}
 
-def get_business_units():
+def get_Users_business_units():
     endpoint = "https://api.hcssapps.com/users/api/v1/BusinessUnits"
     logging.info(f"Fetching business units from {endpoint}")
     headers = get_headers()
@@ -31,7 +31,7 @@ def get_business_units():
         logging.error(f"Error fetching business units: {response.status_code}")
         return None
 
-def get_jobs(business_unit_id):
+def get_Users_jobs(business_unit_id):
     endpoint = "https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit"
     params = {"businessUnitId": business_unit_id}
     logging.info(f"Fetching jobs for business unit ID: {business_unit_id} from {endpoint}")
@@ -46,7 +46,7 @@ def get_jobs(business_unit_id):
         logging.error(f"Error fetching jobs: {response.status_code}")
         return None
 
-def get_roles():
+def get_Users_roles():
     endpoint = "https://api.hcssapps.com/users/api/v1/Roles"
     logging.info(f"Fetching roles from {endpoint}")
     headers = get_headers()
@@ -60,7 +60,7 @@ def get_roles():
         logging.error(f"Error fetching roles: {response.status_code}")
         return None
 
-def get_subscription_groups():
+def get_Users_subscription_groups():
     endpoint = "https://api.hcssapps.com/users/api/v1/SubscriptionGroups"
     logging.info(f"Fetching subscription groups from {endpoint}")
     headers = get_headers()
@@ -74,7 +74,7 @@ def get_subscription_groups():
         logging.error(f"Error fetching subscription groups: {response.status_code}")
         return None
 
-def get_users(business_unit_id, page_size=50):
+def get_Users_users(business_unit_id, page_size=50):
     endpoint = "https://api.hcssapps.com/users/api/v1/Users"
     logging.info(f"Fetching users for business unit ID: {business_unit_id} with page size: {page_size}")
     headers = get_headers()

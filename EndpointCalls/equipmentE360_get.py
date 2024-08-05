@@ -2,7 +2,7 @@
 import requests
 import logging
 from datetime import datetime
-from Tools.progress_bars import Bar
+from Tools.progress_bars import fetch_data_with_progress, fetch_paginated_data_with_progress
 from Tools.data_saver import save_data
 from EndpointCalls.token_get import get_token
 from Tools.logger import setup_logger, set_last_successful_date, get_last_successful_date_from_log
@@ -24,7 +24,7 @@ def fetch_data(url, params=None):
 def log_function_call(function_name, status):
     logger.info(f"{function_name} - {status}")
 
-def get_business_units(file_type):
+def get_EquipmentE360_business_units(file_type):
     url = "https://api.hcssapps.com/e360/api/v1/businessUnits"
     logger.info("Fetching Business Units")
     data = fetch_data(url)
@@ -33,7 +33,7 @@ def get_business_units(file_type):
     set_last_successful_date(logger, 'business_units')
     return [unit['id'] for unit in data['results']]
 
-def get_fuel_costs(file_type, business_unit_ids):
+def get_EquipmentE360_fuel_costs(file_type, business_unit_ids):
     url = "https://api.hcssapps.com/e360/api/v1/costs/fuel"
     start_date = get_last_successful_date_from_log(logger, 'fuel_costs')  # Fetching last successful date
     end_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -48,7 +48,7 @@ def get_fuel_costs(file_type, business_unit_ids):
     set_last_successful_date(logger, 'fuel_costs')
     return data
 
-def get_work_order_costs(file_type, business_unit_ids):
+def get_EquipmentE360_work_order_costs(file_type, business_unit_ids):
     url = "https://api.hcssapps.com/e360/api/v1/costs/workOrders"
     all_data = []
     for unit_id in business_unit_ids:
@@ -58,13 +58,13 @@ def get_work_order_costs(file_type, business_unit_ids):
         logger.info(f"Fetching Work Order Costs for Business Unit ID: {unit_id}")
         data = fetch_data(url, params=params)
         all_data.extend(data.get('results', []))
-        Bar.update_progress(unit_id, len(business_unit_ids))  # Update progress
+        fetch_data_with_progress.update_progress(unit_id, len(business_unit_ids))  # Update progress
     save_data(all_data, 'work_order_costs', file_type)
     log_function_call("fetch_work_order_costs", "Completed")
     set_last_successful_date(logger, 'work_order_costs')
     return all_data
 
-def get_work_order_details(file_type, business_unit_ids):
+def get_EquipmentE360_work_order_details(file_type, business_unit_ids):
     url = "https://api.hcssapps.com/e360/api/v1/costs/workOrdersExtended"
     all_data = []
     for unit_id in business_unit_ids:
@@ -76,13 +76,13 @@ def get_work_order_details(file_type, business_unit_ids):
         logger.info(f"Fetching Work Order Details for Business Unit ID: {unit_id}")
         data = fetch_data(url, params=params)
         all_data.extend(data.get('results', []))
-        Bar.update_progress(unit_id, len(business_unit_ids))  # Update progress
+        fetch_data_with_progress.update_progress(unit_id, len(business_unit_ids))  # Update progress
     save_data(all_data, 'work_order_details', file_type)
     log_function_call("fetch_work_order_details", "Completed")
     set_last_successful_date(logger, 'work_order_details')
     return all_data
 
-def get_custom_fields(file_type):
+def get_EquipmentE360_custom_fields(file_type):
     url = "https://api.hcssapps.com/e360/api/v1/customField"
     logger.info("Fetching Custom Fields")
     data = fetch_data(url)
@@ -91,7 +91,7 @@ def get_custom_fields(file_type):
     set_last_successful_date(logger, 'custom_fields')
     return data
 
-def get_custom_field_categories(file_type):
+def get_EquipmentE360_custom_field_categories(file_type):
     url = "https://api.hcssapps.com/e360/api/v1/customFieldCategories"
     logger.info("Fetching Custom Field Categories")
     data = fetch_data(url)

@@ -18,22 +18,22 @@ from .heavybidestimates_get import (
     get_HeavyBidEstimates_partitions,
 )
 from .heavyjob_get import (
-    get_heavyjob_businessunits,
-    get_heavyjob_jobs,
-    get_heavyjob_jobcosts,
-    get_heavyjob_costcodes,
-    get_heavyjob_jobemployees,
-    get_heavyjob_jobequipment,
-    get_heavyjob_jobmaterials,
-    get_heavyjob_materials,
-    get_heavyjob_timecards,
-    get_heavyjob_user,
-    get_heavyjob_diaries,
-    get_heavyjob_employees,
-    get_heavyjob_equipment_types,
-    get_heavyjob_equipment,
-    get_heavyjob_equipmenthours,
-    get_heavyjob_employeehours,
+    get_HeavyJob_businessunits,
+    get_HeavyJob_jobs,
+    get_HeavyJob_jobcosts,
+    get_HeavyJob_costcodes,
+    get_HeavyJob_jobemployees,
+    get_HeavyJob_jobequipment,
+    get_HeavyJob_jobmaterials,
+    get_HeavyJob_materials,
+    get_HeavyJob_timecards,
+    get_HeavyJob_user,
+    get_HeavyJob_diaries,
+    get_HeavyJob_employees,
+    get_HeavyJob_equipment_types,
+    get_HeavyJob_equipment,
+    get_HeavyJob_equipmenthours,
+    get_HeavyJob_employeehours,
 )
 from .safety_get import (
     get_Safety_incidents,
@@ -53,6 +53,13 @@ from .skills_get import (
 )
 from .telematics_get import get_Telematics_equipment
 from .token_get import get_token
+from .users_get import (
+    get_Users_business_units,
+    get_Users_jobs,
+    get_Users_roles,
+    get_Users_subscription_groups,
+    get_Users_users,
+)
 
 __all__ = [
     # Equipment E360
@@ -68,22 +75,22 @@ __all__ = [
     "get_HeavyBidEstimates_partitions",
     
     # HeavyJob
-    "get_heavyjob_businessunits",
-    "get_heavyjob_jobs",
-    "get_heavyjob_jobcosts",
-    "get_heavyjob_costcodes",
-    "get_heavyjob_jobemployees",
-    "get_heavyjob_jobequipment",
-    "get_heavyjob_jobmaterials",
-    "get_heavyjob_materials",
-    "get_heavyjob_timecards",
-    "get_heavyjob_user",
-    "get_heavyjob_diaries",
-    "get_heavyjob_employees",
-    "get_heavyjob_equipment_types",
-    "get_heavyjob_equipment",
-    "get_heavyjob_equipmenthours",
-    "get_heavyjob_employeehours",
+    "get_HeavyJob_businessunits",
+    "get_HeavyJob_jobs",
+    "get_HeavyJob_jobcosts",
+    "get_HeavyJob_costcodes",
+    "get_HeavyJob_jobemployees",
+    "get_HeavyJob_jobequipment",
+    "get_HeavyJob_jobmaterials",
+    "get_HeavyJob_materials",
+    "get_HeavyJob_timecards",
+    "get_HeavyJob_user",
+    "get_HeavyJob_diaries",
+    "get_HeavyJob_employees",
+    "get_HeavyJob_equipment_types",
+    "get_HeavyJob_equipment",
+    "get_HeavyJob_equipmenthours",
+    "get_HeavyJob_employeehours",
     
     # Safety
     "get_Safety_incidents",
@@ -106,4 +113,11 @@ __all__ = [
     
     # Token
     "get_token",
+
+    # Users
+    "get_Users_business_units",
+    "get_Users_jobs",
+    "get_Users_roles",
+    "get_Users_subscription_groups",
+    "get_Users_users",
 ]

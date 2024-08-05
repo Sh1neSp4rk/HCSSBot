@@ -21,7 +21,7 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def get_equipment(cursor=None):
+def get_Telematics_equipment(cursor=None):
     url = "https://api.hcssapps.com/telematics/api/v1/equipment"
     query = {
         "limit": "1000",

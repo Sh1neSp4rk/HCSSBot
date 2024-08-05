@@ -497,3 +497,48 @@
 2024-08-05 11:06:07,748 - INFO - Token successfully retrieved.
 2024-08-05 11:06:07,748 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
 2024-08-05 11:06:07,748 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:13:26,254 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:13:26,255 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:13:26,255 - INFO - Function get_Skills_skills started at 2024-08-05 11:13:26
+2024-08-05 11:13:26,255 - INFO - Starting Requesting token
+2024-08-05 11:13:26,257 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:13:26,411 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:13:26,412 - INFO - Token successfully retrieved.
+2024-08-05 11:13:26,412 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:13:26,412 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:14:47,641 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:14:47,642 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:14:47,642 - INFO - Function get_Skills_skills started at 2024-08-05 11:14:47
+2024-08-05 11:14:47,643 - INFO - Starting Requesting token
+2024-08-05 11:14:47,644 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:14:47,997 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:14:47,998 - INFO - Token successfully retrieved.
+2024-08-05 11:14:47,998 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:14:47,998 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:16:24,690 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:16:24,691 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:16:24,691 - INFO - Function get_Skills_skills started at 2024-08-05 11:16:24
+2024-08-05 11:16:24,691 - INFO - Starting Requesting token
+2024-08-05 11:16:24,693 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:16:24,989 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:16:24,990 - INFO - Token successfully retrieved.
+2024-08-05 11:16:24,990 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:16:24,990 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:18:03,950 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:18:03,951 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:18:03,951 - INFO - Function get_Skills_skills started at 2024-08-05 11:18:03
+2024-08-05 11:18:03,951 - INFO - Starting Requesting token
+2024-08-05 11:18:03,953 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:18:04,036 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:18:04,037 - INFO - Token successfully retrieved.
+2024-08-05 11:18:04,037 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:18:04,037 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:23:12,540 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:23:12,542 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:23:12,542 - INFO - Function get_Skills_skills started at 2024-08-05 11:23:12
+2024-08-05 11:23:12,542 - INFO - Starting Requesting token
+2024-08-05 11:23:12,544 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:23:12,782 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:23:12,783 - INFO - Token successfully retrieved.
+2024-08-05 11:23:12,783 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:23:12,783 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'

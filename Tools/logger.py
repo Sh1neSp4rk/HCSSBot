@@ -36,7 +36,9 @@ def setup_function_logger(log_dir='Logs', log_filename='function_calls.log'):
     return logging.getLogger()
 
 def log_process_start(logger, process_name):
+    start_time = get_timestamp() 
     logger.info(f"Starting {process_name}")
+    return start_time
 
 def log_process_completion(logger, process_name, start_time):
     """

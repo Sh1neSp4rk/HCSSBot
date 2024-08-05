@@ -1,9 +1,8 @@
+import argparse
 import asyncio
-import aiohttp
 import os
 from Tools.logger import setup_logger, log_process_start, log_process_completion, log_error
 from Tools.rate_limiter import RateLimiter
-from Tools.progress_bars import fetch_paginated_data_with_progress
 from Tools.data_saver import save_data
 from Tools.cleanup_files import cleanup_files
 from Tools.email_sender import send_email
@@ -32,22 +31,39 @@ from EndpointCalls import (
     get_token,
 )
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="Run specific API endpoint functions.")
+    parser.add_argument('--function', type=str, help='Name of the function to run', required=True)
+    parser.add_argument('--file_type', type=str, default="xlsx", help='File type for saving data')
+    parser.add_argument('--email', type=str, default=os.getenv("TARGET_EMAIL"), help='Recipient email address')
+    parser.add_argument('--rate_limit', type=float, default=0.8, help='Rate limit percentage')
+    
+    return parser.parse_args()
+
 async def main():
+    args = parse_args()
     logger = setup_logger()
 
-    # Fetch environment variables
-    file_type = "xlsx"
-    recipient_email = os.getenv("TARGET_EMAIL")
-    rate_limit_percentage = 0.8
+    # Fetch environment variables and arguments
+    file_type = args.file_type
+    recipient_email = args.email
+    rate_limit_percentage = args.rate_limit
+
+    # Get the function to run from the arguments
+    function_to_run = getattr(globals(), args.function, None)
     
+    if function_to_run is None:
+        print(f"Function '{args.function}' not found.")
+        return
+
     rate_limiter = RateLimiter(rate_limit_percentage)
     
     try:
         log_process_start(logger, "Data Fetching")
-        
-        # Example of running one of the _get functions
-        data = get_business_units(file_type)
-        filename = save_data(data, "business_units", file_type)
+
+        # Run the specified function
+        data = function_to_run(file_type)
+        filename = save_data(data, args.function, file_type)
         
         log_process_completion(logger, "Data Fetching")
         
@@ -63,3 +79,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+

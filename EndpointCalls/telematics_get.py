@@ -51,7 +51,7 @@ def get_Telematics_equipment(cursor=None):
     if next_cursor:
         logging.info(f"Next cursor found: {next_cursor}")
         results = data.get("results", [])
-        results.extend(get_equipment(cursor=next_cursor) or [])
+        results.extend(get_Telematics_equipment(cursor=next_cursor) or [])
     else:
         results = data.get("results", [])
 

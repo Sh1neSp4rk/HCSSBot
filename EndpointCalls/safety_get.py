@@ -71,16 +71,16 @@ if __name__ == "__main__":
     token = "YOUR_ACCESS_TOKEN"  # Replace with your actual token
     try:
         # Example usage
-        incidents_data = get_incidents(token, limit=10)
+        incidents_data = get_Safety_incidents(token, limit=10)
         print(incidents_data)
 
         if incidents_data:
             first_incident_id = incidents_data.get('incidents', [])[0].get('id')
             if first_incident_id:
-                details = get_incident_details(token, first_incident_id)
+                details = get_Safety_incidentsV2(token, first_incident_id)
                 print(details)
 
-        meetings_data = get_meetings(token, job_id="example-job-id")
+        meetings_data = get_Safety_meetings(token, job_id="example-job-id")
         print(meetings_data)
 
     except Exception as e:

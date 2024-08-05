@@ -1,25 +1,20 @@
-# Tools/email_sender.py
 import smtplib
 import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 from email.mime.text import MIMEText
-from dotenv import load_dotenv
 import logging
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def send_email(attachments, recipient_email):
-    sender_email = os.getenv('EMAIL_ADDRESS')
-    email_password = os.getenv('EMAIL_PASSWORD')
+    sender_email = 'your-email@example.com'
+    email_password = 'your-email-password'
 
     if not sender_email or not email_password:
-        raise ValueError("Email address or password not set in .env file")
+        raise ValueError("Email address or password is missing")
 
     # Create the email subject and body
     subject = "HCSSBot API Data Files"
@@ -52,4 +47,3 @@ def send_email(attachments, recipient_email):
         logging.info(f"Email sent to {recipient_email}")
     except Exception as e:
         logging.error(f"Failed to send email: {e}")
-

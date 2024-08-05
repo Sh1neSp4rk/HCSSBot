@@ -1,7 +1,7 @@
 # EndpointCalls/users_get.py
 import logging
 from Tools.progress_bars import fetch_data_with_progress, fetch_paginated_data_with_progress
-from token_get import get_token
+from EndpointCalls.token_get import get_token
 
 # Configure logging
 logging.basicConfig(

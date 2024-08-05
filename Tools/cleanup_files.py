@@ -1,6 +1,6 @@
-# Tools/cleanup_files.py
 import os
 import glob
+import logging
 
 def cleanup_files(folder_path):
     # Create a list of all files in the specified folder
@@ -10,9 +10,9 @@ def cleanup_files(folder_path):
     for file in files:
         try:
             os.remove(file)
-            print(f"Deleted: {file}")
+            logging.info(f"Deleted: {file}")
         except Exception as e:
-            print(f"Error deleting {file}: {e}")
+            logging.error(f"Error deleting {file}: {e}")
 
 if __name__ == "__main__":
     folder_path = 'Files'  # Path to the folder you want to clean up

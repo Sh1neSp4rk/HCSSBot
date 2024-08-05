@@ -5,7 +5,7 @@ from datetime import datetime
 from Tools.progress_bars import Bar
 from Tools.data_saver import save_data
 from Tools.caller import get_last_successful_date, set_last_successful_date
-from token_get import TokenGET
+from EndpointCalls.token_get import get_token
 
 # Setting up logging
 logging.basicConfig(filename='Logs/equipment360_get.log', level=logging.DEBUG,
@@ -18,7 +18,7 @@ def setup_logger():
 logger = setup_logger()
 
 def get_headers():
-    token = TokenGET()  # Assuming this function fetches the current token
+    token = get_token()  # Assuming this function fetches the current token
     headers = {"Authorization": f"Bearer {token}"}
     return headers
 

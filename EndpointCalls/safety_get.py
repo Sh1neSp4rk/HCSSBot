@@ -45,10 +45,24 @@ def get_Safety_incidents(limit=0, offset=0):
 def get_Safety_meetings(start_date=None):
     url = "https://api.hcssapps.com/safety/v1/meetings"
     token = get_token()
-    query = {
-        "startDate": start_date,
-    }
+    
+    query = {}
+
+    # Validate and format start_date if provided
+    if start_date:
+        try:
+            # Ensure start_date is a valid ISO 8601 date format
+            datetime.fromisoformat(start_date)  # This will raise ValueError if the format is incorrect
+            query["startDate"] = start_date
+        except ValueError:
+            # Log the error and drop the date parameter
+            logging.error(f"Invalid date format for start_date: {start_date}. The 'startDate' parameter will be omitted.")
+    
     headers = {"Authorization": f"Bearer {token}"}
+    
+    logging.debug(f"Request URL: {url}")
+    logging.debug(f"Request headers: {headers}")
+    logging.debug(f"Request parameters: {query}")
     
     try:
         response = requests.get(url, headers=headers, params=query)
@@ -59,4 +73,3 @@ def get_Safety_meetings(start_date=None):
     except requests.RequestException as e:
         logging.error(f"Error fetching meetings data: {e}")
         raise
-

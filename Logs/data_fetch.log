@@ -100,3 +100,356 @@
 2024-08-05 09:46:02,127 - INFO - Email sent to mikelamble@hotmail.com
 2024-08-05 09:46:02,127 - INFO - Sending Email for get_Safety_meetings completed successfully
 2024-08-05 09:46:02,127 - INFO - Deleted: Files/get_Safety_meetings_20240805_094559.xlsx
+2024-08-05 10:02:24,726 - DEBUG - Using selector: EpollSelector
+2024-08-05 10:02:24,727 - INFO - Starting Data Fetching for get_Safety_meetings
+2024-08-05 10:02:24,729 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:02:24,868 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:02:24,869 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:02:26,133 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/meetings?startDate=xlsx HTTP/1.1" 200 None
+2024-08-05 10:02:26,248 - INFO - Successfully fetched meetings data.
+2024-08-05 10:02:26,428 - INFO - Data saved as XLSX file: Files/get_Safety_meetings_20240805_100226.xlsx
+2024-08-05 10:02:26,428 - INFO - Data Fetching for get_Safety_meetings completed successfully
+2024-08-05 10:02:26,428 - INFO - Starting Sending Email for get_Safety_meetings
+2024-08-05 10:02:28,538 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:02:28,538 - INFO - Sending Email for get_Safety_meetings completed successfully
+2024-08-05 10:02:28,539 - INFO - Deleted: Files/get_Safety_meetings_20240805_100226.xlsx
+2024-08-05 10:09:07,474 - DEBUG - Using selector: EpollSelector
+2024-08-05 10:09:07,475 - INFO - Starting Data Fetching for get_Safety_meetings
+2024-08-05 10:09:07,475 - INFO - Starting Data Fetching for get_Safety_meetings
+2024-08-05 10:09:07,477 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:09:07,477 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:09:07,685 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:09:07,685 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:09:07,686 - ERROR - Invalid date format for start_date: xlsx. The 'startDate' parameter will be omitted.
+2024-08-05 10:09:07,686 - ERROR - Invalid date format for start_date: xlsx. The 'startDate' parameter will be omitted.
+2024-08-05 10:09:07,686 - DEBUG - Request URL: https://api.hcssapps.com/safety/v1/meetings
+2024-08-05 10:09:07,686 - DEBUG - Request URL: https://api.hcssapps.com/safety/v1/meetings
+2024-08-05 10:09:07,686 - DEBUG - Request headers: {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkREOEVCNjJFQUUzNTQ3MDNFMDI0QTZFMTZGMzQxMzdDNTA0QURFMEVSUzI1NiIsIng1dCI6IjNZNjJMcTQxUndQZ0pLYmhielFUZkZCSzNnNCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2lkZW50aXR5Lmhjc3NhcHBzLmNvbSIsIm5iZiI6MTcyMjg1MjU0OCwiaWF0IjoxNzIyODUyNTQ4LCJleHAiOjE3MjI4NTYxNDgsImF1ZCI6WyJjb250YWN0czpyZWFkIiwiZGlzOnJlYWQiLCJlMzYwOnJlYWQiLCJoZWF2eWpvYjpyZWFkIiwiaGVhdnlqb2I6dXNlcnM6cmVhZCIsImluY2lkZW50czpyZWFkIiwibWVldGluZ3M6cmVhZCIsInNraWxsczpyZWFkIiwidGVsZW1hdGljczpyZWFkIiwidGltZWNhcmRzOnJlYWQiLCJ1c2VyczpyZWFkIiwiaHR0cHM6Ly9pZGVudGl0eS5oY3NzYXBwcy5jb20vcmVzb3VyY2VzIl0sInNjb3BlIjpbImNvbnRhY3RzOnJlYWQiLCJkaXM6cmVhZCIsImUzNjA6cmVhZCIsImhlYXZ5am9iOnJlYWQiLCJoZWF2eWpvYjp1c2VyczpyZWFkIiwiaW5jaWRlbnRzOnJlYWQiLCJtZWV0aW5nczpyZWFkIiwic2tpbGxzOnJlYWQiLCJ0ZWxlbWF0aWNzOnJlYWQiLCJ0aW1lY2FyZHM6cmVhZCIsInVzZXJzOnJlYWQiXSwiY2xpZW50X2lkIjoid2J1cWt0c3JkajAwN2w3bWt6ZmozdzY4cW1iNXJnNmsiLCJodHRwOi8vY3JlZGVudGlhbHMuaGNzc2FwcHMuY29tL3NjaGVtYXMvMjAxNS8wOS9pZGVudGl0eS9jbGFpbXMvY29tcGFueWlkIjoiZGVkMDcyZWYtZTJjOC00YWYyLTg2NjctN2Q5MjE2ZGQzZWJkIiwicmVxdWVzdFNvdXJjZSI6IkN1c3RvbWVyIn0.G37vPxP6cZvMAjjyIgAqw3sxcGGxIdAsiMTW_oJ5Rfb378fbWwRcHOz2ziZNx8fsvnlA5njhAPDNYZnjPvS-sPYiSBHaVU67RY3mtHuyhk8Cvbbdb9hfDs3uXw8-Csv4_DSA3fll9X4MhzeCPHWeA7S3uLV1dGARvSMLBRwUYMwKiVMyPkI5WMLltF7QiY3_COIssKR5OGsQjWBdhCGWBpcmRDSG5cFg4e7pxXnGDMdciG4EFgACcep4N_ube1q96e626B9T5gtdnSzVb62vZcXE0bkzhQCJHWe-DraZvMFHGTuFKXErkfGiSkkug1n9As4sQXEA5wHFg8t_AgjFjg'}
+2024-08-05 10:09:07,686 - DEBUG - Request headers: {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkREOEVCNjJFQUUzNTQ3MDNFMDI0QTZFMTZGMzQxMzdDNTA0QURFMEVSUzI1NiIsIng1dCI6IjNZNjJMcTQxUndQZ0pLYmhielFUZkZCSzNnNCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2lkZW50aXR5Lmhjc3NhcHBzLmNvbSIsIm5iZiI6MTcyMjg1MjU0OCwiaWF0IjoxNzIyODUyNTQ4LCJleHAiOjE3MjI4NTYxNDgsImF1ZCI6WyJjb250YWN0czpyZWFkIiwiZGlzOnJlYWQiLCJlMzYwOnJlYWQiLCJoZWF2eWpvYjpyZWFkIiwiaGVhdnlqb2I6dXNlcnM6cmVhZCIsImluY2lkZW50czpyZWFkIiwibWVldGluZ3M6cmVhZCIsInNraWxsczpyZWFkIiwidGVsZW1hdGljczpyZWFkIiwidGltZWNhcmRzOnJlYWQiLCJ1c2VyczpyZWFkIiwiaHR0cHM6Ly9pZGVudGl0eS5oY3NzYXBwcy5jb20vcmVzb3VyY2VzIl0sInNjb3BlIjpbImNvbnRhY3RzOnJlYWQiLCJkaXM6cmVhZCIsImUzNjA6cmVhZCIsImhlYXZ5am9iOnJlYWQiLCJoZWF2eWpvYjp1c2VyczpyZWFkIiwiaW5jaWRlbnRzOnJlYWQiLCJtZWV0aW5nczpyZWFkIiwic2tpbGxzOnJlYWQiLCJ0ZWxlbWF0aWNzOnJlYWQiLCJ0aW1lY2FyZHM6cmVhZCIsInVzZXJzOnJlYWQiXSwiY2xpZW50X2lkIjoid2J1cWt0c3JkajAwN2w3bWt6ZmozdzY4cW1iNXJnNmsiLCJodHRwOi8vY3JlZGVudGlhbHMuaGNzc2FwcHMuY29tL3NjaGVtYXMvMjAxNS8wOS9pZGVudGl0eS9jbGFpbXMvY29tcGFueWlkIjoiZGVkMDcyZWYtZTJjOC00YWYyLTg2NjctN2Q5MjE2ZGQzZWJkIiwicmVxdWVzdFNvdXJjZSI6IkN1c3RvbWVyIn0.G37vPxP6cZvMAjjyIgAqw3sxcGGxIdAsiMTW_oJ5Rfb378fbWwRcHOz2ziZNx8fsvnlA5njhAPDNYZnjPvS-sPYiSBHaVU67RY3mtHuyhk8Cvbbdb9hfDs3uXw8-Csv4_DSA3fll9X4MhzeCPHWeA7S3uLV1dGARvSMLBRwUYMwKiVMyPkI5WMLltF7QiY3_COIssKR5OGsQjWBdhCGWBpcmRDSG5cFg4e7pxXnGDMdciG4EFgACcep4N_ube1q96e626B9T5gtdnSzVb62vZcXE0bkzhQCJHWe-DraZvMFHGTuFKXErkfGiSkkug1n9As4sQXEA5wHFg8t_AgjFjg'}
+2024-08-05 10:09:07,687 - DEBUG - Request parameters: {}
+2024-08-05 10:09:07,687 - DEBUG - Request parameters: {}
+2024-08-05 10:09:07,687 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:09:07,687 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:09:09,080 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/meetings HTTP/1.1" 200 None
+2024-08-05 10:09:09,080 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/meetings HTTP/1.1" 200 None
+2024-08-05 10:09:09,148 - INFO - Successfully fetched meetings data.
+2024-08-05 10:09:09,148 - INFO - Successfully fetched meetings data.
+2024-08-05 10:09:09,330 - INFO - Data saved as XLSX file: Files/get_Safety_meetings_20240805_100909.xlsx
+2024-08-05 10:09:09,330 - INFO - Data saved as XLSX file: Files/get_Safety_meetings_20240805_100909.xlsx
+2024-08-05 10:09:09,330 - INFO - Data Fetching for get_Safety_meetings completed successfully
+2024-08-05 10:09:09,330 - INFO - Data Fetching for get_Safety_meetings completed successfully
+2024-08-05 10:09:09,330 - INFO - Starting Sending Email for get_Safety_meetings
+2024-08-05 10:09:09,330 - INFO - Starting Sending Email for get_Safety_meetings
+2024-08-05 10:09:11,320 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:09:11,320 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:09:11,320 - INFO - Sending Email for get_Safety_meetings completed successfully
+2024-08-05 10:09:11,320 - INFO - Sending Email for get_Safety_meetings completed successfully
+2024-08-05 10:09:11,321 - INFO - Deleted: Files/get_Safety_meetings_20240805_100909.xlsx
+2024-08-05 10:09:11,321 - INFO - Deleted: Files/get_Safety_meetings_20240805_100909.xlsx
+2024-08-05 10:11:59,812 - DEBUG - Using selector: EpollSelector
+2024-08-05 10:11:59,813 - INFO - Starting Data Fetching for get_EquipmentE360_business_units
+2024-08-05 10:11:59,813 - INFO - Fetching Business Units
+2024-08-05 10:11:59,815 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:11:59,943 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:11:59,946 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:00,716 - DEBUG - https://api.hcssapps.com:443 "GET /e360/api/v1/businessUnits HTTP/1.1" 200 206
+2024-08-05 10:12:00,827 - INFO - Data saved as XLSX file: Files/business_units_20240805_101200.xlsx
+2024-08-05 10:12:00,827 - INFO - fetch_business_units - Completed
+2024-08-05 10:12:00,827 - INFO - business_units - Last Successful Date: 2024-08-05T10:12:00Z
+2024-08-05 10:12:00,827 - ERROR - An error occurred while running get_EquipmentE360_business_units: list indices must be integers or slices, not str
+2024-08-05 10:12:00,827 - INFO - Deleted: Files/business_units_20240805_101200.xlsx
+2024-08-05 10:12:00,827 - INFO - Starting Data Fetching for get_EquipmentE360_fuel_costs
+2024-08-05 10:12:00,827 - INFO - Fetching Business Units
+2024-08-05 10:12:00,828 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:02,058 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:02,060 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:02,850 - DEBUG - https://api.hcssapps.com:443 "GET /e360/api/v1/businessUnits HTTP/1.1" 200 206
+2024-08-05 10:12:02,859 - INFO - Data saved as XLSX file: Files/business_units_20240805_101202.xlsx
+2024-08-05 10:12:02,859 - INFO - fetch_business_units - Completed
+2024-08-05 10:12:02,859 - INFO - business_units - Last Successful Date: 2024-08-05T10:12:02Z
+2024-08-05 10:12:02,859 - ERROR - An error occurred while running get_EquipmentE360_fuel_costs: list indices must be integers or slices, not str
+2024-08-05 10:12:02,859 - INFO - Deleted: Files/business_units_20240805_101202.xlsx
+2024-08-05 10:12:02,859 - INFO - Starting Data Fetching for get_EquipmentE360_work_order_costs
+2024-08-05 10:12:02,859 - INFO - Fetching Business Units
+2024-08-05 10:12:02,860 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:03,165 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:03,167 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:03,589 - DEBUG - https://api.hcssapps.com:443 "GET /e360/api/v1/businessUnits HTTP/1.1" 200 206
+2024-08-05 10:12:03,598 - INFO - Data saved as XLSX file: Files/business_units_20240805_101203.xlsx
+2024-08-05 10:12:03,598 - INFO - fetch_business_units - Completed
+2024-08-05 10:12:03,598 - INFO - business_units - Last Successful Date: 2024-08-05T10:12:03Z
+2024-08-05 10:12:03,598 - ERROR - An error occurred while running get_EquipmentE360_work_order_costs: list indices must be integers or slices, not str
+2024-08-05 10:12:03,599 - INFO - Deleted: Files/business_units_20240805_101203.xlsx
+2024-08-05 10:12:03,599 - INFO - Starting Data Fetching for get_EquipmentE360_work_order_details
+2024-08-05 10:12:03,599 - INFO - Fetching Business Units
+2024-08-05 10:12:03,600 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:03,682 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:03,684 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:04,112 - DEBUG - https://api.hcssapps.com:443 "GET /e360/api/v1/businessUnits HTTP/1.1" 200 206
+2024-08-05 10:12:04,120 - INFO - Data saved as XLSX file: Files/business_units_20240805_101204.xlsx
+2024-08-05 10:12:04,120 - INFO - fetch_business_units - Completed
+2024-08-05 10:12:04,120 - INFO - business_units - Last Successful Date: 2024-08-05T10:12:04Z
+2024-08-05 10:12:04,120 - ERROR - An error occurred while running get_EquipmentE360_work_order_details: list indices must be integers or slices, not str
+2024-08-05 10:12:04,121 - INFO - Deleted: Files/business_units_20240805_101204.xlsx
+2024-08-05 10:12:04,121 - INFO - Starting Data Fetching for get_EquipmentE360_custom_fields
+2024-08-05 10:12:04,121 - INFO - Fetching Custom Fields
+2024-08-05 10:12:04,122 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:04,255 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:04,256 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:05,123 - DEBUG - https://api.hcssapps.com:443 "GET /e360/api/v1/customField HTTP/1.1" 400 81
+2024-08-05 10:12:05,124 - ERROR - An error occurred while running get_EquipmentE360_custom_fields: 400 Client Error: Bad Request for url: https://api.hcssapps.com/e360/api/v1/customField
+2024-08-05 10:12:05,124 - INFO - Starting Data Fetching for get_EquipmentE360_custom_field_categories
+2024-08-05 10:12:05,124 - INFO - Fetching Custom Field Categories
+2024-08-05 10:12:05,125 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:05,219 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:05,220 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:05,964 - DEBUG - https://api.hcssapps.com:443 "GET /e360/api/v1/customFieldCategories HTTP/1.1" 200 1128
+2024-08-05 10:12:05,978 - INFO - Data saved as XLSX file: Files/custom_field_categories_20240805_101205.xlsx
+2024-08-05 10:12:05,978 - INFO - fetch_custom_field_categories - Completed
+2024-08-05 10:12:05,978 - INFO - custom_field_categories - Last Successful Date: 2024-08-05T10:12:05Z
+2024-08-05 10:12:05,990 - INFO - Data saved as XLSX file: Files/get_EquipmentE360_custom_field_categories_20240805_101205.xlsx
+2024-08-05 10:12:05,990 - INFO - Data Fetching for get_EquipmentE360_custom_field_categories completed successfully
+2024-08-05 10:12:05,990 - INFO - Starting Sending Email for get_EquipmentE360_custom_field_categories
+2024-08-05 10:12:07,064 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:07,065 - INFO - Sending Email for get_EquipmentE360_custom_field_categories completed successfully
+2024-08-05 10:12:07,065 - INFO - Deleted: Files/get_EquipmentE360_custom_field_categories_20240805_101205.xlsx
+2024-08-05 10:12:07,065 - INFO - Deleted: Files/custom_field_categories_20240805_101205.xlsx
+2024-08-05 10:12:07,065 - INFO - Starting Data Fetching for get_HeavyBidEstimates_business_units
+2024-08-05 10:12:07,065 - ERROR - An error occurred while running get_HeavyBidEstimates_business_units: get_HeavyBidEstimates_business_units() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:07,065 - INFO - Starting Data Fetching for get_HeavyBidEstimates_partitions
+2024-08-05 10:12:07,065 - ERROR - An error occurred while running get_HeavyBidEstimates_partitions: get_HeavyBidEstimates_partitions() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:07,065 - INFO - Starting Data Fetching for get_HeavyJob_business_units
+2024-08-05 10:12:07,066 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/businessUnits, Params: None
+2024-08-05 10:12:07,066 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,114 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/businessUnits HTTP/1.1" 401 0
+2024-08-05 10:12:07,115 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,115 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,115 - ERROR - An error occurred while running get_HeavyJob_business_units: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,115 - INFO - Starting Data Fetching for get_HeavyJob_jobs
+2024-08-05 10:12:07,115 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/jobs, Params: {}
+2024-08-05 10:12:07,116 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,178 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/jobs HTTP/1.1" 401 0
+2024-08-05 10:12:07,179 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,179 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,179 - ERROR - An error occurred while running get_HeavyJob_jobs: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,180 - INFO - Starting Data Fetching for get_HeavyJob_jobcosts
+2024-08-05 10:12:07,180 - ERROR - An error occurred while running get_HeavyJob_jobcosts: get_HeavyJob_jobcosts() missing 2 required positional arguments: 'job_id' and 'start_date'
+2024-08-05 10:12:07,180 - INFO - Starting Data Fetching for get_HeavyJob_costcodes
+2024-08-05 10:12:07,180 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/businessUnits, Params: None
+2024-08-05 10:12:07,182 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,267 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/businessUnits HTTP/1.1" 401 0
+2024-08-05 10:12:07,268 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,268 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,268 - ERROR - An error occurred while running get_HeavyJob_costcodes: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,268 - INFO - Starting Data Fetching for get_HeavyJob_jobemployees
+2024-08-05 10:12:07,268 - ERROR - An error occurred while running get_HeavyJob_jobemployees: get_HeavyJob_jobemployees() missing 1 required positional argument: 'job_id'
+2024-08-05 10:12:07,268 - INFO - Starting Data Fetching for get_HeavyJob_jobequipment
+2024-08-05 10:12:07,268 - ERROR - An error occurred while running get_HeavyJob_jobequipment: get_HeavyJob_jobequipment() missing 1 required positional argument: 'job_id'
+2024-08-05 10:12:07,269 - INFO - Starting Data Fetching for get_HeavyJob_jobmaterials
+2024-08-05 10:12:07,269 - ERROR - An error occurred while running get_HeavyJob_jobmaterials: get_HeavyJob_jobmaterials() missing 1 required positional argument: 'job_id'
+2024-08-05 10:12:07,269 - INFO - Starting Data Fetching for get_HeavyJob_materials
+2024-08-05 10:12:07,269 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/businessUnits, Params: None
+2024-08-05 10:12:07,270 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,372 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/businessUnits HTTP/1.1" 401 0
+2024-08-05 10:12:07,373 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,373 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,373 - ERROR - An error occurred while running get_HeavyJob_materials: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,373 - INFO - Starting Data Fetching for get_HeavyJob_timecards
+2024-08-05 10:12:07,373 - ERROR - An error occurred while running get_HeavyJob_timecards: get_HeavyJob_timecards() missing 1 required positional argument: 'job_id'
+2024-08-05 10:12:07,374 - INFO - Starting Data Fetching for get_HeavyJob_diaries
+2024-08-05 10:12:07,374 - ERROR - An error occurred while running get_HeavyJob_diaries: get_HeavyJob_diaries() missing 1 required positional argument: 'start_date'
+2024-08-05 10:12:07,374 - INFO - Starting Data Fetching for get_HeavyJob_employees
+2024-08-05 10:12:07,374 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/businessUnits, Params: None
+2024-08-05 10:12:07,375 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,463 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/businessUnits HTTP/1.1" 401 0
+2024-08-05 10:12:07,463 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,464 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,464 - ERROR - An error occurred while running get_HeavyJob_employees: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,464 - INFO - Starting Data Fetching for get_HeavyJob_equipment_types
+2024-08-05 10:12:07,464 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/businessUnits, Params: None
+2024-08-05 10:12:07,465 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,544 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/businessUnits HTTP/1.1" 401 0
+2024-08-05 10:12:07,544 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,544 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,544 - ERROR - An error occurred while running get_HeavyJob_equipment_types: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,545 - INFO - Starting Data Fetching for get_HeavyJob_equipment
+2024-08-05 10:12:07,545 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/businessUnits, Params: None
+2024-08-05 10:12:07,546 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,628 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/businessUnits HTTP/1.1" 401 0
+2024-08-05 10:12:07,630 - INFO - Response Status Code: 401
+2024-08-05 10:12:07,630 - INFO - Response Data: Non-JSON Response
+2024-08-05 10:12:07,630 - ERROR - An error occurred while running get_HeavyJob_equipment: Expecting value: line 1 column 1 (char 0)
+2024-08-05 10:12:07,630 - INFO - Starting Data Fetching for get_HeavyJob_equipmenthours
+2024-08-05 10:12:07,631 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/equipment/hours, Params: {'startDate': '1900-01-01T00:00:00Z', 'endDate': '2024-08-05T10:12:07Z'}
+2024-08-05 10:12:07,632 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,687 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/equipment/hours?startDate=1900-01-01T00%3A00%3A00Z&endDate=2024-08-05T10%3A12%3A07Z HTTP/1.1" 404 54
+2024-08-05 10:12:07,687 - INFO - Response Status Code: 404
+2024-08-05 10:12:07,688 - INFO - Response Data: {'statusCode': 404, 'message': 'Resource not found'}
+2024-08-05 10:12:07,689 - ERROR - An error occurred while running get_HeavyJob_equipmenthours: If using all scalar values, you must pass an index
+2024-08-05 10:12:07,689 - INFO - Starting Data Fetching for get_HeavyJob_employeehours
+2024-08-05 10:12:07,689 - INFO - Request Method: GET, URL: https://api.hcssapps.com/heavyjob/api/v1/employee/hours, Params: {'startDate': '1900-01-01T00:00:00Z', 'endDate': '2024-08-05T10:12:07Z'}
+2024-08-05 10:12:07,690 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,730 - DEBUG - https://api.hcssapps.com:443 "GET /heavyjob/api/v1/employee/hours?startDate=1900-01-01T00%3A00%3A00Z&endDate=2024-08-05T10%3A12%3A07Z HTTP/1.1" 404 54
+2024-08-05 10:12:07,730 - INFO - Response Status Code: 404
+2024-08-05 10:12:07,730 - INFO - Response Data: {'statusCode': 404, 'message': 'Resource not found'}
+2024-08-05 10:12:07,731 - ERROR - An error occurred while running get_HeavyJob_employeehours: If using all scalar values, you must pass an index
+2024-08-05 10:12:07,731 - INFO - Starting Data Fetching for get_Safety_incidents
+2024-08-05 10:12:07,732 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:07,841 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:07,843 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:08,767 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/incidents?limit=xlsx&offset=0 HTTP/1.1" 200 56037
+2024-08-05 10:12:08,781 - INFO - Successfully fetched incidents data.
+2024-08-05 10:12:08,781 - WARNING - No incidents found.
+2024-08-05 10:12:08,805 - INFO - Data saved as XLSX file: Files/get_Safety_incidents_20240805_101208.xlsx
+2024-08-05 10:12:08,805 - INFO - Data Fetching for get_Safety_incidents completed successfully
+2024-08-05 10:12:08,805 - INFO - Starting Sending Email for get_Safety_incidents
+2024-08-05 10:12:09,660 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:09,660 - INFO - Sending Email for get_Safety_incidents completed successfully
+2024-08-05 10:12:09,660 - INFO - Deleted: Files/get_Safety_incidents_20240805_101208.xlsx
+2024-08-05 10:12:09,660 - INFO - Starting Data Fetching for get_Safety_meetings
+2024-08-05 10:12:09,661 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:09,846 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:09,847 - ERROR - Invalid date format for start_date: xlsx. The 'startDate' parameter will be omitted.
+2024-08-05 10:12:09,848 - DEBUG - Request URL: https://api.hcssapps.com/safety/v1/meetings
+2024-08-05 10:12:09,848 - DEBUG - Request headers: {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkREOEVCNjJFQUUzNTQ3MDNFMDI0QTZFMTZGMzQxMzdDNTA0QURFMEVSUzI1NiIsIng1dCI6IjNZNjJMcTQxUndQZ0pLYmhielFUZkZCSzNnNCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2lkZW50aXR5Lmhjc3NhcHBzLmNvbSIsIm5iZiI6MTcyMjg1MjczMCwiaWF0IjoxNzIyODUyNzMwLCJleHAiOjE3MjI4NTYzMzAsImF1ZCI6WyJjb250YWN0czpyZWFkIiwiZGlzOnJlYWQiLCJlMzYwOnJlYWQiLCJoZWF2eWpvYjpyZWFkIiwiaGVhdnlqb2I6dXNlcnM6cmVhZCIsImluY2lkZW50czpyZWFkIiwibWVldGluZ3M6cmVhZCIsInNraWxsczpyZWFkIiwidGVsZW1hdGljczpyZWFkIiwidGltZWNhcmRzOnJlYWQiLCJ1c2VyczpyZWFkIiwiaHR0cHM6Ly9pZGVudGl0eS5oY3NzYXBwcy5jb20vcmVzb3VyY2VzIl0sInNjb3BlIjpbImNvbnRhY3RzOnJlYWQiLCJkaXM6cmVhZCIsImUzNjA6cmVhZCIsImhlYXZ5am9iOnJlYWQiLCJoZWF2eWpvYjp1c2VyczpyZWFkIiwiaW5jaWRlbnRzOnJlYWQiLCJtZWV0aW5nczpyZWFkIiwic2tpbGxzOnJlYWQiLCJ0ZWxlbWF0aWNzOnJlYWQiLCJ0aW1lY2FyZHM6cmVhZCIsInVzZXJzOnJlYWQiXSwiY2xpZW50X2lkIjoid2J1cWt0c3JkajAwN2w3bWt6ZmozdzY4cW1iNXJnNmsiLCJodHRwOi8vY3JlZGVudGlhbHMuaGNzc2FwcHMuY29tL3NjaGVtYXMvMjAxNS8wOS9pZGVudGl0eS9jbGFpbXMvY29tcGFueWlkIjoiZGVkMDcyZWYtZTJjOC00YWYyLTg2NjctN2Q5MjE2ZGQzZWJkIiwicmVxdWVzdFNvdXJjZSI6IkN1c3RvbWVyIn0.fZek84vzYyM1Zk1hUolH2U-hYCKZJfXCBwKB4Sk30qfro5FEwJ5UVlHaJix1Hi4A_wlCotg8UA0qzRlOAG9_FBoAGV-MUSVobV9ohveEVuMAPH7ip9Ju0sFnlXgnUET75yTfmDL0vA-uPYF7MQz9iKtkU4RxwqZpH5UIUXLL6SpIKGX9dQB6CSdEF4afnwY8rb1XE-QmyIEjBnb_aK-wRxKzYFlF9U29kXAlh5A4lg_Q_pLgyhJCNut8GEXBaaLMMxFobfQbsIDLwbLM3K2Rhdo9d4uMraqxOKEt_GUP3mXYR62TjO1Gsao7asPjU7czNWU7Ruz__9BNwiQylREmAQ'}
+2024-08-05 10:12:09,848 - DEBUG - Request parameters: {}
+2024-08-05 10:12:09,849 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:16,768 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/meetings HTTP/1.1" 200 None
+2024-08-05 10:12:16,826 - INFO - Successfully fetched meetings data.
+2024-08-05 10:12:16,908 - INFO - Data saved as XLSX file: Files/get_Safety_meetings_20240805_101216.xlsx
+2024-08-05 10:12:16,908 - INFO - Data Fetching for get_Safety_meetings completed successfully
+2024-08-05 10:12:16,909 - INFO - Starting Sending Email for get_Safety_meetings
+2024-08-05 10:12:19,034 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:19,035 - INFO - Sending Email for get_Safety_meetings completed successfully
+2024-08-05 10:12:19,035 - INFO - Deleted: Files/get_Safety_meetings_20240805_101216.xlsx
+2024-08-05 10:12:19,035 - INFO - Starting Data Fetching for get_Setups_accounting_templates
+2024-08-05 10:12:19,036 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:19,116 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:19,117 - INFO - get_Setups_accounting_templates started at 2024-08-05T10:12:19.117089
+2024-08-05 10:12:19,117 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:19,340 - DEBUG - https://api.hcssapps.com:443 "GET /setups/api/v1/AccountingTemplate?businessUnitCode=xlsx HTTP/1.1" 200 None
+2024-08-05 10:12:19,341 - INFO - Response code for accounting templates: 200
+2024-08-05 10:12:19,341 - INFO - get_Setups_accounting_templates completed at 2024-08-05T10:12:19.341165 (Elapsed time: 0:00:00.224076)
+2024-08-05 10:12:19,350 - INFO - Data saved as XLSX file: Files/get_Setups_accounting_templates_20240805_101219.xlsx
+2024-08-05 10:12:19,350 - INFO - Data Fetching for get_Setups_accounting_templates completed successfully
+2024-08-05 10:12:19,350 - INFO - Starting Sending Email for get_Setups_accounting_templates
+2024-08-05 10:12:20,370 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:20,370 - INFO - Sending Email for get_Setups_accounting_templates completed successfully
+2024-08-05 10:12:20,370 - INFO - Deleted: Files/get_Setups_accounting_templates_20240805_101219.xlsx
+2024-08-05 10:12:20,370 - INFO - Starting Data Fetching for get_Setups_business_units
+2024-08-05 10:12:20,370 - ERROR - An error occurred while running get_Setups_business_units: get_Setups_business_units() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:20,370 - INFO - Starting Data Fetching for get_Setups_jobs
+2024-08-05 10:12:20,371 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:20,474 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:20,475 - INFO - get_Setups_jobs started at 2024-08-05T10:12:20.475104
+2024-08-05 10:12:20,476 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:21,056 - DEBUG - https://api.hcssapps.com:443 "GET /setups/api/v1/Job?businessUnitCode=xlsx HTTP/1.1" 400 36
+2024-08-05 10:12:21,057 - INFO - Response code for jobs: 400
+2024-08-05 10:12:21,057 - ERROR - Error fetching jobs: 400
+2024-08-05 10:12:21,057 - INFO - get_Setups_jobs completed at 2024-08-05T10:12:21.057138 (Elapsed time: 0:00:00.582034)
+2024-08-05 10:12:21,064 - INFO - Data saved as XLSX file: Files/get_Setups_jobs_20240805_101221.xlsx
+2024-08-05 10:12:21,064 - INFO - Data Fetching for get_Setups_jobs completed successfully
+2024-08-05 10:12:21,064 - INFO - Starting Sending Email for get_Setups_jobs
+2024-08-05 10:12:21,892 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:21,892 - INFO - Sending Email for get_Setups_jobs completed successfully
+2024-08-05 10:12:21,893 - INFO - Deleted: Files/get_Setups_jobs_20240805_101221.xlsx
+2024-08-05 10:12:21,893 - INFO - Starting Data Fetching for get_Setups_equipment
+2024-08-05 10:12:21,894 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:22,053 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:22,054 - INFO - get_Setups_equipment started at 2024-08-05T10:12:22.054353
+2024-08-05 10:12:22,055 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:22,697 - DEBUG - https://api.hcssapps.com:443 "GET /setups/api/v1/Equipment?businessUnitCode=xlsx HTTP/1.1" 400 36
+2024-08-05 10:12:22,698 - INFO - Response code for equipment: 400
+2024-08-05 10:12:22,698 - ERROR - Error fetching equipment: 400
+2024-08-05 10:12:22,698 - INFO - get_Setups_equipment completed at 2024-08-05T10:12:22.698266 (Elapsed time: 0:00:00.643913)
+2024-08-05 10:12:22,705 - INFO - Data saved as XLSX file: Files/get_Setups_equipment_20240805_101222.xlsx
+2024-08-05 10:12:22,705 - INFO - Data Fetching for get_Setups_equipment completed successfully
+2024-08-05 10:12:22,705 - INFO - Starting Sending Email for get_Setups_equipment
+2024-08-05 10:12:23,524 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:23,524 - INFO - Sending Email for get_Setups_equipment completed successfully
+2024-08-05 10:12:23,524 - INFO - Deleted: Files/get_Setups_equipment_20240805_101222.xlsx
+2024-08-05 10:12:23,524 - INFO - Starting Data Fetching for get_Setups_employees
+2024-08-05 10:12:23,526 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:23,612 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:23,613 - INFO - get_Setups_employees started at 2024-08-05T10:12:23.613142
+2024-08-05 10:12:23,613 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:23,833 - DEBUG - https://api.hcssapps.com:443 "GET /setups/api/v1/Employee?businessUnitCode=xlsx HTTP/1.1" 400 36
+2024-08-05 10:12:23,834 - INFO - Response code for employees: 400
+2024-08-05 10:12:23,834 - ERROR - Error fetching employees: 400
+2024-08-05 10:12:23,834 - INFO - get_Setups_employees completed at 2024-08-05T10:12:23.834829 (Elapsed time: 0:00:00.221687)
+2024-08-05 10:12:23,841 - INFO - Data saved as XLSX file: Files/get_Setups_employees_20240805_101223.xlsx
+2024-08-05 10:12:23,841 - INFO - Data Fetching for get_Setups_employees completed successfully
+2024-08-05 10:12:23,842 - INFO - Starting Sending Email for get_Setups_employees
+2024-08-05 10:12:24,789 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:24,789 - INFO - Sending Email for get_Setups_employees completed successfully
+2024-08-05 10:12:24,789 - INFO - Deleted: Files/get_Setups_employees_20240805_101223.xlsx
+2024-08-05 10:12:24,789 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 10:12:24,791 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:24,876 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:24,877 - INFO - get_Skills_skills started at 2024-08-05T10:12:24.877504
+2024-08-05 10:12:24,877 - INFO - Fetching skills with offset: xlsx, dateAfterUtc: None
+2024-08-05 10:12:24,878 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:26,127 - DEBUG - https://api.hcssapps.com:443 "GET /skills/api/v1/skills?limit=1000&offset=xlsx HTTP/1.1" 200 2022
+2024-08-05 10:12:26,127 - INFO - Response code for skills: 200
+2024-08-05 10:12:26,128 - INFO - get_Skills_skills completed at 2024-08-05T10:12:26.128112 (Elapsed time: 0:00:01.250608)
+2024-08-05 10:12:26,146 - INFO - Data saved as XLSX file: Files/get_Skills_skills_20240805_101226.xlsx
+2024-08-05 10:12:26,146 - INFO - Data Fetching for get_Skills_skills completed successfully
+2024-08-05 10:12:26,146 - INFO - Starting Sending Email for get_Skills_skills
+2024-08-05 10:12:27,491 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:27,491 - INFO - Sending Email for get_Skills_skills completed successfully
+2024-08-05 10:12:27,491 - INFO - Deleted: Files/get_Skills_skills_20240805_101226.xlsx
+2024-08-05 10:12:27,491 - INFO - Starting Data Fetching for get_Skills_employeeskills
+2024-08-05 10:12:27,493 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:27,580 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:27,581 - INFO - get_Skills_employeeskills started at 2024-08-05T10:12:27.581203
+2024-08-05 10:12:27,581 - INFO - Fetching employee skills with offset: xlsx, dateAfterUtc: None
+2024-08-05 10:12:27,582 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:28,696 - DEBUG - https://api.hcssapps.com:443 "GET /skills/api/v1/employeeSkills?limit=1000&offset=xlsx&includeDismissed=true&usePayrollCode=true HTTP/1.1" 200 None
+2024-08-05 10:12:28,790 - INFO - Response code for employee skills: 200
+2024-08-05 10:12:28,793 - INFO - get_Skills_employeeskills completed at 2024-08-05T10:12:28.793062 (Elapsed time: 0:00:01.211859)
+2024-08-05 10:12:29,058 - INFO - Data saved as XLSX file: Files/get_Skills_employeeskills_20240805_101228.xlsx
+2024-08-05 10:12:29,059 - INFO - Data Fetching for get_Skills_employeeskills completed successfully
+2024-08-05 10:12:29,059 - INFO - Starting Sending Email for get_Skills_employeeskills
+2024-08-05 10:12:30,795 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:30,795 - INFO - Sending Email for get_Skills_employeeskills completed successfully
+2024-08-05 10:12:30,796 - INFO - Deleted: Files/get_Skills_employeeskills_20240805_101228.xlsx
+2024-08-05 10:12:30,796 - INFO - Starting Data Fetching for get_Telematics_equipment
+2024-08-05 10:12:30,797 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:30,868 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:30,869 - INFO - fetch_equipment_data started at 2024-08-05T10:12:30.869367
+2024-08-05 10:12:30,869 - INFO - Fetching equipment data with cursor: xlsx
+2024-08-05 10:12:30,870 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:30,983 - DEBUG - https://api.hcssapps.com:443 "GET /telematics/api/v1/equipment?limit=1000&cursor=xlsx&isRegistered=true HTTP/1.1" 400 None
+2024-08-05 10:12:30,984 - INFO - Response code for equipment data: 400
+2024-08-05 10:12:30,984 - ERROR - Error fetching equipment data: 400
+2024-08-05 10:12:30,984 - INFO - fetch_equipment_data completed at 2024-08-05T10:12:30.984741 (Elapsed time: 0:00:00.115374)
+2024-08-05 10:12:30,992 - INFO - Data saved as XLSX file: Files/get_Telematics_equipment_20240805_101230.xlsx
+2024-08-05 10:12:30,992 - INFO - Data Fetching for get_Telematics_equipment completed successfully
+2024-08-05 10:12:30,992 - INFO - Starting Sending Email for get_Telematics_equipment
+2024-08-05 10:12:31,951 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:12:31,951 - INFO - Sending Email for get_Telematics_equipment completed successfully
+2024-08-05 10:12:31,951 - INFO - Deleted: Files/get_Telematics_equipment_20240805_101230.xlsx
+2024-08-05 10:12:31,951 - INFO - Starting Data Fetching for get_token
+2024-08-05 10:12:31,951 - ERROR - An error occurred while running get_token: get_token() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:31,951 - INFO - Starting Data Fetching for get_Users_business_units
+2024-08-05 10:12:31,952 - ERROR - An error occurred while running get_Users_business_units: get_Users_business_units() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:31,952 - INFO - Starting Data Fetching for get_Users_jobs
+2024-08-05 10:12:31,952 - INFO - Fetching jobs for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit
+2024-08-05 10:12:31,953 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:32,032 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:32,033 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit with params {'businessUnitId': 'xlsx'}
+2024-08-05 10:12:32,034 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:32,240 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx HTTP/1.1" 400 None
+2024-08-05 10:12:32,240 - ERROR - An error occurred while running get_Users_jobs: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Jobs/GetJobsByBusinessUnit?businessUnitId=xlsx
+2024-08-05 10:12:32,240 - INFO - Starting Data Fetching for get_Users_roles
+2024-08-05 10:12:32,241 - ERROR - An error occurred while running get_Users_roles: get_Users_roles() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:32,241 - INFO - Starting Data Fetching for get_Users_subscription_groups
+2024-08-05 10:12:32,241 - ERROR - An error occurred while running get_Users_subscription_groups: get_Users_subscription_groups() takes 0 positional arguments but 1 was given
+2024-08-05 10:12:32,241 - INFO - Starting Data Fetching for get_Users_users
+2024-08-05 10:12:32,241 - INFO - Fetching users for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Users with offset 0
+2024-08-05 10:12:32,242 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:32,332 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:12:32,333 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Users with params {'businessUnitId': 'xlsx', 'pageSize': 50, 'offset': 0}
+2024-08-05 10:12:32,334 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:12:32,417 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Users?businessUnitId=xlsx&pageSize=50&offset=0 HTTP/1.1" 400 None
+2024-08-05 10:12:32,417 - ERROR - An error occurred while running get_Users_users: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Users?businessUnitId=xlsx&pageSize=50&offset=0

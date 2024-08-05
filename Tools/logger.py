@@ -3,12 +3,17 @@ import logging
 import os
 from datetime import datetime
 
+
 def setup_logger(log_dir='Logs', log_filename='data_fetch.log'):
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
         
     log_path = os.path.join(log_dir, log_filename)
-    
+
+    # Clear existing handlers to avoid duplication
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+        
     logging.basicConfig(
         filename=log_path,
         level=logging.DEBUG,

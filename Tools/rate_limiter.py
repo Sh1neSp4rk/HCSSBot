@@ -5,8 +5,8 @@ import logging
 import time
 from tqdm.asyncio import tqdm
 
-RATE_LIMIT = 100  # Max requests per minute
-CONCURRENT_LIMIT = 20  # Max concurrent requests
+RATE_LIMIT = 60  # Max requests per minute (max 100)
+CONCURRENT_LIMIT = 12  # Max concurrent requests (max 20)
 RETRY_DELAY = 60  # Default retry delay in seconds for 429 status
 
 class RateLimiter:

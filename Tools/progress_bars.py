@@ -1,17 +1,22 @@
-# Tools/ProgressBars.py
+# Tools/progress_bars.py
 import requests
 from tqdm import tqdm
 import logging
 
+status_logger = logging.getLogger('status_logger')
+
 def fetch_data_with_progress(url, headers, params=None):
     logging.info(f"Sending request to {url} with params {params}")
+    status_logger.info(f"Sending request to {url} with params {params}")
     response = requests.get(url, headers=headers, params=params)
+    status_logger.info(f"Received response with status code {response.status_code}")
     response.raise_for_status()  # Raise an exception for HTTP errors
     logging.info(f"Received response with status code {response.status_code}")
     return response
 
 def fetch_paginated_data_with_progress(url, headers, business_unit_id, page_size=50):
     logging.info(f"Fetching paginated data from {url} with business_unit_id {business_unit_id} and page_size {page_size}")
+    status_logger.info(f"Fetching paginated data from {url} with business_unit_id {business_unit_id} and page_size {page_size}")
     all_data = []
     page = 1
     total_pages = None

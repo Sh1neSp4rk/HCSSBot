@@ -1,12 +1,12 @@
 # EndpointCalls/heavybidestimates_get.py
 import logging
 import requests
+from EndpointCalls.token_get import get_token
 from datetime import datetime
-import os
 
 # Configure logging
 logging.basicConfig(
-    filename='Logs/data_fetch.log',
+    filename='Logs/heavybidestimates_get.log',
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -21,38 +21,44 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def get_business_units(token):
-    url = "https://api.hcssapps.com/heavybid/api/v2/integration/businessunits"
-    headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_business_units")
-    
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Raise an error for bad responses
-    except requests.RequestException as e:
-        logging.error(f"Error fetching business units: {e}")
-        log_function_completion("fetch_business_units", start_time)
+def get_heavybidestimates_business_units():
+    url = "https://api.hcssapps.com/heavybidestimates/api/v1/BusinessUnits"
+    token = get_token()
+    if not token:
+        logging.error("Failed to retrieve token")
         return None
     
-    logging.info(f"Response code for business units: {response.status_code}")
+    headers = {"Authorization": f"Bearer {token}"}
+    start_time = log_function_call("get_heavybidestimates_business_units")
+    response = requests.get(url, headers=headers)
+    logging.info(f"Response code for heavy bid estimates business units: {response.status_code}")
+
+    if response.status_code != 200:
+        logging.error(f"Error fetching heavy bid estimates business units: {response.status_code}")
+        log_function_completion("get_heavybidestimates_business_units", start_time)
+        return None
+
     data = response.json()
-    log_function_completion("fetch_business_units", start_time)
+    log_function_completion("get_heavybidestimates_business_units", start_time)
     return data
 
-def get_database_partitions(token, business_unit_id):
-    url = f"https://api.hcssapps.com/heavybid/api/v2/integration/businessunits/{business_unit_id}/partitions"
-    headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_database_partitions")
-    
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Raise an error for bad responses
-    except requests.RequestException as e:
-        logging.error(f"Error fetching database partitions for {business_unit_id}: {e}")
-        log_function_completion("fetch_database_partitions", start_time)
+def get_heavybidestimates_partitions():
+    url = "https://api.hcssapps.com/heavybidestimates/api/v1/Partitions"
+    token = get_token()
+    if not token:
+        logging.error("Failed to retrieve token")
         return None
     
-    logging.info(f"Response code for database partitions: {response.status_code}")
+    headers = {"Authorization": f"Bearer {token}"}
+    start_time = log_function_call("get_heavybidestimates_partitions")
+    response = requests.get(url, headers=headers)
+    logging.info(f"Response code for heavy bid estimates partitions: {response.status_code}")
+
+    if response.status_code != 200:
+        logging.error(f"Error fetching heavy bid estimates partitions: {response.status_code}")
+        log_function_completion("get_heavybidestimates_partitions", start_time)
+        return None
+
     data = response.json()
-    log_function_completion("fetch_database_partitions", start_time)
+    log_function_completion("get_heavybidestimates_partitions", start_time)
     return data

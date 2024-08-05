@@ -3,11 +3,10 @@ import logging
 import requests
 from EndpointCalls.token_get import get_token
 from datetime import datetime
-from Tools.progress_bars import fetch_data_with_progress
 
 # Configure logging
 logging.basicConfig(
-    filename='Logs/data_fetch.log',
+    filename='Logs/setups_get.log',
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -24,26 +23,24 @@ def log_function_completion(function_name, start_time):
 
 def get_accounting_templates(business_unit_code):
     url = "https://api.hcssapps.com/setups/api/v1/AccountingTemplate"
-    query = {
-        "businessUnitCode": business_unit_code
-    }
+    query = {"businessUnitCode": business_unit_code}
     token = get_token()
     if not token:
         logging.error("Failed to retrieve token")
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_accounting_templates")
+    start_time = log_function_call("get_accounting_templates")
     response = requests.get(url, headers=headers, params=query)
     logging.info(f"Response code for accounting templates: {response.status_code}")
 
     if response.status_code != 200:
         logging.error(f"Error fetching accounting templates: {response.status_code}")
-        log_function_completion("fetch_accounting_templates", start_time)
+        log_function_completion("get_accounting_templates", start_time)
         return None
 
     data = response.json()
-    log_function_completion("fetch_accounting_templates", start_time)
+    log_function_completion("get_accounting_templates", start_time)
     return data
 
 def get_business_units():
@@ -54,17 +51,17 @@ def get_business_units():
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_business_units")
+    start_time = log_function_call("get_business_units")
     response = requests.get(url, headers=headers)
     logging.info(f"Response code for business units: {response.status_code}")
 
     if response.status_code != 200:
         logging.error(f"Error fetching business units: {response.status_code}")
-        log_function_completion("fetch_business_units", start_time)
+        log_function_completion("get_business_units", start_time)
         return None
 
     data = response.json()
-    log_function_completion("fetch_business_units", start_time)
+    log_function_completion("get_business_units", start_time)
     return data
 
 def get_jobs(business_unit_code, accounting_template_name=""):
@@ -79,17 +76,17 @@ def get_jobs(business_unit_code, accounting_template_name=""):
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_jobs")
+    start_time = log_function_call("get_jobs")
     response = requests.get(url, headers=headers, params=query)
     logging.info(f"Response code for jobs: {response.status_code}")
 
     if response.status_code != 200:
         logging.error(f"Error fetching jobs: {response.status_code}")
-        log_function_completion("fetch_jobs", start_time)
+        log_function_completion("get_jobs", start_time)
         return None
 
     data = response.json()
-    log_function_completion("fetch_jobs", start_time)
+    log_function_completion("get_jobs", start_time)
     return data
 
 def get_equipment(business_unit_code, accounting_template_name=""):
@@ -104,17 +101,17 @@ def get_equipment(business_unit_code, accounting_template_name=""):
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_equipment")
+    start_time = log_function_call("get_equipment")
     response = requests.get(url, headers=headers, params=query)
     logging.info(f"Response code for equipment: {response.status_code}")
 
     if response.status_code != 200:
         logging.error(f"Error fetching equipment: {response.status_code}")
-        log_function_completion("fetch_equipment", start_time)
+        log_function_completion("get_equipment", start_time)
         return None
 
     data = response.json()
-    log_function_completion("fetch_equipment", start_time)
+    log_function_completion("get_equipment", start_time)
     return data
 
 def get_employees(business_unit_code, accounting_template_name="", include_deleted=False):
@@ -130,15 +127,15 @@ def get_employees(business_unit_code, accounting_template_name="", include_delet
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_employees")
+    start_time = log_function_call("get_employees")
     response = requests.get(url, headers=headers, params=query)
     logging.info(f"Response code for employees: {response.status_code}")
 
     if response.status_code != 200:
         logging.error(f"Error fetching employees: {response.status_code}")
-        log_function_completion("fetch_employees", start_time)
+        log_function_completion("get_employees", start_time)
         return None
 
     data = response.json()
-    log_function_completion("fetch_employees", start_time)
+    log_function_completion("get_employees", start_time)
     return data

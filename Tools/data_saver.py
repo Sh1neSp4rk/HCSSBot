@@ -3,11 +3,6 @@ import pandas as pd
 import json
 import logging
 from datetime import datetime
-import os
-
-# Ensure the Files directory exists
-if not os.path.exists('Files'):
-    os.makedirs('Files')
 
 def save_data(data, caller_name, file_type):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')

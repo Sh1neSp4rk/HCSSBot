@@ -1,12 +1,9 @@
-# Tools/rate_limiter
+# Tools/rate_limiter.py
 import asyncio
-import aiohttp
-import logging
 import time
-from tqdm.asyncio import tqdm
 
-RATE_LIMIT = 60  # Max requests per minute (max 100)
-CONCURRENT_LIMIT = 12  # Max concurrent requests (max 20)
+RATE_LIMIT = 60  # Max requests per minute
+CONCURRENT_LIMIT = 12  # Max concurrent requests
 RETRY_DELAY = 60  # Default retry delay in seconds for 429 status
 
 class RateLimiter:
@@ -27,17 +24,3 @@ class RateLimiter:
 
     async def __aexit__(self, exc_type, exc, tb):
         self.semaphore.release()
-
-async def make_request(session: aiohttp.ClientSession, url: str, rate_limiter: RateLimiter):
-    async with rate_limiter:
-        while True:
-            logging.debug(f"Making request to {url}")
-            async with session.get(url) as response:
-                if response.status == 429:
-                    retry_after = int(response.headers.get('Retry-After', RETRY_DELAY))
-                    logging.warning(f"Rate limit exceeded. Retrying after {retry_after} seconds.")
-                    await asyncio.sleep(retry_after)
-                else:
-                    response.raise_for_status()
-                    logging.info(f"Successfully received response from {url}")
-                    return await response.json()  # Assuming JSON response

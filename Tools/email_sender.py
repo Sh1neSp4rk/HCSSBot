@@ -7,30 +7,22 @@ from email import encoders
 from email.mime.text import MIMEText
 import logging
 
-# Configure logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-
 def send_email(attachments, recipient_email):
-    sender_email = 'your-email@example.com'
-    email_password = 'your-email-password'
+    sender_email = os.getenv('EMAIL_ADDRESS')
+    email_password = os.getenv('EMAIL_PASSWORD')
 
     if not sender_email or not email_password:
         raise ValueError("Email address or password is missing")
 
-    # Create the email subject and body
     subject = "HCSSBot API Data Files"
     body = f"The following files have been generated and are attached:\n\n" + "\n".join(attachments)
 
-    # Create the email message
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = recipient_email
     msg['Subject'] = subject
-
-    # Attach the email body
     msg.attach(MIMEText(body, 'plain'))
 
-    # Attach each file
     for file in attachments:
         part = MIMEBase('application', 'octet-stream')
         part.set_payload(open(file, 'rb').read())
@@ -38,7 +30,6 @@ def send_email(attachments, recipient_email):
         part.add_header('Content-Disposition', f'attachment; filename={os.path.basename(file)}')
         msg.attach(part)
 
-    # Send the email
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()

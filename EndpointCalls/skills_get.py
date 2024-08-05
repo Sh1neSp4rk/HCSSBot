@@ -1,6 +1,7 @@
 # EndpointCalls/skills_get.py
 import logging
 import requests
+import re
 from EndpointCalls.token_get import get_token
 from datetime import datetime
 
@@ -20,6 +21,27 @@ def log_function_completion(function_name, start_time):
     end_time = datetime.now()
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
+
+def get_last_successful_date(function_name):
+    try:
+        with open('Logs/data_fetch.log', 'r') as log_file:
+            logs = log_file.readlines()
+        
+        # Reverse logs to start searching from the end
+        logs.reverse()
+        
+        pattern = rf"{function_name} completed at (\S+)"
+        for log in logs:
+            match = re.search(pattern, log)
+            if match:
+                return match.group(1)
+    
+    except FileNotFoundError:
+        logging.error("Log file not found.")
+    except Exception as e:
+        logging.error(f"Error retrieving last successful date: {e}")
+    
+    return None
 
 def get_Skills_skills(offset=0, forceall=False):
     url = "https://api.hcssapps.com/skills/api/v1/skills"

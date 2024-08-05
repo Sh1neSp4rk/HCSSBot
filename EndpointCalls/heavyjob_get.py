@@ -3,6 +3,7 @@ import requests
 import logging
 from datetime import datetime
 from EndpointCalls.token_get import get_token
+import re
 
 # Configure logging
 logging.basicConfig(
@@ -20,6 +21,27 @@ def log_response(response):
         logging.info(f"Response Data: {response.json()}")
     except ValueError:
         logging.info("Response Data: Non-JSON Response")
+
+def get_last_successful_date(function_name):
+    try:
+        with open('Logs/data_fetch.log', 'r') as log_file:
+            logs = log_file.readlines()
+        
+        # Reverse logs to start searching from the end
+        logs.reverse()
+        
+        pattern = rf"{function_name} completed at (\S+)"
+        for log in logs:
+            match = re.search(pattern, log)
+            if match:
+                return match.group(1)
+    
+    except FileNotFoundError:
+        logging.error("Log file not found.")
+    except Exception as e:
+        logging.error(f"Error retrieving last successful date: {e}")
+    
+    return None
 
 def get_HeavyJob_business_units(token):
     url = "https://api.hcssapps.com/heavyjob/api/v1/businessUnits"
@@ -196,7 +218,7 @@ def get_HeavyJob_equipment(token, business_unit_id=None):
 
 def get_HeavyJob_equipmenthours(token):
     url = "https://api.hcssapps.com/heavyjob/api/v1/equipment/hours"
-    start_date = get_last_successful_date_from_log(logger, 'equipment_hours')  # Fetching last successful date
+    start_date = get_last_successful_date('equipment_hours')  # Fetching last successful date
     end_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     params = {
         "startDate": start_date or '1900-01-01T00:00:00Z',  # Default to an old date if not found
@@ -210,7 +232,7 @@ def get_HeavyJob_equipmenthours(token):
 
 def get_HeavyJob_employeehours(token):
     url = "https://api.hcssapps.com/heavyjob/api/v1/employee/hours"
-    start_date = get_last_successful_date_from_log(logger, 'employee_hours')  # Fetching last successful date
+    start_date = get_last_successful_date('employee_hours')  # Fetching last successful date
     end_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     params = {
         "startDate": start_date or '1900-01-01T00:00:00Z',  # Default to an old date if not found

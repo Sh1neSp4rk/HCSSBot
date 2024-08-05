@@ -1,34 +1,27 @@
 # Tools/data_saver.py
-import csv
-import json
-import logging
 import pandas as pd
+import json
+import csv
+import logging
+from datetime import datetime
 
-def save_data(data, file_type):
-    logging.debug(f"Saving data as {file_type}")
-    if file_type == 'csv':
-        save_as_csv(data)
-    elif file_type == 'excel':
-        save_as_excel(data)
+def save_data(data, caller_name, file_type):
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    filename = f"{caller_name}_{timestamp}.{file_type}"
+
+    if file_type == 'xlsx':
+        df = pd.DataFrame(data)
+        df.to_excel(filename, index=False)
+        logging.info(f"Data saved as Excel file: {filename}")
+    elif file_type == 'csv':
+        df = pd.DataFrame(data)
+        df.to_csv(filename, index=False)
+        logging.info(f"Data saved as CSV file: {filename}")
     elif file_type == 'json':
-        save_as_json(data)
+        with open(filename, 'w') as json_file:
+            json.dump(data, json_file)
+        logging.info(f"Data saved as JSON file: {filename}")
     else:
-        raise ValueError("Unsupported file type. Choose from 'csv', 'excel', or 'json'.")
+        raise ValueError(f"Unsupported file type: {file_type}")
 
-def save_as_csv(data):
-    with open('output.csv', 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(data[0].keys())  # Write header
-        for row in data:
-            writer.writerow(row.values())
-    logging.info("Data saved as CSV")
-
-def save_as_excel(data):
-    df = pd.DataFrame(data)
-    df.to_excel('output.xlsx', index=False)
-    logging.info("Data saved as Excel")
-
-def save_as_json(data):
-    with open('output.json', 'w') as jsonfile:
-        json.dump(data, jsonfile, indent=4)
-    logging.info("Data saved as JSON")
+    return filename

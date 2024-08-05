@@ -1,27 +1,42 @@
 # Tools/caller.py
 import logging
-from EndpointCalls.users_business_units import get_business_units
-from EndpointCalls.users_jobs import get_jobs
-from EndpointCalls.users_roles import get_roles
-from EndpointCalls.users_subscription_groups import get_subscription_groups
-from EndpointCalls.users_users import get_all_users
+from EndpointCalls.users_get import get_business_units, get_jobs, get_roles, get_subscription_groups, get_all_users
+
+# Configure logging to a file
+logging.basicConfig(
+    filename='Logs/data_fetch.log',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 status_logger = logging.getLogger('status_logger')
 
 def fetch_all_data():
-    logging.info("Fetching all data")
-    
+    logging.info("Starting fetch_all_data")
     status_logger.info("Starting fetch_all_data")
-    business_units = get_business_units()
-    if not business_units:
-        logging.error("No business units found")
-        status_logger.error("No business units found")
-        return None, None, None, None, None
 
-    roles = get_roles()
-    subscription_groups = get_subscription_groups()
-    jobs = get_jobs(business_units[0].get('id'))
-    users = get_all_users(business_units[0].get('id'))
-    
+    # Fetch business units
+    get_business_units()
+
+    # Fetch roles
+    get_roles()
+
+    # Fetch subscription groups
+    get_subscription_groups()
+
+    # Fetch jobs and users
+    business_unit_id = get_business_unit_id()  # Define this function to get the business unit ID if needed
+    if not business_unit_id:
+        logging.error("Business unit ID is missing")
+        status_logger.error("Business unit ID is missing")
+        return
+
+    get_jobs(business_unit_id)
+    get_all_users(business_unit_id)
+
     status_logger.info("Fetched all data successfully")
-    return business_units, roles, subscription_groups, jobs, users
+
+def get_business_unit_id():
+    # Dummy implementation to return a sample business unit ID
+    # Replace this with the actual method to retrieve business unit ID
+    return 'sample-business-unit-id'

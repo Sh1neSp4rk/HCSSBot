@@ -1,6 +1,7 @@
 # Tools/caller.py
 import logging
 from EndpointCalls.users_get import get_business_units, get_jobs, get_roles, get_subscription_groups, get_all_users
+from EndpointCalls.telematics_get import get_equipment
 
 # Configure logging to a file
 logging.basicConfig(

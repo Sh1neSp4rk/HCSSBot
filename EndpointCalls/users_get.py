@@ -5,7 +5,7 @@ from token_get import get_token
 
 # Configure logging
 logging.basicConfig(
-    filename='Logs/data_fetch.log',
+    filename='Logs/users_fetch.log',
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )

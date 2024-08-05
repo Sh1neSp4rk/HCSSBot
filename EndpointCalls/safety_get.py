@@ -1,15 +1,15 @@
 import requests
 import logging
 from datetime import datetime
-
+from EndpointCalls.token_get import get_token
 # Configure logging
 logging.basicConfig(filename='Logs/safety_get.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_Safety_incidents(token, limit=0, offset=0):
+def get_Safety_incidents(limit=0, offset=0):
     url_incidents = "https://api.hcssapps.com/safety/v1/incidents"
     url_incidents_v2 = "https://api.hcssapps.com/safety/v2/incidents"
-    
+    token = get_token()
     query_incidents = {
         "limit": limit,
         "offset": offset
@@ -42,8 +42,9 @@ def get_Safety_incidents(token, limit=0, offset=0):
         logging.error(f"Error fetching incidents data: {e}")
         raise
 
-def get_Safety_meetings(token, start_date=None):
+def get_Safety_meetings(start_date=None):
     url = "https://api.hcssapps.com/safety/v1/meetings"
+    token = get_token()
     query = {
         "startDate": start_date,
     }

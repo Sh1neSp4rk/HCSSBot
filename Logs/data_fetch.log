@@ -72,3 +72,31 @@
 2024-08-05 08:41:04,103 - DEBUG - Using selector: EpollSelector
 2024-08-05 08:41:04,104 - INFO - Starting Data Fetching for get_Users_users
 2024-08-05 08:41:04,104 - ERROR - An error occurred while running get_Users_users: name 'get_Users_business_units' is not defined
+2024-08-05 09:39:30,907 - DEBUG - Using selector: EpollSelector
+2024-08-05 09:39:30,908 - INFO - Starting Data Fetching for get_Users_users
+2024-08-05 09:39:30,908 - INFO - Fetching users for business unit ID: xlsx from https://api.hcssapps.com/users/api/v1/Users with offset 0
+2024-08-05 09:39:30,910 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 09:39:31,082 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 09:39:31,083 - INFO - Sending request to https://api.hcssapps.com/users/api/v1/Users with params {'businessUnitId': 'xlsx', 'pageSize': 50, 'offset': 0}
+2024-08-05 09:39:31,084 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 09:39:31,230 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Users?businessUnitId=xlsx&pageSize=50&offset=0 HTTP/1.1" 400 None
+2024-08-05 09:39:31,230 - ERROR - An error occurred while running get_Users_users: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Users?businessUnitId=xlsx&pageSize=50&offset=0
+2024-08-05 09:40:26,176 - DEBUG - Using selector: EpollSelector
+2024-08-05 09:40:26,177 - INFO - Starting Data Fetching for get_Safety_meetings
+2024-08-05 09:40:26,178 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 09:40:26,579 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/meetings HTTP/1.1" 401 61
+2024-08-05 09:40:26,579 - ERROR - Error fetching meetings data: 401 Client Error: Unauthorized for url: https://api.hcssapps.com/safety/v1/meetings
+2024-08-05 09:40:26,579 - ERROR - An error occurred while running get_Safety_meetings: 401 Client Error: Unauthorized for url: https://api.hcssapps.com/safety/v1/meetings
+2024-08-05 09:45:57,579 - DEBUG - Using selector: EpollSelector
+2024-08-05 09:45:57,580 - INFO - Starting Data Fetching for get_Safety_meetings
+2024-08-05 09:45:57,583 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 09:45:57,706 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 09:45:57,708 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 09:45:59,271 - DEBUG - https://api.hcssapps.com:443 "GET /safety/v1/meetings?startDate=xlsx HTTP/1.1" 200 None
+2024-08-05 09:45:59,330 - INFO - Successfully fetched meetings data.
+2024-08-05 09:45:59,512 - INFO - Data saved as XLSX file: Files/get_Safety_meetings_20240805_094559.xlsx
+2024-08-05 09:45:59,513 - INFO - Data Fetching for get_Safety_meetings completed successfully
+2024-08-05 09:45:59,513 - INFO - Starting Sending Email for get_Safety_meetings
+2024-08-05 09:46:02,127 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 09:46:02,127 - INFO - Sending Email for get_Safety_meetings completed successfully
+2024-08-05 09:46:02,127 - INFO - Deleted: Files/get_Safety_meetings_20240805_094559.xlsx

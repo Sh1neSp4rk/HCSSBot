@@ -473,3 +473,27 @@
 2024-08-05 10:47:57,654 - INFO - Email sent to mikelamble@hotmail.com
 2024-08-05 10:47:57,654 - INFO - Sending Email for get_Skills_skills completed successfully
 2024-08-05 10:47:57,655 - INFO - Deleted: Files/get_Skills_skills_20240805_104756.xlsx
+2024-08-05 11:04:44,735 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:04:44,736 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:04:44,736 - INFO - Function get_Skills_skills started at 2024-08-05 11:04:44
+2024-08-05 11:04:44,736 - INFO - Starting Requesting token
+2024-08-05 11:04:44,738 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:04:44,959 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:04:44,960 - INFO - Token successfully retrieved.
+2024-08-05 11:04:44,960 - INFO - Token request completed successfully
+2024-08-05 11:04:44,961 - INFO - Starting get_Skills_skills
+2024-08-05 11:04:44,961 - INFO - Fetching skills with offset: xlsx, dateAfterUtc: 2024-08-05
+2024-08-05 11:04:44,961 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:04:45,919 - DEBUG - https://api.hcssapps.com:443 "GET /skills/api/v1/skills?limit=1000&offset=xlsx&dateAfterUtc=2024-08-05 HTTP/1.1" 200 122
+2024-08-05 11:04:45,920 - INFO - Response code for skills: 200
+2024-08-05 11:04:45,920 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() takes 2 positional arguments but 3 were given
+2024-08-05 11:04:45,920 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() takes 2 positional arguments but 3 were given
+2024-08-05 11:06:07,650 - DEBUG - Using selector: EpollSelector
+2024-08-05 11:06:07,651 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 11:06:07,651 - INFO - Function get_Skills_skills started at 2024-08-05 11:06:07
+2024-08-05 11:06:07,651 - INFO - Starting Requesting token
+2024-08-05 11:06:07,653 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 11:06:07,747 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 11:06:07,748 - INFO - Token successfully retrieved.
+2024-08-05 11:06:07,748 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'
+2024-08-05 11:06:07,748 - ERROR - An error occurred while running get_Skills_skills: log_process_completion() missing 1 required positional argument: 'start_time'

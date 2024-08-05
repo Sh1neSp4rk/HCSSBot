@@ -38,8 +38,13 @@ def setup_function_logger(log_dir='Logs', log_filename='function_calls.log'):
 def log_process_start(logger, process_name):
     logger.info(f"Starting {process_name}")
 
-def log_process_completion(logger, process_name):
-    logger.info(f"{process_name} completed successfully")
+def log_process_completion(logger, process_name, start_time):
+    """
+    Log process completion details with the elapsed time.
+    """
+    end_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    elapsed_time = datetime.strptime(end_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S')
+    logger.info(f"{process_name} completed at {end_time}. Elapsed time: {elapsed_time}")
 
 def log_error(logger, error_message):
     logger.error(error_message)

@@ -1,13 +1,17 @@
 # Tools/data_saver.py
 import pandas as pd
 import json
-import csv
 import logging
 from datetime import datetime
+import os
+
+# Ensure the Files directory exists
+if not os.path.exists('Files'):
+    os.makedirs('Files')
 
 def save_data(data, caller_name, file_type):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    filename = f"{caller_name}_{timestamp}.{file_type}"
+    filename = f"Files/{caller_name}_{timestamp}.{file_type}"
 
     if file_type == 'xlsx':
         df = pd.DataFrame(data)

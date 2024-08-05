@@ -35,7 +35,11 @@ from .heavyjob_get import (
     get_heavyjob_equipmenthours,
     get_heavyjob_employeehours,
 )
-from .safety_get import get_Safety_data
+from .safety_get import (
+    get_Safety_incidents,
+    get_Safety_incidentsV2,
+    get_Safety_meetings,
+)
 from .setups_get import (
     get_Setups_accounting_templates,
     get_Setups_business_units,
@@ -84,7 +88,9 @@ __all__ = [
     "get_heavyjob_employeehours",
     
     # Safety
-    "get_Safety_data",
+    "get_Safety_incidents",
+    "get_Safety_incidentsV2",
+    "get_Safety_meetings",
     
     # Setups
     "get_Setups_accounting_templates",

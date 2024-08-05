@@ -1,3 +1,4 @@
+# Tools/cleanup_files.py
 import os
 import glob
 import logging

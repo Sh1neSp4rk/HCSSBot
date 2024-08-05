@@ -22,7 +22,7 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def fetch_incidents(modified_after_utc=None, created_after_utc=None, incident_date_after_utc=None, incident_date_before_utc=None, limit=0, offset=0):
+def get_incidents(modified_after_utc=None, created_after_utc=None, incident_date_after_utc=None, incident_date_before_utc=None, limit=0, offset=0):
     url = "https://api.hcssapps.com/safety/v1/incidents"
     query = {
         "modifiedAfterUtc": modified_after_utc,
@@ -51,7 +51,7 @@ def fetch_incidents(modified_after_utc=None, created_after_utc=None, incident_da
     log_function_completion("fetch_incidents", start_time)
     return data
 
-def fetch_incident_details(incident_id, exclude_forms=True):
+def get_incident_details(incident_id, exclude_forms=True):
     url = f"https://api.hcssapps.com/safety/v2/incidents/{incident_id}"
     query = {
         "excludeForms": str(exclude_forms).lower()
@@ -75,7 +75,7 @@ def fetch_incident_details(incident_id, exclude_forms=True):
     log_function_completion("fetch_incident_details", start_time)
     return data
 
-def fetch_meetings(job_id=None, recorder_id=None, business_unit_id=None, employee_id=None, start_date=None, end_date=None, skip=0, take=0):
+def get_meetings(job_id=None, recorder_id=None, business_unit_id=None, employee_id=None, start_date=None, end_date=None, skip=0, take=0):
     url = "https://api.hcssapps.com/safety/v1/meetings"
     query = {
         "jobId": job_id,

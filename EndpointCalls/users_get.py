@@ -62,7 +62,7 @@ def get_subscription_groups():
     if response.status_code != 200:
         logging.error(f"Error fetching subscription groups: {response.status_code}")
 
-def get_all_users(business_unit_id, page_size=50):
+def get_users(business_unit_id, page_size=50):
     endpoint = "https://api.hcssapps.com/users/api/v1/Users"
     logging.info(f"Fetching users for business unit ID: {business_unit_id} with page size: {page_size}")
     headers = get_headers()

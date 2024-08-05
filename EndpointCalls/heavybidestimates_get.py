@@ -21,7 +21,7 @@ def log_function_completion(function_name, start_time):
     elapsed_time = end_time - start_time
     logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
 
-def fetch_business_units(token):
+def get_business_units(token):
     url = "https://api.hcssapps.com/heavybid/api/v2/integration/businessunits"
     headers = {"Authorization": f"Bearer {token}"}
     start_time = log_function_call("fetch_business_units")
@@ -39,7 +39,7 @@ def fetch_business_units(token):
     log_function_completion("fetch_business_units", start_time)
     return data
 
-def fetch_database_partitions(token, business_unit_id):
+def get_database_partitions(token, business_unit_id):
     url = f"https://api.hcssapps.com/heavybid/api/v2/integration/businessunits/{business_unit_id}/partitions"
     headers = {"Authorization": f"Bearer {token}"}
     start_time = log_function_call("fetch_database_partitions")
@@ -56,32 +56,3 @@ def fetch_database_partitions(token, business_unit_id):
     data = response.json()
     log_function_completion("fetch_database_partitions", start_time)
     return data
-
-def main():
-    token = os.getenv("HEAVYBID_API_TOKEN")  # Fetch token from environment variables
-    if not token:
-        logging.error("API token is not set")
-        return
-    
-    # Fetch business units
-    business_units = fetch_business_units(token)
-    if not business_units:
-        logging.error("No business units data retrieved")
-        return
-    
-    # Fetch partitions for each business unit
-    all_partitions = []
-    for business_unit in business_units.get("results", []):
-        business_unit_id = business_unit.get("id")
-        if not business_unit_id:
-            continue
-        
-        partitions = fetch_database_partitions(token, business_unit_id)
-        if partitions:
-            all_partitions.extend(partitions.get("results", []))
-    
-    # Print or process all partitions as needed
-    print(all_partitions)
-
-if __name__ == "__main__":
-    main()

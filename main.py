@@ -55,14 +55,20 @@ async def main():
             log_process_completion(logger, f"Data Fetching for {func_name}")
             
             log_process_start(logger, f"Sending Email for {func_name}")
-            send_email([filename], recipient_email)
-            log_process_completion(logger, f"Sending Email for {func_name}")
+            try:
+                send_email([filename], recipient_email)
+                log_process_completion(logger, f"Sending Email for {func_name}")
+            except Exception as email_error:
+                log_error(logger, f"An error occurred while sending email for {func_name}: {email_error}")
 
         except Exception as e:
             log_error(logger, f"An error occurred while running {func_name}: {e}")
 
         finally:
-            cleanup_files("Files")
+            try:
+                cleanup_files("Files")
+            except Exception as cleanup_error:
+                log_error(logger, f"An error occurred while cleaning up files: {cleanup_error}")
 
 if __name__ == "__main__":
     asyncio.run(main())

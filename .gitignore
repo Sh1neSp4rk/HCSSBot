@@ -1,4 +1,5 @@
 .env
+.vscode/
 Tools/_pycache_
 EndpointCalls/_pycache_
 Files/

@@ -48,10 +48,8 @@ from .setups_get import (
     get_Setups_employees,
 )
 from .skills_get import (
-    fetch_Skills_skills,
-    fetch_Skills_employee_skills,
-    get_Skills_all_skills,
-    get_Skills_all_employee_skills,
+    get_Skills_skills,
+    get_Skills_employeeskills,
 )
 from .telematics_get import get_Telematics_equipment
 from .token_get import get_token
@@ -100,10 +98,8 @@ __all__ = [
     "get_Setups_employees",
     
     # Skills
-    "fetch_Skills_skills",
-    "fetch_Skills_employee_skills",
-    "get_Skills_all_skills",
-    "get_Skills_all_employee_skills",
+    "get_Skills_skills",
+    "get_Skills_employeeskills",
     
     # Telematics
     "get_Telematics_equipment",

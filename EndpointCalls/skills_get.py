@@ -1,26 +1,12 @@
 # EndpointCalls/skills_get.py
-import logging
 import requests
 import re
-from EndpointCalls.token_get import get_token
 from datetime import datetime
+from EndpointCalls.token_get import get_token
+from Tools.logger import setup_main_logger, log_process_start, log_process_completion, log_error
 
-# Configure logging
-logging.basicConfig(
-    filename='Logs/data_fetch.log',
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-
-def log_function_call(function_name):
-    start_time = datetime.now()
-    logging.info(f"{function_name} started at {start_time.isoformat()}")
-    return start_time
-
-def log_function_completion(function_name, start_time):
-    end_time = datetime.now()
-    elapsed_time = end_time - start_time
-    logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
+# Set up the main logger
+logger = setup_main_logger()
 
 def get_last_successful_date(function_name):
     try:
@@ -37,9 +23,9 @@ def get_last_successful_date(function_name):
                 return match.group(1)
     
     except FileNotFoundError:
-        logging.error("Log file not found.")
+        log_error(logger, "Log file not found.")
     except Exception as e:
-        logging.error(f"Error retrieving last successful date: {e}")
+        log_error(logger, f"Error retrieving last successful date: {e}")
     
     return None
 
@@ -55,23 +41,33 @@ def get_Skills_skills(offset=0, forceall=False):
 
     token = get_token()
     if not token:
-        logging.error("Failed to retrieve token")
+        log_error(logger, "Failed to retrieve token")
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("get_Skills_skills")
-    logging.info(f"Fetching skills with offset: {offset}, dateAfterUtc: {date_after_utc}")
-    response = requests.get(url, headers=headers, params=query)
-    logging.info(f"Response code for skills: {response.status_code}")
+    start_time = log_process_start(logger, "get_Skills_skills")
+    try:
+        logger.info(f"Fetching skills with offset: {offset}, dateAfterUtc: {date_after_utc}")
+        response = requests.get(url, headers=headers, params=query)
+        logger.info(f"Response code for skills: {response.status_code}")
 
-    if response.status_code != 200:
-        logging.error(f"Error fetching skills: {response.status_code}")
-        log_function_completion("get_Skills_skills", start_time)
+        if response.status_code != 200:
+            log_error(logger, f"Error fetching skills: {response.status_code}")
+            return None
+
+        data = response.json()
+        return data
+
+    except requests.exceptions.RequestException as e:
+        log_error(logger, f"Request failed: {e}")
+        log_error(logger, f"Response content: {response.text if response else 'No response content'}")
         return None
-
-    data = response.json()
-    log_function_completion("get_Skills_skills", start_time)
-    return data
+    except ValueError as e:
+        log_error(logger, "Error decoding JSON response", exc_info=e)
+        log_error(logger, f"Response content: {response.text if response else 'No response content'}")
+        return None
+    finally:
+        log_process_completion(logger, "get_Skills_skills", start_time)
 
 def get_Skills_employeeskills(offset=0, forceall=False):
     url = "https://api.hcssapps.com/skills/api/v1/employeeSkills"
@@ -87,20 +83,30 @@ def get_Skills_employeeskills(offset=0, forceall=False):
 
     token = get_token()
     if not token:
-        logging.error("Failed to retrieve token")
+        log_error(logger, "Failed to retrieve token")
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("get_Skills_employeeskills")
-    logging.info(f"Fetching employee skills with offset: {offset}, dateAfterUtc: {date_after_utc}")
-    response = requests.get(url, headers=headers, params=query)
-    logging.info(f"Response code for employee skills: {response.status_code}")
+    start_time = log_process_start(logger, "get_Skills_employeeskills")
+    try:
+        logger.info(f"Fetching employee skills with offset: {offset}, dateAfterUtc: {date_after_utc}")
+        response = requests.get(url, headers=headers, params=query)
+        logger.info(f"Response code for employee skills: {response.status_code}")
 
-    if response.status_code != 200:
-        logging.error(f"Error fetching employee skills: {response.status_code}")
-        log_function_completion("get_Skills_employeeskills", start_time)
+        if response.status_code != 200:
+            log_error(logger, f"Error fetching employee skills: {response.status_code}")
+            return None
+
+        data = response.json()
+        return data
+
+    except requests.exceptions.RequestException as e:
+        log_error(logger, f"Request failed: {e}")
+        log_error(logger, f"Response content: {response.text if response else 'No response content'}")
         return None
-
-    data = response.json()
-    log_function_completion("get_Skills_employeeskills", start_time)
-    return data
+    except ValueError as e:
+        log_error(logger, "Error decoding JSON response", exc_info=e)
+        log_error(logger, f"Response content: {response.text if response else 'No response content'}")
+        return None
+    finally:
+        log_process_completion(logger, "get_Skills_employeeskills", start_time)

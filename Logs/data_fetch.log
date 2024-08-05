@@ -453,3 +453,23 @@
 2024-08-05 10:12:32,334 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
 2024-08-05 10:12:32,417 - DEBUG - https://api.hcssapps.com:443 "GET /users/api/v1/Users?businessUnitId=xlsx&pageSize=50&offset=0 HTTP/1.1" 400 None
 2024-08-05 10:12:32,417 - ERROR - An error occurred while running get_Users_users: 400 Client Error: Bad Request for url: https://api.hcssapps.com/users/api/v1/Users?businessUnitId=xlsx&pageSize=50&offset=0
+2024-08-05 10:42:36,377 - DEBUG - Using selector: EpollSelector
+2024-08-05 10:47:39,009 - DEBUG - Using selector: EpollSelector
+2024-08-05 10:47:55,367 - DEBUG - Using selector: EpollSelector
+2024-08-05 10:47:55,368 - INFO - Starting Data Fetching for get_Skills_skills
+2024-08-05 10:47:55,368 - INFO - Function get_Skills_skills started at 2024-08-05 10:47:55
+2024-08-05 10:47:55,370 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:47:55,468 - DEBUG - https://api.hcssapps.com:443 "POST /identity/connect/token HTTP/1.1" 200 None
+2024-08-05 10:47:55,469 - INFO - get_Skills_skills started at 2024-08-05T10:47:55.469499
+2024-08-05 10:47:55,469 - INFO - Fetching skills with offset: xlsx, dateAfterUtc: 2024-08-05T10:12:26.128112
+2024-08-05 10:47:55,470 - DEBUG - Starting new HTTPS connection (1): api.hcssapps.com:443
+2024-08-05 10:47:56,424 - DEBUG - https://api.hcssapps.com:443 "GET /skills/api/v1/skills?limit=1000&offset=xlsx&dateAfterUtc=2024-08-05T10%3A12%3A26.128112 HTTP/1.1" 200 122
+2024-08-05 10:47:56,425 - INFO - Response code for skills: 200
+2024-08-05 10:47:56,425 - INFO - get_Skills_skills completed at 2024-08-05T10:47:56.425396 (Elapsed time: 0:00:00.955897)
+2024-08-05 10:47:56,528 - INFO - Data saved as XLSX file: Files/get_Skills_skills_20240805_104756.xlsx
+2024-08-05 10:47:56,528 - INFO - Data Fetching for get_Skills_skills completed successfully
+2024-08-05 10:47:56,529 - INFO - Function get_Skills_skills completed at 2024-08-05 10:47:56. Elapsed time: 0:00:01
+2024-08-05 10:47:56,529 - INFO - Starting Sending Email for get_Skills_skills
+2024-08-05 10:47:57,654 - INFO - Email sent to mikelamble@hotmail.com
+2024-08-05 10:47:57,654 - INFO - Sending Email for get_Skills_skills completed successfully
+2024-08-05 10:47:57,655 - INFO - Deleted: Files/get_Skills_skills_20240805_104756.xlsx

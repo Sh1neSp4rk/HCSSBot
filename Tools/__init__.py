@@ -19,10 +19,14 @@ from .progress_bars import (
 
 # Logging
 from .logger import (
-    setup_logger,
+    setup_main_logger,
+    setup_function_logger,
     log_process_start,
     log_process_completion,
     log_error,
+    log_function_call,
+    log_function_completion,
+    get_timestamp,
     set_last_successful_date,
     get_last_successful_date_from_log
 )
@@ -45,12 +49,16 @@ __all__ = [
     "fetch_paginated_data_with_progress",
 
     # Logging
-    "setup_logger",
+    "setup_main_logger",
+    "setup_function_logger",
     "log_process_start",
     "log_process_completion",
     "log_error",
+    "log_function_call",
+    "log_function_completion",
+    "get_timestamp",
     "set_last_successful_date",
-    "get_last_successful_date_from_log"
+    "get_last_successful_date_from_log",
 
     # Email Sending
     "send_email",

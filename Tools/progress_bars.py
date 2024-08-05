@@ -1,12 +1,23 @@
+# Tools/progress_bars.py
 import requests
 from tqdm import tqdm
-import logging
+from Tools.logger import log_error, setup_main_logger
+
+# Set up logging
+logger = setup_main_logger()
 
 def fetch_data_with_progress(url, headers, params=None):
-    logging.info(f"Sending request to {url} with params {params}")
-    response = requests.get(url, headers=headers, params=params)
-    response.raise_for_status()
-    logging.info(f"Received response with status code {response.status_code}")
+    logger.info(f"Sending request to {url} with params {params}")
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        response.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        log_error(logger, f"HTTP error occurred: {e}")
+        raise
+    except Exception as e:
+        log_error(logger, f"An error occurred: {e}")
+        raise
+    logger.info(f"Received response with status code {response.status_code}")
     return response
 
 def fetch_paginated_data_with_progress(url, headers, params, page_size=50):
@@ -22,20 +33,12 @@ def fetch_paginated_data_with_progress(url, headers, params, page_size=50):
     Returns:
         list: A list of all fetched data items.
     """
-    logging.info(f"Fetching paginated data from {url} with params {params} and page_size {page_size}")
+    logger.info(f"Fetching paginated data from {url} with params {params} and page_size {page_size}")
     all_data = []
     page = 1
     total_pages = None
 
     # Custom ASCII progress bar format
-    # Explanation of the components:
-    # '{l_bar}' - Left side of the progress bar (contains the description or label).
-    # '{bar}' - The actual progress bar itself, which shows how much progress has been made.
-    # '{n_fmt}' - Current number of completed tasks.
-    # '{total_fmt}' - Total number of tasks.
-    # '{elapsed}' - Time elapsed since the start of the process.
-    # '{remaining}' - Estimated time remaining to complete the process.
-    # '{rate_fmt}' - Rate of progress (e.g., tasks per second).
     bar_format = (
         '{l_bar}{bar} {n_fmt}/{total_fmt} [{elapsed}<{remaining}] {rate_fmt}'
     )
@@ -46,8 +49,12 @@ def fetch_paginated_data_with_progress(url, headers, params, page_size=50):
                 "page": page,
                 "pageSize": page_size
             })
-            response = fetch_data_with_progress(url, headers, params)
-            data = response.json()
+            try:
+                response = fetch_data_with_progress(url, headers, params)
+                data = response.json()
+            except Exception as e:
+                log_error(logger, f"Failed to fetch paginated data: {e}")
+                break
 
             if total_pages is None:
                 total_pages = data.get('totalPages', 1)

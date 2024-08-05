@@ -1,7 +1,7 @@
 import argparse
 import asyncio
 import os
-from Tools.logger import setup_logger, log_process_start, log_process_completion, log_error
+from Tools.logger import get_timestamp, setup_main_logger, setup_function_logger, log_process_start, log_process_completion, log_error, log_function_call, log_function_completion, set_last_successful_date, get_last_successful_date_from_log
 from Tools.rate_limiter import RateLimiter
 from Tools.data_saver import save_data
 from Tools.cleanup_files import cleanup_files
@@ -20,7 +20,8 @@ def parse_args():
 
 async def main():
     args = parse_args()
-    logger = setup_logger()
+    main_logger = setup_main_logger()
+    function_logger = setup_function_logger()
 
     # Fetch environment variables and arguments
     file_type = args.filetype
@@ -45,30 +46,28 @@ async def main():
 
     for func_name, function_to_run in functions_to_run.items():
         try:
-            log_process_start(logger, f"Data Fetching for {func_name}")
+            start_time = get_timestamp()
+            log_process_start(main_logger, f"Data Fetching for {func_name}")
+            log_function_call(function_logger, func_name, start_time)
 
             # Call the function without worrying about business unit IDs here
             data = function_to_run(file_type)
-            
+
             filename = save_data(data, func_name, file_type)
-            
-            log_process_completion(logger, f"Data Fetching for {func_name}")
-            
-            log_process_start(logger, f"Sending Email for {func_name}")
-            try:
-                send_email([filename], recipient_email)
-                log_process_completion(logger, f"Sending Email for {func_name}")
-            except Exception as email_error:
-                log_error(logger, f"An error occurred while sending email for {func_name}: {email_error}")
+
+            log_process_completion(main_logger, f"Data Fetching for {func_name}")
+            log_function_completion(function_logger, func_name, start_time)
+
+            log_process_start(main_logger, f"Sending Email for {func_name}")
+            send_email([filename], recipient_email)
+            log_process_completion(main_logger, f"Sending Email for {func_name}")
 
         except Exception as e:
-            log_error(logger, f"An error occurred while running {func_name}: {e}")
+            log_error(main_logger, f"An error occurred while running {func_name}: {e}")
+            log_error(function_logger, f"An error occurred while running {func_name}: {e}")
 
         finally:
-            try:
-                cleanup_files("Files")
-            except Exception as cleanup_error:
-                log_error(logger, f"An error occurred while cleaning up files: {cleanup_error}")
+            cleanup_files("Files")
 
 if __name__ == "__main__":
     asyncio.run(main())

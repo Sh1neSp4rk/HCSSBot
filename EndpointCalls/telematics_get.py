@@ -1,25 +1,12 @@
 # EndpointCalls/telematics_get.py
-import logging
+from datetime import datetime
 import requests
 from EndpointCalls.token_get import get_token
-from datetime import datetime
+from Tools.logger import setup_main_logger, log_process_start, log_process_completion, log_error
+from Tools.progress_bars import fetch_paginated_data_with_progress
 
-# Configure logging
-logging.basicConfig(
-    filename='Logs/data_fetch.log',
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-
-def log_function_call(function_name):
-    start_time = datetime.now()
-    logging.info(f"{function_name} started at {start_time.isoformat()}")
-    return start_time
-
-def log_function_completion(function_name, start_time):
-    end_time = datetime.now()
-    elapsed_time = end_time - start_time
-    logging.info(f"{function_name} completed at {end_time.isoformat()} (Elapsed time: {elapsed_time})")
+# Set up the main logger
+logger = setup_main_logger()
 
 def get_Telematics_equipment(cursor=None):
     url = "https://api.hcssapps.com/telematics/api/v1/equipment"
@@ -31,29 +18,38 @@ def get_Telematics_equipment(cursor=None):
 
     token = get_token()
     if not token:
-        logging.error("Failed to retrieve token")
+        log_error(logger, "Failed to retrieve token")
         return None
     
     headers = {"Authorization": f"Bearer {token}"}
-    start_time = log_function_call("fetch_equipment_data")
-    logging.info(f"Fetching equipment data with cursor: {cursor}")
-    response = requests.get(url, headers=headers, params=query)
-    logging.info(f"Response code for equipment data: {response.status_code}")
 
-    if response.status_code != 200:
-        logging.error(f"Error fetching equipment data: {response.status_code}")
-        log_function_completion("fetch_equipment_data", start_time)
+    log_process_start(logger, "Fetching equipment data")
+    try:
+        response = requests.get(url, headers=headers, params=query)
+        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
+
+        logger.info(f"Response code for equipment data: {response.status_code}")
+
+        data = response.json()
+        next_cursor = data.get("metadata", {}).get("nextCursor")
+
+        if next_cursor:
+            logger.info(f"Next cursor found: {next_cursor}")
+            results = data.get("results", [])
+            results.extend(get_Telematics_equipment(cursor=next_cursor) or [])
+        else:
+            results = data.get("results", [])
+
+        log_process_completion(logger, "Fetching equipment data")
+        return results
+
+    except requests.exceptions.RequestException as e:
+        log_error(logger, f"Request failed: {e}")
+        log_error(logger, f"Response content: {response.text if response else 'No response content'}")
+        log_process_completion(logger, "Fetching equipment data")
         return None
-
-    data = response.json()
-    next_cursor = data.get("metadata", {}).get("nextCursor")
-
-    if next_cursor:
-        logging.info(f"Next cursor found: {next_cursor}")
-        results = data.get("results", [])
-        results.extend(get_Telematics_equipment(cursor=next_cursor) or [])
-    else:
-        results = data.get("results", [])
-
-    log_function_completion("fetch_equipment_data", start_time)
-    return results
+    except ValueError as e:
+        log_error(logger, "Error decoding JSON response", exc_info=e)
+        log_error(logger, f"Response content: {response.text if response else 'No response content'}")
+        log_process_completion(logger, "Fetching equipment data")
+        return None

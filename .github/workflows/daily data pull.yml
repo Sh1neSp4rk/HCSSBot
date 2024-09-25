@@ -22,6 +22,18 @@ jobs:
           pip install -r requirements.txt
           chmod +x install_browsers.sh  # Make sure your script is executable
           ./install_browsers.sh  # Run your browser installation script
+        env:
+          HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
+          HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}
 
       - name: Run main.py
         run: python main.py
+        env:
+          HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
+          HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}

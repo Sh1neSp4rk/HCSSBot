@@ -1,1 +1,5 @@
-
+.env
+junk/
+__pycache__/
+downloads/
+screenshots/

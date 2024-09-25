@@ -1,0 +1,89 @@
+{
+    "baseurl": "https://www.hcss.com/",
+    "loginurl": "https://identity.hcssapps.com/Account/Login?",
+    "safetyurl": "https://safety.hcssapps.com/Home/Dashboard",
+    "inspectionsurl": "https://safety.hcssapps.com/Inspection/Inspection",
+    "nearmissessurl": "https://safety.hcssapps.com/NearMiss/NearMiss",
+    "employeemetricsurl": "https://safety.hcssapps.com/Report/EmployeeMetrics",
+  
+    "homepage": {
+        "loginbutton": {
+            "xpath": "/html/body/div[1]/div[1]/header/div/nav[1]/div/ul/li[2]/a/span"
+        }
+    },
+  
+    "loginpage": {
+        "username": {
+            "field": {
+                "xpath": "/html/body/div/main/div[3]/div[1]/div[2]/div[1]/form/div[2]/input"
+            },
+            "button": {
+                "xpath": "/html/body/div/main/div[3]/div[1]/div[2]/div[1]/form/button"
+            }
+        },
+        "password": {
+            "field": {
+                "xpath": "/html/body/div/main/div[3]/div[1]/div[2]/div[1]/form/div[3]/input"
+            },
+            "button": {
+                "xpath": "/html/body/div/main/div[3]/div[1]/div[2]/div[1]/form/button"
+            }
+        }
+    },
+  
+    "safetydash": {
+        "employeemetrics": {
+            "xpath": "/html/body/hcss-messages/div/div/div[1]/nav/ul/li[11]/ul/li[1]/a"
+        },
+        "inspections": {
+            "xpath": "/html/body/div[1]/hcss-messages/div/div/div/nav/ul/li[4]/a/span"
+        },
+        "nearmisses": {
+            "xpath": "/html/body/div[1]/hcss-messages/div/div/div/nav/ul/li[8]/a/span"
+        }
+    },
+  
+    "employeemetrics": {
+        "template_dropdown": {
+            "dropdown": {
+                "xpath": "//*[@id=\"template-select\"]"
+            },
+            "options": {
+                "foreman": {
+                    "xpath": "/html/body/hcss-messages/div/div/div[2]/div/div/div/div/div[2]/div[1]/div[1]/div/select/option[2]"
+                },
+                "operators": {
+                    "xpath": "/html/body/hcss-messages/div/div/div[2]/div/div/div/div/div[2]/div[1]/div[1]/div/select/option[3]"
+                }
+            }
+        },
+        "runreportbutton": {
+            "xpath": "//*[@id=\"reportBtn\"]"
+        }
+    },
+  
+    "inspections": {
+        "dateselect_dropdown": {
+            "xpath": "//*[@id=\"dateRangeSelect\"]"
+        },
+        "locationfield": {
+            "xpath": "//*[@id=\"locationName\"]"
+        },
+        "searchbutton": {
+            "xpath": "//*[@id=\"search\"]"
+        }
+    },
+  
+    "nearmisses": {
+        "dateselect_dropdown": {
+            "xpath": "//*[@id=\"dateRangeSelect\"]"
+        },
+        "locationfield": {
+            "xpath": "//*[@id=\"locationName\"]"
+        },
+        "searchbutton": {
+            "xpath": "//*[@id=\"search\"]"
+        }
+    }
+  }
+  

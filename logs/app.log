@@ -1,0 +1,256 @@
+*******************************************************
+2024-09-25 18:56:37,141 - DEBUG - This is a debug message for testing.
+2024-09-25 18:56:37,158 - INFO - Starting main script
+2024-09-25 18:56:37,158 - INFO - Deleted all screenshots in screenshots
+2024-09-25 18:56:37,158 - INFO - Setting up Chrome driver with headless options
+2024-09-25 18:56:37,931 - INFO - Chrome driver setup complete
+2024-09-25 18:56:37,932 - INFO - Attempting to log in
+2024-09-25 18:56:38,623 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 18:56:38,624 - INFO - Locating and populating username field
+2024-09-25 18:56:40,671 - INFO - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-09-25 18:56:40,763 - INFO - Clicking next button
+2024-09-25 18:56:42,801 - INFO - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 18:56:42,838 - INFO - Successfully clicked Next button
+2024-09-25 18:56:42,838 - INFO - Waiting for and inspecting password field
+2024-09-25 18:56:45,401 - INFO - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-09-25 18:56:45,445 - INFO - Clicking login button
+2024-09-25 18:56:47,502 - INFO - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 18:56:51,136 - INFO - Successfully clicked Login button
+2024-09-25 18:56:51,136 - INFO - Confirming login
+2024-09-25 18:56:51,596 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 18:56:51,601 - INFO - Successfully navigated to the dashboard
+2024-09-25 18:56:51,607 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 18:56:52,027 - INFO - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-09-25 18:56:52,027 - INFO - Attempt 1 for verifying page load
+2024-09-25 18:56:54,083 - INFO - Inspecting Inspection History Results Grid: Tag=table, Displayed=True, Enabled=True
+2024-09-25 18:56:54,083 - INFO - Successfully verified presence of Inspection History Results Grid
+2024-09-25 18:56:54,083 - INFO - Initial inspections page loaded
+2024-09-25 18:56:54,083 - INFO - Setting date range: 09/24/2024 to 09/25/2024
+2024-09-25 18:56:56,121 - INFO - Inspecting Date Range Select: Tag=select, Displayed=True, Enabled=True
+2024-09-25 18:56:58,166 - INFO - Inspecting Custom Option: Tag=option, Displayed=True, Enabled=True
+2024-09-25 18:56:58,199 - INFO - Successfully clicked Custom Option
+2024-09-25 18:57:00,237 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 18:57:02,342 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 18:57:04,436 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 18:57:06,499 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 18:57:06,554 - INFO - Date range set
+2024-09-25 18:57:08,591 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 18:57:10,625 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 18:57:10,665 - INFO - Successfully clicked Apply Button
+2024-09-25 18:57:12,703 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
+2024-09-25 18:57:12,714 - INFO - Updated number of entries: 171
+2024-09-25 18:57:12,714 - INFO - Date filter applied successfully
+2024-09-25 18:57:12,714 - INFO - Clicking the Export button to reveal options
+2024-09-25 18:57:14,752 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 18:57:14,806 - INFO - Successfully clicked Export Button
+2024-09-25 18:57:14,806 - INFO - Clicking the option to export Inspection Summary
+2024-09-25 18:57:16,843 - INFO - Inspecting Inspection Summary: Tag=li, Displayed=True, Enabled=True
+2024-09-25 18:57:16,918 - INFO - Successfully clicked Inspection Summary
+2024-09-25 18:57:16,919 - INFO - Clicking 'Select All' for Summary
+2024-09-25 18:57:29,097 - ERROR - Unexpected error while inspecting Select All Option: Message: 
+
+2024-09-25 18:57:29,097 - ERROR - Error inspecting Select All Option Error: Message: 
+
+2024-09-25 18:57:29,218 - INFO - Screenshot taken: screenshots/001_error_screenshot_20240925_185729.png
+2024-09-25 18:57:29,218 - INFO - Got list of files: []
+2024-09-25 18:57:29,218 - INFO - Generating email
+2024-09-25 18:57:29,225 - INFO - Sending email
+2024-09-25 18:57:30,974 - INFO - Email sent successfully
+2024-09-25 18:57:30,975 - INFO - Downloads emptied
+2024-09-25 18:57:30,985 - INFO - Downloads emptied
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-09-25 18:58:00
+*******************************************************
+2024-09-25 18:58:00,733 - DEBUG - This is a debug message for testing.
+2024-09-25 18:58:00,759 - INFO - Starting main script
+2024-09-25 18:58:00,760 - INFO - Deleted all screenshots in screenshots
+2024-09-25 18:58:00,760 - INFO - Setting up Chrome driver with headless options
+2024-09-25 18:58:01,550 - INFO - Chrome driver setup complete
+2024-09-25 18:58:01,551 - INFO - Attempting to log in
+2024-09-25 18:58:02,279 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 18:58:02,279 - INFO - Locating and populating username field
+2024-09-25 18:58:04,321 - INFO - Inspecting Username field: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:04,402 - INFO - Clicking next button
+2024-09-25 18:58:06,448 - INFO - Inspecting Next button: Attempt 1/1, Displayed=True, Enabled=True
+2024-09-25 18:58:06,484 - INFO - Successfully clicked Next button
+2024-09-25 18:58:06,484 - INFO - Waiting for and inspecting password field
+2024-09-25 18:58:09,058 - INFO - Inspecting Password field: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:09,115 - INFO - Clicking login button
+2024-09-25 18:58:11,159 - INFO - Inspecting Login button: Attempt 1/1, Displayed=True, Enabled=True
+2024-09-25 18:58:11,351 - INFO - Successfully clicked Login button
+2024-09-25 18:58:11,351 - INFO - Confirming login
+2024-09-25 18:58:15,101 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 18:58:15,101 - INFO - Successfully navigated to the dashboard
+2024-09-25 18:58:15,104 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 18:58:15,815 - INFO - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-09-25 18:58:15,816 - INFO - Attempt 1 for verifying page load
+2024-09-25 18:58:17,850 - INFO - Inspecting Inspection History Results Grid: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:17,850 - INFO - Successfully verified presence of Inspection History Results Grid
+2024-09-25 18:58:17,851 - INFO - Initial inspections page loaded
+2024-09-25 18:58:17,851 - INFO - Setting date range: 09/24/2024 to 09/25/2024
+2024-09-25 18:58:19,922 - INFO - Inspecting Date Range Select: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:21,957 - INFO - Inspecting Custom Option: Attempt 1/1, Displayed=True, Enabled=True
+2024-09-25 18:58:21,990 - INFO - Successfully clicked Custom Option
+2024-09-25 18:58:24,029 - INFO - Inspecting From Date Input: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:26,097 - INFO - Inspecting From Date Input: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:28,193 - INFO - Inspecting To Date Input: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:30,256 - INFO - Inspecting To Date Input: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:30,321 - INFO - Date range set
+2024-09-25 18:58:32,357 - INFO - Inspecting Apply Button: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:34,389 - INFO - Inspecting Apply Button: Attempt 1/1, Displayed=True, Enabled=True
+2024-09-25 18:58:34,432 - INFO - Successfully clicked Apply Button
+2024-09-25 18:58:36,467 - INFO - Inspecting Results Grid Info: Attempt 1/3, Displayed=True, Enabled=True
+2024-09-25 18:58:36,478 - INFO - Updated number of entries: 171
+2024-09-25 18:58:36,478 - INFO - Date filter applied successfully
+2024-09-25 18:58:36,478 - INFO - Clicking the Export button to reveal options
+2024-09-25 18:58:38,511 - INFO - Inspecting Export Button: Attempt 1/1, Displayed=True, Enabled=True
+2024-09-25 18:58:38,547 - INFO - Successfully clicked Export Button
+2024-09-25 18:58:38,548 - INFO - Clicking the option to export Inspection Summary
+2024-09-25 18:58:40,582 - INFO - Inspecting Inspection Summary: Attempt 1/1, Displayed=True, Enabled=True
+2024-09-25 18:58:40,667 - INFO - Successfully clicked Inspection Summary
+2024-09-25 18:58:40,667 - INFO - Clicking 'Select All' for Summary
+2024-09-25 18:58:52,827 - ERROR - Unexpected error while inspecting Select All Option: Message: 
+
+2024-09-25 18:58:52,827 - ERROR - Error inspecting Select All Option Error: Message: 
+
+2024-09-25 18:58:52,948 - INFO - Screenshot taken: screenshots/001_error_screenshot_20240925_185852.png
+2024-09-25 18:58:52,948 - INFO - Got list of files: []
+2024-09-25 18:58:52,948 - INFO - Generating email
+2024-09-25 18:58:52,958 - INFO - Sending email
+2024-09-25 18:58:54,467 - INFO - Email sent successfully
+2024-09-25 18:58:54,468 - INFO - Downloads emptied
+2024-09-25 18:58:54,490 - INFO - Downloads emptied
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-09-25 19:01:23
+*******************************************************
+2024-09-25 19:01:23,850 - DEBUG - This is a debug message for testing.
+2024-09-25 19:01:23,866 - INFO - Starting main script
+2024-09-25 19:01:23,867 - INFO - Deleted all screenshots in screenshots
+2024-09-25 19:01:23,867 - INFO - Setting up Chrome driver with headless options
+2024-09-25 19:01:24,662 - INFO - Chrome driver setup complete
+2024-09-25 19:01:24,663 - INFO - Attempting to log in
+2024-09-25 19:01:25,349 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 19:01:25,351 - INFO - Locating and populating username field
+2024-09-25 19:01:27,391 - INFO - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:01:27,477 - INFO - Clicking next button
+2024-09-25 19:01:29,513 - INFO - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:01:29,549 - INFO - Successfully clicked Next button
+2024-09-25 19:01:29,550 - INFO - Waiting for and inspecting password field
+2024-09-25 19:01:31,612 - INFO - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:01:31,677 - INFO - Clicking login button
+2024-09-25 19:01:33,708 - INFO - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:01:35,009 - INFO - Successfully clicked Login button
+2024-09-25 19:01:35,009 - INFO - Confirming login
+2024-09-25 19:01:37,582 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 19:01:37,583 - INFO - Successfully navigated to the dashboard
+2024-09-25 19:01:37,644 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 19:01:38,198 - INFO - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-09-25 19:01:38,199 - INFO - Attempt 1 for verifying page load
+2024-09-25 19:01:40,231 - INFO - Inspecting Inspection History Results Grid: Tag=table, Displayed=True, Enabled=True
+2024-09-25 19:01:40,231 - INFO - Successfully verified presence of Inspection History Results Grid
+2024-09-25 19:01:40,231 - INFO - Initial inspections page loaded
+2024-09-25 19:01:40,231 - INFO - Setting date range: 09/24/2024 to 09/25/2024
+2024-09-25 19:01:42,262 - INFO - Inspecting Date Range Select: Tag=select, Displayed=True, Enabled=True
+2024-09-25 19:01:44,293 - INFO - Inspecting Custom Option: Tag=option, Displayed=True, Enabled=True
+2024-09-25 19:01:44,331 - INFO - Successfully clicked Custom Option
+2024-09-25 19:01:46,363 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:01:48,428 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:01:50,517 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:01:52,574 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:01:52,650 - INFO - Date range set
+2024-09-25 19:01:54,683 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:01:56,750 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:01:56,827 - INFO - Successfully clicked Apply Button
+2024-09-25 19:01:58,899 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
+2024-09-25 19:01:58,910 - INFO - Updated number of entries: 171
+2024-09-25 19:01:58,910 - INFO - Date filter applied successfully
+2024-09-25 19:01:58,910 - INFO - Clicking the Export button to reveal options
+2024-09-25 19:02:00,941 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:00,976 - INFO - Successfully clicked Export Button
+2024-09-25 19:02:00,976 - INFO - Clicking the option to export Inspection Summary
+2024-09-25 19:02:03,007 - INFO - Inspecting Inspection Summary: Tag=li, Displayed=True, Enabled=True
+2024-09-25 19:02:03,088 - INFO - Successfully clicked Inspection Summary
+2024-09-25 19:02:03,089 - INFO - Clicking 'Select All' for Summary
+2024-09-25 19:02:05,124 - INFO - Inspecting Select All Option: Tag=input, Displayed=False, Enabled=True
+2024-09-25 19:02:05,124 - INFO - Select All Option is not visible.
+2024-09-25 19:02:05,124 - INFO - Retrying...
+2024-09-25 19:02:05,124 - ERROR - Select All Option could not be inspected after 1 attempts.
+2024-09-25 19:02:05,124 - INFO - Select All Option could not be inspected, cannot click.
+2024-09-25 19:02:05,124 - INFO - Clicking the Export button for Summary
+2024-09-25 19:02:07,157 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:07,199 - INFO - Successfully clicked Export Button
+2024-09-25 19:02:07,200 - INFO - File export initiated
+2024-09-25 19:02:07,200 - INFO - Waiting for file download in './downloads' with prefixes: ['InspectionSummaryReport']
+2024-09-25 19:02:08,202 - INFO - File 'InspectionSummaryReport_09-25-2024_19_02_07.xlsx' downloaded successfully.
+2024-09-25 19:02:08,202 - INFO - Clicking the Export button to reveal options
+2024-09-25 19:02:10,240 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:10,273 - INFO - Successfully clicked Export Button
+2024-09-25 19:02:10,273 - INFO - Clicking the option to export Inspection Details
+2024-09-25 19:02:12,304 - INFO - Inspecting Inspection Details: Tag=li, Displayed=True, Enabled=True
+2024-09-25 19:02:12,343 - INFO - Successfully clicked Inspection Details
+2024-09-25 19:02:12,344 - INFO - Clicking 'Select All' for Details
+2024-09-25 19:02:14,376 - INFO - Inspecting Select All Option: Tag=input, Displayed=False, Enabled=True
+2024-09-25 19:02:14,376 - INFO - Select All Option is not visible.
+2024-09-25 19:02:14,376 - INFO - Retrying...
+2024-09-25 19:02:14,376 - ERROR - Select All Option could not be inspected after 1 attempts.
+2024-09-25 19:02:14,376 - INFO - Select All Option could not be inspected, cannot click.
+2024-09-25 19:02:14,376 - INFO - Clicking the Export button for Details
+2024-09-25 19:02:16,408 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:16,595 - INFO - Successfully clicked Export Button
+2024-09-25 19:02:16,597 - INFO - File export initiated
+2024-09-25 19:02:16,598 - INFO - Waiting for file download in './downloads' with prefixes: ['InspectionItemDetails']
+2024-09-25 19:02:18,600 - INFO - File 'InspectionItemDetails_09-25-2024_19_02_18.xlsx' downloaded successfully.
+2024-09-25 19:02:20,704 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 19:02:20,743 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
+2024-09-25 19:02:20,746 - INFO - Navigating to https://safety.hcssapps.com/NearMiss/NearMiss
+2024-09-25 19:02:20,964 - INFO - Navigating to https://safety.hcssapps.com/NearMiss/NearMiss
+2024-09-25 19:02:20,965 - INFO - Attempt 1 for verifying page load
+2024-09-25 19:02:22,997 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
+2024-09-25 19:02:22,997 - INFO - Successfully verified presence of Results Grid Info
+2024-09-25 19:02:22,997 - INFO - Initial Near Miss page loaded
+2024-09-25 19:02:22,997 - INFO - Setting date range: 09/24/2024 to 09/25/2024
+2024-09-25 19:02:25,069 - INFO - Inspecting Date Range Select: Tag=select, Displayed=True, Enabled=True
+2024-09-25 19:02:27,117 - INFO - Inspecting Custom Option: Tag=option, Displayed=True, Enabled=True
+2024-09-25 19:02:27,160 - INFO - Successfully clicked Custom Option
+2024-09-25 19:02:29,193 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:02:31,256 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:02:33,345 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:02:35,418 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
+2024-09-25 19:02:35,476 - INFO - Date range set
+2024-09-25 19:02:37,528 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:39,559 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:39,602 - INFO - Successfully clicked Apply Button
+2024-09-25 19:02:41,631 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
+2024-09-25 19:02:41,638 - INFO - Updated number of entries: 2
+2024-09-25 19:02:41,638 - INFO - Date filter applied successfully
+2024-09-25 19:02:41,638 - INFO - Clicking the Export button for Near Miss
+2024-09-25 19:02:43,670 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:43,704 - INFO - Successfully clicked Export Button
+2024-09-25 19:02:43,705 - INFO - Clicking the 'Select All' option for Near Miss
+2024-09-25 19:02:45,736 - INFO - Inspecting Select All Option: Tag=input, Displayed=False, Enabled=True
+2024-09-25 19:02:45,736 - INFO - Select All Option is not visible.
+2024-09-25 19:02:45,736 - INFO - Retrying...
+2024-09-25 19:02:45,736 - ERROR - Select All Option could not be inspected after 1 attempts.
+2024-09-25 19:02:45,736 - INFO - Select All Option could not be inspected, cannot click.
+2024-09-25 19:02:45,736 - INFO - Clicking the Export button to download Near Miss file
+2024-09-25 19:02:47,790 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
+2024-09-25 19:02:47,836 - INFO - Successfully clicked Export Button
+2024-09-25 19:02:47,836 - INFO - Waiting for file download in './downloads' with prefixes: ['NearMiss']
+2024-09-25 19:02:48,837 - INFO - File 'NearMiss_09-25-2024 19_02_47.xlsx' downloaded successfully.
+2024-09-25 19:02:48,837 - INFO - Near Miss file export initiated and completed successfully.
+2024-09-25 19:02:48,837 - INFO - Got list of files: ['InspectionSummaryReport_09-25-2024_19_02_07.xlsx', 'InspectionItemDetails_09-25-2024_19_02_18.xlsx', 'NearMiss_09-25-2024 19_02_47.xlsx']
+2024-09-25 19:02:48,837 - INFO - Generating email
+2024-09-25 19:02:48,852 - INFO - Sending email
+2024-09-25 19:02:52,659 - INFO - Email sent successfully
+2024-09-25 19:02:52,683 - INFO - Downloads emptied
+2024-09-25 19:02:52,754 - INFO - Main script completed successfully.

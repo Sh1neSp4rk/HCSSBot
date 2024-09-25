@@ -13,6 +13,13 @@ DOWNLOAD_DIR = "downloads"
 MAX_RETRIES = 3
 TIMEOUT = 10  # seconds
 
+def log_browser_versions():
+    """Log the installed versions of Google Chrome and ChromeDriver."""
+    chrome_version = os.popen('google-chrome --version').read().strip()
+    chromedriver_version = os.popen('chromedriver --version').read().strip()
+    log_message("INFO", f"Installed Google Chrome version: {chrome_version}")
+    log_message("INFO", f"Installed ChromeDriver version: {chromedriver_version}")
+
 def create_chrome_driver():
     """Create a Chrome driver with headless options."""
     log_message("INFO", "Setting up Chrome driver with headless options")
@@ -24,7 +31,7 @@ def create_chrome_driver():
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--window-size=1920,1080")
 
-      # Set the download directory
+    # Set the download directory
     chrome_options.add_experimental_option("prefs", {
         "download.default_directory": os.path.abspath(DOWNLOAD_DIR),  # Use absolute path
         "download.prompt_for_download": False,
@@ -34,6 +41,9 @@ def create_chrome_driver():
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     log_message("SUCCESS", "Chrome driver setup complete")
+    
+    # Log versions after driver creation
+    log_browser_versions()
 
     return driver
 

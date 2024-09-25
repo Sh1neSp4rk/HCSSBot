@@ -1,0 +1,40 @@
+name: Daily Run
+
+on:
+  schedule:
+    - cron: '45 13 * * *'  # This runs at 9:45 AM Eastern Time (UTC-4/5)
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Upgrade to v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4  # Upgrade to v4
+        with:
+          python-version: '3.10'  # Specify your Python version
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          chmod +x install_browsers.sh  # Make sure your script is executable
+          ./install_browsers.sh  # Run your browser installation script
+        env:
+          HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
+          HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}
+
+      - name: Run main.py
+        run: python main.py
+        env:
+          HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
+          HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}

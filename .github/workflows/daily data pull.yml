@@ -36,12 +36,12 @@ jobs:
           # Clean up
           rm google-chrome-stable_current_amd64.deb
 
-          # Get the version of Chrome installed
-          CHROME_VERSION=$(google-chrome --version | grep -oP '[\d.]+')
+          # Get the installed Chrome version
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
 
-          # Install ChromeDriver that matches the Chrome version
+          # Install the matching ChromeDriver version
           echo "Installing ChromeDriver..."
-          CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+          CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION | tr -d '\r')
           wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
           sudo unzip chromedriver_linux64.zip -d /usr/local/bin
           rm chromedriver_linux64.zip
@@ -59,6 +59,7 @@ jobs:
           rm geckodriver-${GECKO_DRIVER_VERSION}-linux64.tar.gz
 
           echo "Browser and driver installation complete."
+
         env:
           HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
           HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}

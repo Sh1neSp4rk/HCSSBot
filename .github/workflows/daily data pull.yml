@@ -22,7 +22,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           
-      - name: Install Browsers
+      - name: Install Google Chrome
         run: |
           # Update package list
           echo "Updating package list..."
@@ -36,18 +36,27 @@ jobs:
           # Clean up
           rm google-chrome-stable_current_amd64.deb
 
+          # Verify Chrome installation
+          google-chrome --version
+          
+      - name: Install ChromeDriver
+        run: |
           # Get the installed Chrome version
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+' | head -1 | cut -d '.' -f 1-3)
 
-          # Install the matching ChromeDriver version
-          echo "Installing ChromeDriver..."
+          echo "Installed Chrome version: $CHROME_VERSION"
+
+          # Fetch the matching ChromeDriver version
+          echo "Fetching the latest ChromeDriver for version $CHROME_VERSION"
           CHROME_DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
 
-          # Check if the version was successfully fetched
+          # Fallback if specific version is not found
           if [ -z "$CHROME_DRIVER_VERSION" ]; then
-            echo "Failed to get the ChromeDriver version. Falling back to the latest stable version."
+            echo "Specific ChromeDriver version for $CHROME_VERSION not found. Using the latest stable version."
             CHROME_DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
           fi
+
+          echo "Installing ChromeDriver version: $CHROME_DRIVER_VERSION"
 
           # Download and install ChromeDriver
           wget -N "https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
@@ -60,7 +69,6 @@ jobs:
 
           # Verify ChromeDriver installation
           chromedriver --version
-
 
         env:
           HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}

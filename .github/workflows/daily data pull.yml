@@ -26,7 +26,7 @@ jobs:
       - name: Install Chrome
         uses: logikal-io/install-chrome@v1.0.1
         with:
-          version: 'latest'
+          version: 129.0.6668.70-1
           
         env:
           HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}

@@ -21,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-
+          
       - name: Install Browsers
         run: |
           # Update package list
@@ -41,24 +41,26 @@ jobs:
 
           # Install the matching ChromeDriver version
           echo "Installing ChromeDriver..."
-          CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION | tr -d '\r')
-          wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
-          sudo unzip chromedriver_linux64.zip -d /usr/local/bin
+          CHROME_DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+
+          # Check if the version was successfully fetched
+          if [ -z "$CHROME_DRIVER_VERSION" ]; then
+            echo "Failed to get the ChromeDriver version. Falling back to the latest stable version."
+            CHROME_DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          fi
+
+          # Download and install ChromeDriver
+          wget -N "https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+
+          # Clean up
           rm chromedriver_linux64.zip
 
-          # Install Firefox (alternative)
-          echo "Installing Firefox..."
-          sudo apt-get install -y firefox
+          # Verify ChromeDriver installation
+          chromedriver --version
 
-          # Install GeckoDriver (for Firefox)
-          echo "Installing GeckoDriver..."
-          GECKO_DRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep 'tag_name' | cut -d '"' -f 4)
-          wget https://github.com/mozilla/geckodriver/releases/download/${GECKO_DRIVER_VERSION}/geckodriver-${GECKO_DRIVER_VERSION}-linux64.tar.gz
-          tar -xzf geckodriver-${GECKO_DRIVER_VERSION}-linux64.tar.gz
-          sudo mv geckodriver /usr/local/bin/
-          rm geckodriver-${GECKO_DRIVER_VERSION}-linux64.tar.gz
-
-          echo "Browser and driver installation complete."
 
         env:
           HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}

@@ -11,29 +11,58 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # Upgrade to v3
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4  # Upgrade to v4
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'  # Specify your Python version
 
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
+          
+      - name: Install Google Chrome for Testing (CfT)
+        run: |
+          # Fetch the latest stable Chrome for Testing
+          echo "Fetching the latest stable Chrome for Testing version..."
+          CHROME_URL=$(curl -sS "https://googlechromelabs.github.io/chrome-for-testing/latest-versions-per-milestone-with-downloads.json" | jq -r '.["115"].downloads.chrome[].url' | grep "linux64" | head -n 1)
 
-          
-      - name: Install Chrome
-        uses: logikal-io/install-chrome@v1.0.1
-        with:
-          version: 'latest'
-          
-        env:
-          HCSS_USERNAME: ${{ secrets.HCSS_USERNAME }}
-          HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
-          EMAIL: ${{ secrets.EMAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}
+          # Download and install Chrome
+          echo "Downloading Chrome from $CHROME_URL"
+          wget $CHROME_URL -O google-chrome-stable_linux64.deb
+          sudo apt-get install -y ./google-chrome-stable_linux64.deb
+
+          # Clean up
+          rm google-chrome-stable_linux64.deb
+
+          # Verify Chrome installation
+          google-chrome --version
+
+      - name: Install ChromeDriver
+        run: |
+          # Get the installed Chrome version
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+' | head -1 | cut -d '.' -f 1-3)
+
+          echo "Installed Chrome version: $CHROME_VERSION"
+
+          # Fetch the latest ChromeDriver for this version from CfT
+          echo "Fetching the latest ChromeDriver for version $CHROME_VERSION"
+          CHROME_DRIVER_URL=$(curl -sS "https://googlechromelabs.github.io/chrome-for-testing/latest-patch-versions-per-build-with-downloads.json" | jq -r --arg version "$CHROME_VERSION" '.[$version].downloads.chromedriver[].url' | head -1)
+
+          echo "Downloading ChromeDriver from $CHROME_DRIVER_URL"
+
+          # Download and install ChromeDriver
+          wget -N "$CHROME_DRIVER_URL" -O chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+
+          # Clean up
+          rm chromedriver_linux64.zip
+
+          # Verify ChromeDriver installation
+          chromedriver --version
 
       - name: Run main.py
         run: python main.py
@@ -42,4 +71,3 @@ jobs:
           HCSS_PASSWORD: ${{ secrets.HCSS_PASSWORD }}
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}

@@ -1,88 +1,76 @@
 # login.py
 
 import os
-import traceback
+import time
 from dotenv import load_dotenv
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import StaleElementReferenceException, ElementNotInteractableException
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from utils_inspector import inspect, click, handle_error, navigate
-from utils_logging import log_message, take_screenshot
+from utils_inspector import inspect, click
+from utils_logging import logger, handle_error
+from utils_yaml import selectors
 
 # Load environment variables from .env file
 load_dotenv()
+logger.debug("Environment variables loaded")
 USERNAME = os.getenv("HCSS_USERNAME")
 PASSWORD = os.getenv("HCSS_PASSWORD")
+logger.debug(f"Loaded USERNAME: {USERNAME}, PASSWORD: {'*' * len(PASSWORD) if PASSWORD else 'None'}")
+
 
 def login(driver):
-    safetydash_url = "https://safety.hcssapps.com/Home/Dashboard"
-    
-    # Locators
+    logger.debug("Entering login function")
+    logger.debug(f"Selectors loaded: {selectors}")
+
+    # Define locators using a dictionary
     locators = {
-        "username": (By.CSS_SELECTOR, "input[name='username']"),
-        "password": (By.CSS_SELECTOR, "input[name='password']"),
-        "next_button": (By.CSS_SELECTOR, "button.login-button[type='submit']"),
-        "login_button": (By.CSS_SELECTOR, "button[type='submit']"),
-        "dashboard": (By.CSS_SELECTOR, "div.Page-headerInnerWrapper")
+        'username': (By.CSS_SELECTOR, selectors['login']['username']),
+        'password': (By.CSS_SELECTOR, selectors['login']['password']),
+        'next_button': (By.CSS_SELECTOR, selectors['login']['next_button']),
+        'login_button': (By.CSS_SELECTOR, selectors['login']['login_button']),
+        'error_message': (By.CSS_SELECTOR, selectors['login']['error_message']),
     }
 
-    log_message("INFO", "Attempting to log in")
-    
-    # Navigate to the dashboard URL
-    if not navigate(driver, safetydash_url):
-        handle_error(driver, "login", None, "Failed to navigate to the dashboard URL.")
-        return False  # Return False on failure
+    logger.info("Attempting to log in")
 
-    try:
-        # Inspect and populate username
-        log_message("INFO", "Locating and populating username field")
-        if not inspect(driver, locators["username"], "Username field"):
-            handle_error(driver, "login", None, "Failed to inspect username field.")
-            return False  # Return False on failure
+    # Inspect and populate username
+    logger.info("Inspecting username field")
+    if not inspect(driver, locators['username'], "Username field"):
+        handle_error(driver, "login", Exception("Username field not found"), "Failed to inspect username field")
+        return False
 
-        driver.find_element(*locators["username"]).send_keys(USERNAME)
+    logger.debug("Entering username")
+    start_time = time.time()
+    driver.find_element(*locators['username']).send_keys(USERNAME)
+    logger.debug(f"Username entered successfully. Time taken: {time.time() - start_time:.2f} seconds")
 
-        # Click Next button
-        log_message("INFO", "Clicking next button")
-        if not click(driver, locators["next_button"], "Next button"):
-            handle_error(driver, "login", None, "Failed to click next button.")
-            return False  # Return False on failure
+    # Click Next button
+    logger.debug("Clicking Next button")
+    if not click(driver, locators['next_button'], "Next button"):
+        handle_error(driver, "login", None, "Failed to click next button")
+        return False
 
-        # Wait for password field and inspect it
-        log_message("INFO", "Waiting for and inspecting password field")
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(locators["password"]))
-        if not inspect(driver, locators["password"], "Password field"):
-            handle_error(driver, "login", None, "Failed to inspect password field.")
-            return False  # Return False on failure
+    # Wait for password field and inspect it
+    logger.debug("Inspecting password field")
+    if not inspect(driver, locators['password'], "Password field"):
+        handle_error(driver, "login", None, "Failed to inspect password field")
+        return False
 
-        driver.find_element(*locators["password"]).send_keys(PASSWORD)
+    logger.debug("Entering password")
+    start_time = time.time()
+    driver.find_element(*locators['password']).send_keys(PASSWORD)
+    logger.debug(f"Password entered successfully. Time taken: {time.time() - start_time:.2f} seconds")
 
-        # Click Login button
-        log_message("INFO", "Clicking login button")
-        if not click(driver, locators["login_button"], "Login button"):
-            handle_error(driver, "login", None, "Failed to click login button.")
-            return False  # Return False on failure
+    # Click Login button
+    logger.debug("Clicking Login button")
+    if not click(driver, locators['login_button'], "Login button"):
+        handle_error(driver, "login", None, "Failed to click login button")
+        return False
 
-        # Confirm successful login
-        log_message("INFO", "Confirming login")
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located(locators["dashboard"]))
-        current_url = driver.current_url
-        log_message("INFO", f"Current URL: {current_url}")
-        
-        if current_url == safetydash_url:
-            log_message("SUCCESS", "Successfully navigated to the dashboard")
-            return True  # Return True on success
-        else:
-            handle_error(driver, "login", None, f"Expected URL: {safetydash_url}, but got: {current_url}")
-            return False  # Return False on failure
+    # Check for error message
+    if driver.find_elements(*locators['error_message']):
+        error_message = driver.find_element(*locators['error_message']).text
+        logger.error(f"Login failed: {error_message}")
+        return False
 
-    except (StaleElementReferenceException, ElementNotInteractableException) as e:
-        handle_error(driver, "login", e, "Element issue during login")
-        return False  # Return False on failure
-
-    except Exception as e:
-        error_info = traceback.format_exc()
-        log_message("ERROR", f"An unexpected error occurred in login: {error_info}")
-        handle_error(driver, "login", e, "An unexpected error occurred during login")
-        return False  # Return False on failure
+    logger.info("Login successful")
+    logger.debug("Exiting login function")
+    return True  # Return True on successful login

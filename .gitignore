@@ -3,3 +3,5 @@ junk/
 __pycache__/
 downloads/
 screenshots/
+paths/
+logs/XHR.log

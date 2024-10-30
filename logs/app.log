@@ -1,256 +1,911 @@
 *******************************************************
-2024-09-25 18:56:37,141 - DEBUG - This is a debug message for testing.
-2024-09-25 18:56:37,158 - INFO - Starting main script
-2024-09-25 18:56:37,158 - INFO - Deleted all screenshots in screenshots
-2024-09-25 18:56:37,158 - INFO - Setting up Chrome driver with headless options
-2024-09-25 18:56:37,931 - INFO - Chrome driver setup complete
-2024-09-25 18:56:37,932 - INFO - Attempting to log in
-2024-09-25 18:56:38,623 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 18:56:38,624 - INFO - Locating and populating username field
-2024-09-25 18:56:40,671 - INFO - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
-2024-09-25 18:56:40,763 - INFO - Clicking next button
-2024-09-25 18:56:42,801 - INFO - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 18:56:42,838 - INFO - Successfully clicked Next button
-2024-09-25 18:56:42,838 - INFO - Waiting for and inspecting password field
-2024-09-25 18:56:45,401 - INFO - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
-2024-09-25 18:56:45,445 - INFO - Clicking login button
-2024-09-25 18:56:47,502 - INFO - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 18:56:51,136 - INFO - Successfully clicked Login button
-2024-09-25 18:56:51,136 - INFO - Confirming login
-2024-09-25 18:56:51,596 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 18:56:51,601 - INFO - Successfully navigated to the dashboard
-2024-09-25 18:56:51,607 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 18:56:52,027 - INFO - Navigating to https://safety.hcssapps.com/Inspection/Inspection
-2024-09-25 18:56:52,027 - INFO - Attempt 1 for verifying page load
-2024-09-25 18:56:54,083 - INFO - Inspecting Inspection History Results Grid: Tag=table, Displayed=True, Enabled=True
-2024-09-25 18:56:54,083 - INFO - Successfully verified presence of Inspection History Results Grid
-2024-09-25 18:56:54,083 - INFO - Initial inspections page loaded
-2024-09-25 18:56:54,083 - INFO - Setting date range: 09/24/2024 to 09/25/2024
-2024-09-25 18:56:56,121 - INFO - Inspecting Date Range Select: Tag=select, Displayed=True, Enabled=True
-2024-09-25 18:56:58,166 - INFO - Inspecting Custom Option: Tag=option, Displayed=True, Enabled=True
-2024-09-25 18:56:58,199 - INFO - Successfully clicked Custom Option
-2024-09-25 18:57:00,237 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 18:57:02,342 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 18:57:04,436 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 18:57:06,499 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 18:57:06,554 - INFO - Date range set
-2024-09-25 18:57:08,591 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 18:57:10,625 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 18:57:10,665 - INFO - Successfully clicked Apply Button
-2024-09-25 18:57:12,703 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
-2024-09-25 18:57:12,714 - INFO - Updated number of entries: 171
-2024-09-25 18:57:12,714 - INFO - Date filter applied successfully
-2024-09-25 18:57:12,714 - INFO - Clicking the Export button to reveal options
-2024-09-25 18:57:14,752 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 18:57:14,806 - INFO - Successfully clicked Export Button
-2024-09-25 18:57:14,806 - INFO - Clicking the option to export Inspection Summary
-2024-09-25 18:57:16,843 - INFO - Inspecting Inspection Summary: Tag=li, Displayed=True, Enabled=True
-2024-09-25 18:57:16,918 - INFO - Successfully clicked Inspection Summary
-2024-09-25 18:57:16,919 - INFO - Clicking 'Select All' for Summary
-2024-09-25 18:57:29,097 - ERROR - Unexpected error while inspecting Select All Option: Message: 
-
-2024-09-25 18:57:29,097 - ERROR - Error inspecting Select All Option Error: Message: 
-
-2024-09-25 18:57:29,218 - INFO - Screenshot taken: screenshots/001_error_screenshot_20240925_185729.png
-2024-09-25 18:57:29,218 - INFO - Got list of files: []
-2024-09-25 18:57:29,218 - INFO - Generating email
-2024-09-25 18:57:29,225 - INFO - Sending email
-2024-09-25 18:57:30,974 - INFO - Email sent successfully
-2024-09-25 18:57:30,975 - INFO - Downloads emptied
-2024-09-25 18:57:30,985 - INFO - Downloads emptied
+2024-10-30 16:24:40,723 - DEBUG - This is a debug message for testing.
+2024-10-30 16:24:40,723 - INFO - Displayed standard colors.
+2024-10-30 16:24:40,723 - INFO - Displayed bright colors.
+2024-10-30 16:24:40,724 - INFO - Displayed background colors.
+2024-10-30 16:24:40,724 - INFO - Displayed bright background colors.
+2024-10-30 16:24:40,724 - DEBUG - This is a debug message for testing.
+2024-10-30 16:24:40,724 - INFO - This is an info message for testing.
+2024-10-30 16:24:40,724 - WARNING - This is a warning message for testing.
+2024-10-30 16:24:40,724 - ERROR - This is an error message for testing.
+2024-10-30 16:24:40,724 - CRITICAL - This is a critical message for testing.
 
 
     *******************************************************
     *                NEW SCRIPT EXECUTION                 *
     *******************************************************
     
-Execution started at: 2024-09-25 18:58:00
+Execution started at: 2024-10-30 16:26:12
 *******************************************************
-2024-09-25 18:58:00,733 - DEBUG - This is a debug message for testing.
-2024-09-25 18:58:00,759 - INFO - Starting main script
-2024-09-25 18:58:00,760 - INFO - Deleted all screenshots in screenshots
-2024-09-25 18:58:00,760 - INFO - Setting up Chrome driver with headless options
-2024-09-25 18:58:01,550 - INFO - Chrome driver setup complete
-2024-09-25 18:58:01,551 - INFO - Attempting to log in
-2024-09-25 18:58:02,279 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 18:58:02,279 - INFO - Locating and populating username field
-2024-09-25 18:58:04,321 - INFO - Inspecting Username field: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:04,402 - INFO - Clicking next button
-2024-09-25 18:58:06,448 - INFO - Inspecting Next button: Attempt 1/1, Displayed=True, Enabled=True
-2024-09-25 18:58:06,484 - INFO - Successfully clicked Next button
-2024-09-25 18:58:06,484 - INFO - Waiting for and inspecting password field
-2024-09-25 18:58:09,058 - INFO - Inspecting Password field: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:09,115 - INFO - Clicking login button
-2024-09-25 18:58:11,159 - INFO - Inspecting Login button: Attempt 1/1, Displayed=True, Enabled=True
-2024-09-25 18:58:11,351 - INFO - Successfully clicked Login button
-2024-09-25 18:58:11,351 - INFO - Confirming login
-2024-09-25 18:58:15,101 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 18:58:15,101 - INFO - Successfully navigated to the dashboard
-2024-09-25 18:58:15,104 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 18:58:15,815 - INFO - Navigating to https://safety.hcssapps.com/Inspection/Inspection
-2024-09-25 18:58:15,816 - INFO - Attempt 1 for verifying page load
-2024-09-25 18:58:17,850 - INFO - Inspecting Inspection History Results Grid: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:17,850 - INFO - Successfully verified presence of Inspection History Results Grid
-2024-09-25 18:58:17,851 - INFO - Initial inspections page loaded
-2024-09-25 18:58:17,851 - INFO - Setting date range: 09/24/2024 to 09/25/2024
-2024-09-25 18:58:19,922 - INFO - Inspecting Date Range Select: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:21,957 - INFO - Inspecting Custom Option: Attempt 1/1, Displayed=True, Enabled=True
-2024-09-25 18:58:21,990 - INFO - Successfully clicked Custom Option
-2024-09-25 18:58:24,029 - INFO - Inspecting From Date Input: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:26,097 - INFO - Inspecting From Date Input: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:28,193 - INFO - Inspecting To Date Input: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:30,256 - INFO - Inspecting To Date Input: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:30,321 - INFO - Date range set
-2024-09-25 18:58:32,357 - INFO - Inspecting Apply Button: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:34,389 - INFO - Inspecting Apply Button: Attempt 1/1, Displayed=True, Enabled=True
-2024-09-25 18:58:34,432 - INFO - Successfully clicked Apply Button
-2024-09-25 18:58:36,467 - INFO - Inspecting Results Grid Info: Attempt 1/3, Displayed=True, Enabled=True
-2024-09-25 18:58:36,478 - INFO - Updated number of entries: 171
-2024-09-25 18:58:36,478 - INFO - Date filter applied successfully
-2024-09-25 18:58:36,478 - INFO - Clicking the Export button to reveal options
-2024-09-25 18:58:38,511 - INFO - Inspecting Export Button: Attempt 1/1, Displayed=True, Enabled=True
-2024-09-25 18:58:38,547 - INFO - Successfully clicked Export Button
-2024-09-25 18:58:38,548 - INFO - Clicking the option to export Inspection Summary
-2024-09-25 18:58:40,582 - INFO - Inspecting Inspection Summary: Attempt 1/1, Displayed=True, Enabled=True
-2024-09-25 18:58:40,667 - INFO - Successfully clicked Inspection Summary
-2024-09-25 18:58:40,667 - INFO - Clicking 'Select All' for Summary
-2024-09-25 18:58:52,827 - ERROR - Unexpected error while inspecting Select All Option: Message: 
-
-2024-09-25 18:58:52,827 - ERROR - Error inspecting Select All Option Error: Message: 
-
-2024-09-25 18:58:52,948 - INFO - Screenshot taken: screenshots/001_error_screenshot_20240925_185852.png
-2024-09-25 18:58:52,948 - INFO - Got list of files: []
-2024-09-25 18:58:52,948 - INFO - Generating email
-2024-09-25 18:58:52,958 - INFO - Sending email
-2024-09-25 18:58:54,467 - INFO - Email sent successfully
-2024-09-25 18:58:54,468 - INFO - Downloads emptied
-2024-09-25 18:58:54,490 - INFO - Downloads emptied
+2024-10-30 16:26:12,772 - DEBUG - This is a debug message for testing.
+2024-10-30 16:26:12,773 - INFO - Displayed standard colors.
+2024-10-30 16:26:12,773 - INFO - Displayed bright colors.
+2024-10-30 16:26:12,773 - INFO - Displayed background colors.
+2024-10-30 16:26:12,773 - INFO - Displayed bright background colors.
+2024-10-30 16:26:12,773 - DEBUG - This is a debug message for testing.
+2024-10-30 16:26:12,774 - INFO - This is an info message for testing.
+2024-10-30 16:26:12,774 - WARNING - This is a warning message for testing.
+2024-10-30 16:26:12,774 - ERROR - This is an error message for testing.
+2024-10-30 16:26:12,774 - CRITICAL - This is a critical message for testing.
 
 
     *******************************************************
     *                NEW SCRIPT EXECUTION                 *
     *******************************************************
     
-Execution started at: 2024-09-25 19:01:23
+Execution started at: 2024-10-30 16:26:47
 *******************************************************
-2024-09-25 19:01:23,850 - DEBUG - This is a debug message for testing.
-2024-09-25 19:01:23,866 - INFO - Starting main script
-2024-09-25 19:01:23,867 - INFO - Deleted all screenshots in screenshots
-2024-09-25 19:01:23,867 - INFO - Setting up Chrome driver with headless options
-2024-09-25 19:01:24,662 - INFO - Chrome driver setup complete
-2024-09-25 19:01:24,663 - INFO - Attempting to log in
-2024-09-25 19:01:25,349 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 19:01:25,351 - INFO - Locating and populating username field
-2024-09-25 19:01:27,391 - INFO - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:01:27,477 - INFO - Clicking next button
-2024-09-25 19:01:29,513 - INFO - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:01:29,549 - INFO - Successfully clicked Next button
-2024-09-25 19:01:29,550 - INFO - Waiting for and inspecting password field
-2024-09-25 19:01:31,612 - INFO - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:01:31,677 - INFO - Clicking login button
-2024-09-25 19:01:33,708 - INFO - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:01:35,009 - INFO - Successfully clicked Login button
-2024-09-25 19:01:35,009 - INFO - Confirming login
-2024-09-25 19:01:37,582 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 19:01:37,583 - INFO - Successfully navigated to the dashboard
-2024-09-25 19:01:37,644 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 19:01:38,198 - INFO - Navigating to https://safety.hcssapps.com/Inspection/Inspection
-2024-09-25 19:01:38,199 - INFO - Attempt 1 for verifying page load
-2024-09-25 19:01:40,231 - INFO - Inspecting Inspection History Results Grid: Tag=table, Displayed=True, Enabled=True
-2024-09-25 19:01:40,231 - INFO - Successfully verified presence of Inspection History Results Grid
-2024-09-25 19:01:40,231 - INFO - Initial inspections page loaded
-2024-09-25 19:01:40,231 - INFO - Setting date range: 09/24/2024 to 09/25/2024
-2024-09-25 19:01:42,262 - INFO - Inspecting Date Range Select: Tag=select, Displayed=True, Enabled=True
-2024-09-25 19:01:44,293 - INFO - Inspecting Custom Option: Tag=option, Displayed=True, Enabled=True
-2024-09-25 19:01:44,331 - INFO - Successfully clicked Custom Option
-2024-09-25 19:01:46,363 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:01:48,428 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:01:50,517 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:01:52,574 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:01:52,650 - INFO - Date range set
-2024-09-25 19:01:54,683 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:01:56,750 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:01:56,827 - INFO - Successfully clicked Apply Button
-2024-09-25 19:01:58,899 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
-2024-09-25 19:01:58,910 - INFO - Updated number of entries: 171
-2024-09-25 19:01:58,910 - INFO - Date filter applied successfully
-2024-09-25 19:01:58,910 - INFO - Clicking the Export button to reveal options
-2024-09-25 19:02:00,941 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:00,976 - INFO - Successfully clicked Export Button
-2024-09-25 19:02:00,976 - INFO - Clicking the option to export Inspection Summary
-2024-09-25 19:02:03,007 - INFO - Inspecting Inspection Summary: Tag=li, Displayed=True, Enabled=True
-2024-09-25 19:02:03,088 - INFO - Successfully clicked Inspection Summary
-2024-09-25 19:02:03,089 - INFO - Clicking 'Select All' for Summary
-2024-09-25 19:02:05,124 - INFO - Inspecting Select All Option: Tag=input, Displayed=False, Enabled=True
-2024-09-25 19:02:05,124 - INFO - Select All Option is not visible.
-2024-09-25 19:02:05,124 - INFO - Retrying...
-2024-09-25 19:02:05,124 - ERROR - Select All Option could not be inspected after 1 attempts.
-2024-09-25 19:02:05,124 - INFO - Select All Option could not be inspected, cannot click.
-2024-09-25 19:02:05,124 - INFO - Clicking the Export button for Summary
-2024-09-25 19:02:07,157 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:07,199 - INFO - Successfully clicked Export Button
-2024-09-25 19:02:07,200 - INFO - File export initiated
-2024-09-25 19:02:07,200 - INFO - Waiting for file download in './downloads' with prefixes: ['InspectionSummaryReport']
-2024-09-25 19:02:08,202 - INFO - File 'InspectionSummaryReport_09-25-2024_19_02_07.xlsx' downloaded successfully.
-2024-09-25 19:02:08,202 - INFO - Clicking the Export button to reveal options
-2024-09-25 19:02:10,240 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:10,273 - INFO - Successfully clicked Export Button
-2024-09-25 19:02:10,273 - INFO - Clicking the option to export Inspection Details
-2024-09-25 19:02:12,304 - INFO - Inspecting Inspection Details: Tag=li, Displayed=True, Enabled=True
-2024-09-25 19:02:12,343 - INFO - Successfully clicked Inspection Details
-2024-09-25 19:02:12,344 - INFO - Clicking 'Select All' for Details
-2024-09-25 19:02:14,376 - INFO - Inspecting Select All Option: Tag=input, Displayed=False, Enabled=True
-2024-09-25 19:02:14,376 - INFO - Select All Option is not visible.
-2024-09-25 19:02:14,376 - INFO - Retrying...
-2024-09-25 19:02:14,376 - ERROR - Select All Option could not be inspected after 1 attempts.
-2024-09-25 19:02:14,376 - INFO - Select All Option could not be inspected, cannot click.
-2024-09-25 19:02:14,376 - INFO - Clicking the Export button for Details
-2024-09-25 19:02:16,408 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:16,595 - INFO - Successfully clicked Export Button
-2024-09-25 19:02:16,597 - INFO - File export initiated
-2024-09-25 19:02:16,598 - INFO - Waiting for file download in './downloads' with prefixes: ['InspectionItemDetails']
-2024-09-25 19:02:18,600 - INFO - File 'InspectionItemDetails_09-25-2024_19_02_18.xlsx' downloaded successfully.
-2024-09-25 19:02:20,704 - INFO - Navigating to https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 19:02:20,743 - INFO - Current URL: https://safety.hcssapps.com/Home/Dashboard
-2024-09-25 19:02:20,746 - INFO - Navigating to https://safety.hcssapps.com/NearMiss/NearMiss
-2024-09-25 19:02:20,964 - INFO - Navigating to https://safety.hcssapps.com/NearMiss/NearMiss
-2024-09-25 19:02:20,965 - INFO - Attempt 1 for verifying page load
-2024-09-25 19:02:22,997 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
-2024-09-25 19:02:22,997 - INFO - Successfully verified presence of Results Grid Info
-2024-09-25 19:02:22,997 - INFO - Initial Near Miss page loaded
-2024-09-25 19:02:22,997 - INFO - Setting date range: 09/24/2024 to 09/25/2024
-2024-09-25 19:02:25,069 - INFO - Inspecting Date Range Select: Tag=select, Displayed=True, Enabled=True
-2024-09-25 19:02:27,117 - INFO - Inspecting Custom Option: Tag=option, Displayed=True, Enabled=True
-2024-09-25 19:02:27,160 - INFO - Successfully clicked Custom Option
-2024-09-25 19:02:29,193 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:02:31,256 - INFO - Inspecting From Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:02:33,345 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:02:35,418 - INFO - Inspecting To Date Input: Tag=input, Displayed=True, Enabled=True
-2024-09-25 19:02:35,476 - INFO - Date range set
-2024-09-25 19:02:37,528 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:39,559 - INFO - Inspecting Apply Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:39,602 - INFO - Successfully clicked Apply Button
-2024-09-25 19:02:41,631 - INFO - Inspecting Results Grid Info: Tag=div, Displayed=True, Enabled=True
-2024-09-25 19:02:41,638 - INFO - Updated number of entries: 2
-2024-09-25 19:02:41,638 - INFO - Date filter applied successfully
-2024-09-25 19:02:41,638 - INFO - Clicking the Export button for Near Miss
-2024-09-25 19:02:43,670 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:43,704 - INFO - Successfully clicked Export Button
-2024-09-25 19:02:43,705 - INFO - Clicking the 'Select All' option for Near Miss
-2024-09-25 19:02:45,736 - INFO - Inspecting Select All Option: Tag=input, Displayed=False, Enabled=True
-2024-09-25 19:02:45,736 - INFO - Select All Option is not visible.
-2024-09-25 19:02:45,736 - INFO - Retrying...
-2024-09-25 19:02:45,736 - ERROR - Select All Option could not be inspected after 1 attempts.
-2024-09-25 19:02:45,736 - INFO - Select All Option could not be inspected, cannot click.
-2024-09-25 19:02:45,736 - INFO - Clicking the Export button to download Near Miss file
-2024-09-25 19:02:47,790 - INFO - Inspecting Export Button: Tag=button, Displayed=True, Enabled=True
-2024-09-25 19:02:47,836 - INFO - Successfully clicked Export Button
-2024-09-25 19:02:47,836 - INFO - Waiting for file download in './downloads' with prefixes: ['NearMiss']
-2024-09-25 19:02:48,837 - INFO - File 'NearMiss_09-25-2024 19_02_47.xlsx' downloaded successfully.
-2024-09-25 19:02:48,837 - INFO - Near Miss file export initiated and completed successfully.
-2024-09-25 19:02:48,837 - INFO - Got list of files: ['InspectionSummaryReport_09-25-2024_19_02_07.xlsx', 'InspectionItemDetails_09-25-2024_19_02_18.xlsx', 'NearMiss_09-25-2024 19_02_47.xlsx']
-2024-09-25 19:02:48,837 - INFO - Generating email
-2024-09-25 19:02:48,852 - INFO - Sending email
-2024-09-25 19:02:52,659 - INFO - Email sent successfully
-2024-09-25 19:02:52,683 - INFO - Downloads emptied
-2024-09-25 19:02:52,754 - INFO - Main script completed successfully.
+2024-10-30 16:26:47,000 - DEBUG - This is a debug message for testing.
+2024-10-30 16:26:47,001 - INFO - Displayed standard colors.
+2024-10-30 16:26:47,001 - INFO - Displayed bright colors.
+2024-10-30 16:26:47,001 - INFO - Displayed background colors.
+2024-10-30 16:26:47,002 - INFO - Displayed bright background colors.
+2024-10-30 16:26:47,002 - DEBUG - This is a debug message for testing.
+2024-10-30 16:26:47,002 - INFO - This is an info message for testing.
+2024-10-30 16:26:47,002 - WARNING - This is a warning message for testing.
+2024-10-30 16:26:47,002 - ERROR - This is an error message for testing.
+2024-10-30 16:26:47,002 - CRITICAL - This is a critical message for testing.
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 16:46:35
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 16:46:35
+*******************************************************
+2024-10-30 16:46:35,991 - DEBUG - This is a debug message for testing.
+2024-10-30 16:46:35,991 - INFO - Starting main script
+2024-10-30 16:46:35,991 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 16:46:35,991 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 16:46:36,781 - INFO - Chrome driver setup complete
+2024-10-30 16:46:36,822 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 16:46:36,823 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 16:46:47,478 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 16:46:47,483 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 16:46:47,484 - DEBUG - Entering login function
+2024-10-30 16:46:47,484 - INFO - Attempting to log in
+2024-10-30 16:46:47,484 - INFO - Inspecting username field
+2024-10-30 16:46:47,785 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 16:46:47,785 - WARNING - Username field is not visible.
+2024-10-30 16:46:47,786 - DEBUG - Retrying...
+2024-10-30 16:46:48,082 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 16:46:48,084 - DEBUG - Entering username
+2024-10-30 16:46:48,212 - DEBUG - Username entered successfully. Time taken: 0.13 seconds
+2024-10-30 16:46:48,212 - DEBUG - Clicking Next button
+2024-10-30 16:46:48,494 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 16:46:48,539 - DEBUG - Successfully clicked Next button
+2024-10-30 16:46:48,539 - DEBUG - Inspecting password field
+2024-10-30 16:46:48,820 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 16:46:48,820 - DEBUG - Entering password
+2024-10-30 16:46:48,867 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 16:46:48,867 - DEBUG - Clicking Login button
+2024-10-30 16:46:49,149 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 16:46:50,291 - DEBUG - Successfully clicked Login button
+2024-10-30 16:46:50,291 - DEBUG - Checking for error message
+2024-10-30 16:46:56,713 - ERROR - Timeout while waiting for Error message to appear.
+2024-10-30 16:46:56,713 - INFO - Login successful or no error message displayed
+2024-10-30 16:46:56,713 - DEBUG - Exiting login function
+2024-10-30 16:47:01,567 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 16:47:01,644 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 16:47:02,106 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 16:47:02,154 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 16:53:45
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 16:53:45
+*******************************************************
+2024-10-30 16:53:45,174 - DEBUG - This is a debug message for testing.
+2024-10-30 16:53:45,174 - INFO - Starting main script
+2024-10-30 16:53:45,174 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 16:53:45,174 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 16:53:45,955 - INFO - Chrome driver setup complete
+2024-10-30 16:53:46,008 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 16:53:46,008 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 16:53:56,606 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 16:53:56,612 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 16:53:56,612 - DEBUG - Entering login function
+2024-10-30 16:53:56,612 - INFO - Attempting to log in
+2024-10-30 16:53:56,613 - INFO - Inspecting username field
+2024-10-30 16:53:56,897 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 16:53:56,897 - WARNING - Username field is not visible.
+2024-10-30 16:53:56,897 - DEBUG - Retrying...
+2024-10-30 16:53:57,179 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 16:53:57,179 - DEBUG - Entering username
+2024-10-30 16:53:57,266 - DEBUG - Username entered successfully. Time taken: 0.09 seconds
+2024-10-30 16:53:57,269 - DEBUG - Clicking Next button
+2024-10-30 16:53:57,547 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 16:53:57,583 - DEBUG - Successfully clicked Next button
+2024-10-30 16:53:57,583 - DEBUG - Inspecting password field
+2024-10-30 16:53:57,870 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 16:53:57,870 - DEBUG - Entering password
+2024-10-30 16:53:57,924 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 16:53:57,924 - DEBUG - Clicking Login button
+2024-10-30 16:53:58,218 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 16:53:59,339 - DEBUG - Successfully clicked Login button
+2024-10-30 16:53:59,339 - INFO - Login successful or no error message displayed
+2024-10-30 16:53:59,340 - DEBUG - Exiting login function
+2024-10-30 16:54:03,534 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 16:54:03,780 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 16:54:04,179 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 16:54:04,195 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 16:55:33
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 16:55:33
+*******************************************************
+2024-10-30 16:55:33,387 - DEBUG - This is a debug message for testing.
+2024-10-30 16:55:33,387 - INFO - Starting main script
+2024-10-30 16:55:33,388 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 16:55:33,388 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 16:55:34,176 - INFO - Chrome driver setup complete
+2024-10-30 16:55:34,216 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 16:55:34,216 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 16:55:44,812 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 16:55:44,818 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 16:55:44,818 - DEBUG - Entering login function
+2024-10-30 16:55:44,818 - INFO - Attempting to log in
+2024-10-30 16:55:44,818 - INFO - Inspecting username field
+2024-10-30 16:55:45,104 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 16:55:45,104 - WARNING - Username field is not visible.
+2024-10-30 16:55:45,104 - DEBUG - Retrying...
+2024-10-30 16:55:45,388 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 16:55:45,389 - DEBUG - Entering username
+2024-10-30 16:55:45,474 - DEBUG - Username entered successfully. Time taken: 0.09 seconds
+2024-10-30 16:55:45,474 - DEBUG - Clicking Next button
+2024-10-30 16:55:45,763 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 16:55:45,800 - DEBUG - Successfully clicked Next button
+2024-10-30 16:55:45,800 - DEBUG - Inspecting password field
+2024-10-30 16:55:46,079 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 16:55:46,079 - DEBUG - Entering password
+2024-10-30 16:55:46,126 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 16:55:46,126 - DEBUG - Clicking Login button
+2024-10-30 16:55:46,406 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 16:55:47,452 - DEBUG - Successfully clicked Login button
+2024-10-30 16:55:47,453 - INFO - Login successful
+2024-10-30 16:55:47,453 - DEBUG - Exiting login function
+2024-10-30 16:55:47,592 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 16:55:50,411 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 16:55:50,930 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 16:55:50,939 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 16:55:53,314 - ERROR - Timeout while waiting for start date input to appear.
+2024-10-30 16:55:53,314 - WARNING - start date input could not be inspected, cannot click.
+2024-10-30 16:55:55,631 - ERROR - Timeout while waiting for end date input to appear.
+2024-10-30 16:55:55,631 - WARNING - end date input could not be inspected, cannot click.
+2024-10-30 16:55:57,950 - ERROR - Timeout while waiting for filter button to appear.
+2024-10-30 16:55:57,951 - WARNING - filter button could not be inspected, cannot click.
+2024-10-30 16:55:57,951 - ERROR - Export failed Error in Inspection_export: 'Inspection'
+2024-10-30 16:55:57,956 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 16:55:58,084 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_165557.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:19:55
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:19:55
+*******************************************************
+2024-10-30 17:19:55,066 - DEBUG - This is a debug message for testing.
+2024-10-30 17:19:55,066 - INFO - Starting main script
+2024-10-30 17:19:55,067 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 17:19:55,067 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 17:19:55,834 - INFO - Chrome driver setup complete
+2024-10-30 17:19:55,875 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 17:19:55,875 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 17:20:06,537 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 17:20:06,543 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 17:20:06,544 - DEBUG - Entering login function
+2024-10-30 17:20:06,544 - INFO - Attempting to log in
+2024-10-30 17:20:06,544 - INFO - Inspecting username field
+2024-10-30 17:20:06,862 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 17:20:06,863 - WARNING - Username field is not visible.
+2024-10-30 17:20:06,863 - DEBUG - Retrying...
+2024-10-30 17:20:07,146 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:20:07,146 - DEBUG - Entering username
+2024-10-30 17:20:07,280 - DEBUG - Username entered successfully. Time taken: 0.13 seconds
+2024-10-30 17:20:07,280 - DEBUG - Clicking Next button
+2024-10-30 17:20:07,567 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:20:07,609 - DEBUG - Successfully clicked Next button
+2024-10-30 17:20:07,609 - DEBUG - Inspecting password field
+2024-10-30 17:20:07,888 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:20:07,888 - DEBUG - Entering password
+2024-10-30 17:20:07,936 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 17:20:07,937 - DEBUG - Clicking Login button
+2024-10-30 17:20:08,218 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:20:08,994 - DEBUG - Successfully clicked Login button
+2024-10-30 17:20:08,994 - INFO - Login successful
+2024-10-30 17:20:08,994 - DEBUG - Exiting login function
+2024-10-30 17:20:10,263 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 17:20:10,268 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 17:20:10,777 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:20:10,810 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 17:20:11,060 - ERROR - Unexpected error while inspecting date range dropdown: WebDriver.find_element() takes from 1 to 3 positional arguments but 17 were given
+2024-10-30 17:20:11,061 - WARNING - date range dropdown could not be inspected, cannot click.
+2024-10-30 17:20:11,061 - ERROR - Export failed Error in Inspection_export: 'Inspection'
+2024-10-30 17:20:11,065 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:20:11,219 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_172011.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:25:39
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:25:39
+*******************************************************
+2024-10-30 17:25:39,757 - DEBUG - This is a debug message for testing.
+2024-10-30 17:25:39,757 - INFO - Starting main script
+2024-10-30 17:25:39,757 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 17:25:39,757 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 17:25:40,527 - INFO - Chrome driver setup complete
+2024-10-30 17:25:40,580 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 17:25:40,580 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 17:25:51,275 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 17:25:51,283 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 17:25:51,283 - DEBUG - Entering login function
+2024-10-30 17:25:51,283 - INFO - Attempting to log in
+2024-10-30 17:25:51,283 - INFO - Inspecting username field
+2024-10-30 17:25:51,569 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 17:25:51,570 - WARNING - Username field is not visible.
+2024-10-30 17:25:51,570 - DEBUG - Retrying...
+2024-10-30 17:25:51,854 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:25:51,854 - DEBUG - Entering username
+2024-10-30 17:25:52,001 - DEBUG - Username entered successfully. Time taken: 0.15 seconds
+2024-10-30 17:25:52,001 - DEBUG - Clicking Next button
+2024-10-30 17:25:52,281 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:25:52,332 - DEBUG - Successfully clicked Next button
+2024-10-30 17:25:52,333 - DEBUG - Inspecting password field
+2024-10-30 17:25:52,612 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:25:52,613 - DEBUG - Entering password
+2024-10-30 17:25:52,677 - DEBUG - Password entered successfully. Time taken: 0.06 seconds
+2024-10-30 17:25:52,677 - DEBUG - Clicking Login button
+2024-10-30 17:25:52,965 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:25:53,159 - DEBUG - Successfully clicked Login button
+2024-10-30 17:25:53,159 - INFO - Login successful
+2024-10-30 17:25:53,159 - DEBUG - Exiting login function
+2024-10-30 17:25:59,345 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 17:25:59,447 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 17:25:59,907 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:25:59,927 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 17:26:00,214 - DEBUG - Inspecting date range select: Tag=select, Displayed=True, Enabled=True
+2024-10-30 17:26:00,271 - DEBUG - Successfully clicked date range select
+2024-10-30 17:26:00,550 - DEBUG - Inspecting Custom date option: Tag=option, Displayed=True, Enabled=True
+2024-10-30 17:26:00,577 - DEBUG - Successfully clicked Custom date option
+2024-10-30 17:26:02,931 - ERROR - Timeout while waiting for start date input to appear.
+2024-10-30 17:26:02,932 - WARNING - start date input could not be inspected, cannot click.
+2024-10-30 17:26:05,262 - ERROR - Timeout while waiting for end date input to appear.
+2024-10-30 17:26:05,262 - WARNING - end date input could not be inspected, cannot click.
+2024-10-30 17:26:07,579 - ERROR - Timeout while waiting for filter button to appear.
+2024-10-30 17:26:07,579 - WARNING - filter button could not be inspected, cannot click.
+2024-10-30 17:26:07,580 - ERROR - Export failed Error in Inspection_export: 'Inspection'
+2024-10-30 17:26:07,583 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:26:07,697 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_172607.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:44:00
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:44:00
+*******************************************************
+2024-10-30 17:44:00,062 - DEBUG - This is a debug message for testing.
+2024-10-30 17:44:00,062 - INFO - Starting main script
+2024-10-30 17:44:00,062 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 17:44:00,062 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 17:44:00,869 - INFO - Chrome driver setup complete
+2024-10-30 17:44:00,925 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 17:44:00,925 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 17:44:11,620 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 17:44:11,645 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 17:44:11,645 - DEBUG - Entering login function
+2024-10-30 17:44:11,646 - INFO - Attempting to log in
+2024-10-30 17:44:11,646 - INFO - Inspecting username field
+2024-10-30 17:44:11,948 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 17:44:11,948 - WARNING - Username field is not visible.
+2024-10-30 17:44:11,948 - DEBUG - Retrying...
+2024-10-30 17:44:12,231 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:44:12,231 - DEBUG - Entering username
+2024-10-30 17:44:12,322 - DEBUG - Username entered successfully. Time taken: 0.09 seconds
+2024-10-30 17:44:12,322 - DEBUG - Clicking Next button
+2024-10-30 17:44:12,602 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:44:12,639 - DEBUG - Successfully clicked Next button
+2024-10-30 17:44:12,639 - DEBUG - Inspecting password field
+2024-10-30 17:44:12,937 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:44:12,937 - DEBUG - Entering password
+2024-10-30 17:44:12,986 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 17:44:12,986 - DEBUG - Clicking Login button
+2024-10-30 17:44:13,268 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:44:29,403 - DEBUG - Successfully clicked Login button
+2024-10-30 17:44:29,405 - INFO - Login successful
+2024-10-30 17:44:29,405 - DEBUG - Exiting login function
+2024-10-30 17:44:33,375 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 17:44:33,653 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 17:44:34,131 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:44:34,155 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 17:44:34,155 - ERROR - Inspection export failed Error in get_export: apply_date_filter() missing 1 required positional argument: 'section'
+2024-10-30 17:44:34,190 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:44:34,309 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_174434.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:47:46
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 17:47:46
+*******************************************************
+2024-10-30 17:47:46,778 - DEBUG - This is a debug message for testing.
+2024-10-30 17:47:46,778 - INFO - Starting main script
+2024-10-30 17:47:46,778 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 17:47:46,778 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 17:47:47,669 - INFO - Chrome driver setup complete
+2024-10-30 17:47:47,705 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 17:47:47,705 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 17:47:58,544 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 17:47:58,550 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 17:47:58,550 - DEBUG - Entering login function
+2024-10-30 17:47:58,551 - INFO - Attempting to log in
+2024-10-30 17:47:58,551 - INFO - Inspecting username field
+2024-10-30 17:47:58,836 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 17:47:58,836 - WARNING - Username field is not visible.
+2024-10-30 17:47:58,836 - DEBUG - Retrying...
+2024-10-30 17:47:59,118 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:47:59,119 - DEBUG - Entering username
+2024-10-30 17:47:59,216 - DEBUG - Username entered successfully. Time taken: 0.10 seconds
+2024-10-30 17:47:59,216 - DEBUG - Clicking Next button
+2024-10-30 17:47:59,496 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:47:59,533 - DEBUG - Successfully clicked Next button
+2024-10-30 17:47:59,533 - DEBUG - Inspecting password field
+2024-10-30 17:47:59,813 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 17:47:59,814 - DEBUG - Entering password
+2024-10-30 17:47:59,861 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 17:47:59,861 - DEBUG - Clicking Login button
+2024-10-30 17:48:00,142 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 17:48:01,231 - DEBUG - Successfully clicked Login button
+2024-10-30 17:48:01,231 - INFO - Login successful
+2024-10-30 17:48:01,231 - DEBUG - Exiting login function
+2024-10-30 17:48:05,211 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 17:48:05,253 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 17:48:05,839 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:48:05,873 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 17:48:05,875 - ERROR - Inspection export failed Error in get_export: apply_date_filter() missing 1 required positional argument: 'section'
+2024-10-30 17:48:05,884 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 17:48:06,014 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_174805.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:01:34
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:01:34
+*******************************************************
+2024-10-30 18:01:34,606 - DEBUG - This is a debug message for testing.
+2024-10-30 18:01:34,606 - INFO - Starting main script
+2024-10-30 18:01:34,606 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 18:01:34,606 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 18:01:35,394 - INFO - Chrome driver setup complete
+2024-10-30 18:01:35,432 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 18:01:35,433 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 18:01:46,075 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 18:01:46,080 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 18:01:46,080 - DEBUG - Entering login function
+2024-10-30 18:01:46,080 - INFO - Attempting to log in
+2024-10-30 18:01:46,081 - INFO - Inspecting username field
+2024-10-30 18:01:46,392 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 18:01:46,392 - WARNING - Username field is not visible.
+2024-10-30 18:01:46,393 - DEBUG - Retrying...
+2024-10-30 18:01:46,674 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 18:01:46,674 - DEBUG - Entering username
+2024-10-30 18:01:46,766 - DEBUG - Username entered successfully. Time taken: 0.09 seconds
+2024-10-30 18:01:46,766 - DEBUG - Clicking Next button
+2024-10-30 18:01:47,047 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 18:01:47,087 - DEBUG - Successfully clicked Next button
+2024-10-30 18:01:47,087 - DEBUG - Inspecting password field
+2024-10-30 18:01:47,371 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 18:01:47,372 - DEBUG - Entering password
+2024-10-30 18:01:47,420 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 18:01:47,420 - DEBUG - Clicking Login button
+2024-10-30 18:01:47,702 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 18:01:47,860 - DEBUG - Successfully clicked Login button
+2024-10-30 18:01:47,860 - INFO - Login successful
+2024-10-30 18:01:47,860 - DEBUG - Exiting login function
+2024-10-30 18:01:51,806 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 18:01:51,901 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 18:01:52,674 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 18:01:52,718 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 18:01:52,719 - ERROR - Inspection export failed Error in get_export: apply_date_filter() missing 1 required positional argument: 'section'
+2024-10-30 18:01:52,729 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 18:01:52,856 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_180152.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:28:53
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:28:53
+*******************************************************
+2024-10-30 18:28:53,143 - DEBUG - This is a debug message for testing.
+2024-10-30 18:28:53,143 - INFO - Starting main script
+2024-10-30 18:28:53,143 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 18:28:53,143 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 18:28:53,940 - INFO - Chrome driver setup complete
+2024-10-30 18:28:53,985 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 18:28:53,985 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 18:29:04,667 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 18:29:04,674 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 18:29:04,674 - DEBUG - Entering login function
+2024-10-30 18:29:04,674 - INFO - Attempting to log in
+2024-10-30 18:29:04,675 - INFO - Inspecting username field
+2024-10-30 18:29:04,960 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 18:29:04,960 - WARNING - Username field is not visible.
+2024-10-30 18:29:04,960 - DEBUG - Retrying...
+2024-10-30 18:29:05,243 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 18:29:05,244 - DEBUG - Entering username
+2024-10-30 18:29:05,332 - DEBUG - Username entered successfully. Time taken: 0.09 seconds
+2024-10-30 18:29:05,332 - DEBUG - Clicking Next button
+2024-10-30 18:29:05,612 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 18:29:05,647 - DEBUG - Successfully clicked Next button
+2024-10-30 18:29:05,647 - DEBUG - Inspecting password field
+2024-10-30 18:29:05,928 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 18:29:05,928 - DEBUG - Entering password
+2024-10-30 18:29:05,973 - DEBUG - Password entered successfully. Time taken: 0.04 seconds
+2024-10-30 18:29:05,973 - DEBUG - Clicking Login button
+2024-10-30 18:29:06,254 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 18:29:07,357 - DEBUG - Successfully clicked Login button
+2024-10-30 18:29:07,358 - INFO - Login successful
+2024-10-30 18:29:07,358 - DEBUG - Exiting login function
+2024-10-30 18:29:12,930 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 18:29:12,987 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 18:29:13,596 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 18:29:13,608 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 18:29:13,859 - ERROR - Unexpected error while inspecting Custom date option: WebDriver.find_element() takes from 1 to 3 positional arguments but 42 were given
+2024-10-30 18:29:13,860 - WARNING - Custom date option could not be inspected, cannot click.
+2024-10-30 18:29:13,860 - ERROR - Export failed Error in Inspection_export: 'Inspection'
+2024-10-30 18:29:13,863 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 18:29:14,013 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_182913.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:53:06
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:53:06
+*******************************************************
+2024-10-30 18:53:06,870 - DEBUG - This is a debug message for testing.
+2024-10-30 18:53:06,870 - INFO - Starting main script
+2024-10-30 18:53:06,870 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 18:53:06,870 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 18:53:07,657 - INFO - Chrome driver setup complete
+2024-10-30 18:53:07,695 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 18:53:07,695 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 18:53:18,585 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 18:53:18,592 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 18:53:18,593 - DEBUG - Entering login function
+2024-10-30 18:53:18,593 - ERROR - An unexpected error occurred Error in main_script: 'error_message'
+2024-10-30 18:53:18,614 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253DV4Jw_x9OjgGDpbAMXaZ2fC-B5FvCfu_dNPPXpoJJvLWSjftuHpcekHn4Zm4bOvJCx7Ju_MUyhurIPWFjnt5z-zG7w-9TsLWitqblNnrlvEPHsgSHo4G-1tv2LSn8U03LsGLRHROJNqKyVJV6pecOgW4Hh3vHaWYJu2LgXYP1Bv0fIWWJ%26nonce%3D638659111978411076.MjMxMGQ1MTYtNDQ0My00MDFkLTljOTktZTVmYWU2OGM2ZWU5MjM3YjljMTMtNzBmMy00NTg4LWIyNjgtMjcyZDFhYjRhNDgx%26acr_values%3Dam%253Atel
+2024-10-30 18:53:18,807 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_185318.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:56:04
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:56:04
+*******************************************************
+2024-10-30 18:56:04,518 - DEBUG - This is a debug message for testing.
+2024-10-30 18:56:04,518 - INFO - Starting main script
+2024-10-30 18:56:04,518 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 18:56:04,518 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 18:56:05,335 - INFO - Chrome driver setup complete
+2024-10-30 18:56:05,387 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 18:56:05,387 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 18:56:16,112 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 18:56:16,120 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 18:56:16,120 - DEBUG - Entering login function
+2024-10-30 18:56:16,120 - ERROR - An unexpected error occurred Error in main_script: 'error_message'
+2024-10-30 18:56:16,124 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253DdQW9p49FLnQEiXOGxqfs3peg9FY1ttTzgtK9QBDTPSYknM27nLl9P1W8NgvqSPOwzWCGl5olAd8zstgwvZaMSMYg4eg_-y9lbIw8nNOJ1GXoFbgE6dFsqbGOJ3vmFodjcZ60u6Hi68oviRlH3AVIEKbeZZScx2W9qU0AEAMryIfv3OUT%26nonce%3D638659113755918401.ZTBlZWZiOGYtYzI4OS00MmMyLWI1Y2ItOWViZTZmNGEwNDYyZTIxMTE1ZmUtNmFhOC00MGVkLWJjMDYtODE3YzUyYTgzZmFm%26acr_values%3Dam%253Atel
+2024-10-30 18:56:16,276 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_185616.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 18:56:51
+*******************************************************
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:00:13
+*******************************************************
+2024-10-30 19:00:13,680 - DEBUG - This is a debug message for testing.
+2024-10-30 19:00:13,681 - INFO - Starting main script
+2024-10-30 19:00:13,681 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:00:13,681 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:00:14,465 - INFO - Chrome driver setup complete
+2024-10-30 19:00:14,507 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:00:14,507 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:00:25,216 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:00:25,224 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:00:25,224 - DEBUG - Entering login function
+2024-10-30 19:00:25,224 - ERROR - An unexpected error occurred Error in main_script: 'error_message'
+2024-10-30 19:00:25,229 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253D5x0ihhF2LzcMhrCVMNJfnRVBGMBWPuL2TWs_Je4_VDzk9QL-7gjvMMKuFjVJafUOZGuvkeGxMbUFweHmKX20YATDfh-eya2sgiUvYbnKRiIKs8FQ5HY8VbNrlSd47JCKsqW7cnD9iqxT6beMpSM2x4qwzYFd_e0MEnR5qT7MNLgbSZL0%26nonce%3D638659116246857322.NWU1NDVmM2ItMzllOC00ZTA2LTliYTUtYjQzYjkzZTg0MjA0MjU5MmNmZjMtZGJmYS00NDAxLWI5YTUtMzdhMWY3ZThkNWQ3%26acr_values%3Dam%253Atel
+2024-10-30 19:00:25,400 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_190025.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:00:33
+*******************************************************
+2024-10-30 19:00:33,729 - DEBUG - This is a debug message for testing.
+2024-10-30 19:00:33,729 - INFO - Starting main script
+2024-10-30 19:00:33,729 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:00:33,729 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:00:34,500 - INFO - Chrome driver setup complete
+2024-10-30 19:00:34,541 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:00:34,541 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:00:45,287 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:00:45,309 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:00:45,310 - DEBUG - Entering login function
+2024-10-30 19:00:45,310 - ERROR - An unexpected error occurred Error in main_script: 'error_message'
+2024-10-30 19:00:45,314 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253Dq_YebUwDrkvxX_sDaYUSveRYJ2_CwbvvtNUbg0CMnxVxpAhP197PPHnx7OMSEQUN8glqy1sF_A2AoZQFMnomTCnjHhFhj-hffhBPdeDXhOs8EHs3zj5ThEGVTzcjZItIQYpglKoBv0Ug3BHekXYQC7kGNlJNBatQyoans4t3idNBfcfk%26nonce%3D638659116447102825.MWY0Yjk2MGEtMzY3NS00NDdhLWFjYWYtNTUzODQwZTAyZWRkNjg3NGUwN2EtYmU0Zi00NmVjLWFlZDQtOTBjNzk2MTc1NTVj%26acr_values%3Dam%253Atel
+2024-10-30 19:00:45,487 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_190045.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:11:39
+*******************************************************
+2024-10-30 19:11:39,601 - DEBUG - This is a debug message for testing.
+2024-10-30 19:11:39,601 - INFO - Starting main script
+2024-10-30 19:11:39,601 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:11:39,602 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:11:40,389 - INFO - Chrome driver setup complete
+2024-10-30 19:11:40,436 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:11:40,436 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:11:51,081 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:11:51,097 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:11:51,097 - DEBUG - Entering login function
+2024-10-30 19:11:51,097 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:11:51,102 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253D5sbDDfv0vujF2ZA7dCuHY_ouysAqWz7Cy59iDwyMnxaxOhg1uke8-Yjek2v7gOnDMPz5ZFpel1V1omyg2UL6PciGYaoPNR75itFtNgc95_RsXgv_tesbUs-4Ex8tACqbe5nejCt8HUimNG8RcPVCD_M2pCL9cEdR9S2StO6e8U14wuZT%26nonce%3D638659123105955525.N2ZmYTFjYWEtYzlhZS00MmEwLWJhODgtYjI0ODIxOTcyYWQ1NjFmZDJjZmEtYTJiNy00ZmY5LWI0MTQtNzY2MjE5ZmNkYTcy%26acr_values%3Dam%253Atel
+2024-10-30 19:11:51,339 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_191151.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:18:35
+*******************************************************
+2024-10-30 19:18:35,908 - DEBUG - This is a debug message for testing.
+2024-10-30 19:18:35,908 - INFO - Starting main script
+2024-10-30 19:18:35,908 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:18:35,908 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:18:36,700 - INFO - Chrome driver setup complete
+2024-10-30 19:18:36,744 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:18:36,744 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:18:47,404 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:18:47,410 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:18:47,410 - DEBUG - Entering login function
+2024-10-30 19:18:47,410 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:18:47,413 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253DINmCuhJM1lLuMgyfOfLNuMtZqTNQXVUADzNYj2Ad9wHB4j6ZWQze_S4NGA2Xt94ktTvOCGxGr0PmT9IEG48F6Zv6yoa3plp-2YXN_6KKdAI-xMBZGFqWfEcjlJqUzEqx18cIyOwXscIzdqdxXh1mlAJnA2knZHz-iZrtkTOjk_AquG8M%26nonce%3D638659127268843978.YzUzYTc0NzYtMTY2Zi00MGUzLTkzYWItYTM1NTI4ZTVkNzRiMjYzMDhiMWMtNDNhNy00YzZkLTgwMTAtOGY1NTgwODhiMzA5%26acr_values%3Dam%253Atel
+2024-10-30 19:18:47,598 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_191847.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:20:22
+*******************************************************
+2024-10-30 19:20:22,747 - DEBUG - This is a debug message for testing.
+2024-10-30 19:20:22,748 - INFO - Starting main script
+2024-10-30 19:20:22,748 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:20:22,748 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:20:23,558 - INFO - Chrome driver setup complete
+2024-10-30 19:20:23,597 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:20:23,597 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:20:34,334 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:20:34,348 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:20:34,348 - DEBUG - Entering login function
+2024-10-30 19:20:34,348 - INFO - Selectors loaded: {'near_misses': {'page_url': 'https://safety.hcssapps.com/NearMiss/NearMiss', 'date_filter': {'date_input': {'inner_html': '<input type="text" class="datepicker" id="dateFilter" />', 'outer_html': '<div class="input-group date">\n  <input type="text" class="datepicker" id="dateFilter" />\n  <span class="input-group-addon">\n    <i class="fa fa-calendar"></i>\n  </span>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  div.input-group.date\n', 'css_selector': '#dateFilter', 'xpath': '//*[@id="dateFilter"]'}, 'apply_button': {'inner_html': '<button class="btn btn-primary" id="applyDateFilter">Apply</button>', 'outer_html': '<button class="btn btn-primary" id="applyDateFilter">Apply</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  button#applyDateFilter.btn.btn-primary\n', 'css_selector': '#applyDateFilter', 'xpath': '//*[@id="applyDateFilter"]'}}, 'first_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-white btn-primary hcss-btn-small exportBtn" id="createEXCELBtn">\n  <i class="icon-signout"></i>&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div.btn-group.row-fluid  button#createEXCELBtn.btn.btn-sm.btn-white.btn-primary.hcss-btn-small.exportBtn\n', 'css_selector': '#createEXCELBtn', 'xpath': '//*[@id="createEXCELBtn"]'}, 'select_all': {'inner_html': '<label>\n  <input class="ace ace-checkbox-2" data-val="true" id="chkselectAll" name="" type="checkbox" value="SelectAll">\n  <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n</label>\n', 'outer_html': '<div id="divSelectAll" class="span10 checkbox selectAll">\n  <label>\n    <input class="ace ace-checkbox-2" data-val="true" id="chkselectAll" name="" type="checkbox" value="SelectAll">\n    <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n  </label>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-body.optionsExcelModal div#divSelectAll.span10.checkbox.selectAll\n', 'css_selector': '#divSelectAll', 'xpath': '//*[@id="divSelectAll"]'}, 'second_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-info no-border hcss-btn-small js-update-report-options" data-dismiss="modal" id="btnExcelExport">\n  <i class="icon-signout"></i>&nbsp;&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right button#btnExcelExport.btn.btn-sm.btn-info.no-border.hcss-btn-small.js-update-report-options\n', 'css_selector': '#btnExcelExport', 'xpath': '//*[@id="btnExcelExport"]'}}, 'inspections_summary': {'page_url': 'https://safety.hcssapps.com/Inspection/Inspection', 'date_filter': {'date_input': {'inner_html': '<input type="text" class="datepicker" id="summaryDateFilter" />', 'outer_html': '<div class="input-group date">\n  <input type="text" class="datepicker" id="summaryDateFilter" />\n  <span class="input-group-addon">\n    <i class="fa fa-calendar"></i>\n  </span>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  div.input-group.date\n', 'css_selector': '#summaryDateFilter', 'xpath': '//*[@id="summaryDateFilter"]'}, 'apply_button': {'inner_html': '<button class="btn btn-primary" id="applySummaryDateFilter">Apply</button>', 'outer_html': '<button class="btn btn-primary" id="applySummaryDateFilter">Apply</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  button#applySummaryDateFilter.btn.btn-primary\n', 'css_selector': '#applySummaryDateFilter', 'xpath': '//*[@id="applySummaryDateFilter"]'}}, 'first_export_button': {'inner_html': '<button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown">\n  <i class="icon-signout"></i>&nbsp;Export\n</button>\n<ul class="dropdown-menu">\n  <li id="createSummaryExcel"><a href="#">Inspection Summary</a></li>\n  <li id="createDetailsExcel"><a href="#">Inspection Item Details</a></li>\n</ul>\n', 'outer_html': '<span class="dropdown exportBtn btn-group">\n  <button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown">\n    <i class="icon-signout"></i>&nbsp;Export\n  </button>\n  <ul class="dropdown-menu">\n    <li id="createSummaryExcel"><a href="#">Inspection Summary</a></li>\n    <li id="createDetailsExcel"><a href="#">Inspection Item Details</a></li>\n  </ul>\n</span>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.table div.row-fluid div.row-fluid.padtop div.span12  table#InspectionHistoryResultsGrid.table.table-striped div.btn-group.row-fluid  span.dropdown.exportBtn.btn-group\n', 'css_selector': '.dropdown', 'xpath': '/html/body/hcss-messages/div/div/div[2]/div/div/div/div[1]/div/div/div[2]/div/table/div[1]/span'}, 'select_all': {'inner_html': '<label>\n  <input class="ace ace-checkbox-2" data-val="true" id="chkSummarySelectAll" name="" type="checkbox" value="SelectAll">\n  <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n</label>\n', 'outer_html': '<div id="divSelectAll" class="span12 checkbox selectAll">\n  <label>\n    <input class="ace ace-checkbox-2" data-val="true" id="chkSummarySelectAll" name="" type="checkbox" value="SelectAll">\n    <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n  </label>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-body.optionsExcelModal div#divSelectAll.span12.checkbox.selectAll\n', 'css_selector': '#divSelectAll', 'xpath': '//*[@id="divSelectAll"]'}, 'second_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-info no-border hcss-btn-small js-update-report-options" data-dismiss="modal" id="btnSummaryExport">\n  <i class="icon-signout"></i>&nbsp;&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right button#btnSummaryExport.btn.btn-sm.btn-info.no-border.hcss-btn-small.js-update-report-options\n', 'css_selector': '#btnSummaryExport', 'xpath': '//*[@id="btnSummaryExport"]'}}, 'inspections_detail': {'page_url': 'https://safety.hcssapps.com/Inspection/Inspection', 'date_filter': {'date_input': {'inner_html': '<input type="text" class="datepicker" id="detailDateFilter" />', 'outer_html': '<div class="input-group date">\n  <input type="text" class="datepicker" id="detailDateFilter" />\n  <span class="input-group-addon">\n    <i class="fa fa-calendar"></i>\n  </span>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  div.input-group.date\n', 'css_selector': '#detailDateFilter', 'xpath': '//*[@id="detailDateFilter"]'}, 'apply_button': {'inner_html': '<button class="btn btn-primary" id="applyDetailDateFilter">Apply</button>', 'outer_html': '<button class="btn btn-primary" id="applyDetailDateFilter">Apply</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  button#applyDetailDateFilter.btn.btn-primary\n', 'css_selector': '#applyDetailDateFilter', 'xpath': '//*[@id="applyDetailDateFilter"]'}}, 'first_export_button': {'inner_html': '<button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown"><i class="icon-signout"></i>&nbsp;Export</button>', 'outer_html': '<span class="dropdown exportBtn btn-group">\n  <button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown">\n    <i class="icon-signout"></i>&nbsp;Export\n  </button>\n  <ul class="dropdown-menu">\n    <li id="createDetailExcel"><a href="#">Inspection Item Details</a></li>\n  </ul>\n</span>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right span.dropdown.exportBtn.btn-group\n', 'css_selector': '.dropdown', 'xpath': '/html/body/hcss-messages/div/div/div[2]/div/div/div/div[1]/div/div/div[2]/div/table/div[1]/span'}, 'select_all': {'inner_html': '<label>\n  <input class="ace ace-checkbox-2" data-val="true" id="chkDetailSelectAll" name="" type="checkbox" value="SelectAll">\n  <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n</label>\n', 'outer_html': '<div id="divSelectAll" class="span10 checkbox selectAll">\n  <label>\n    <input class="ace ace-checkbox-2" data-val="true" id="chkDetailSelectAll" name="" type="checkbox" value="SelectAll">\n    <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n  </label>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-body.optionsExcelModal div#divSelectAll.span10.checkbox.selectAll\n', 'css_selector': '#divSelectAll', 'xpath': '//*[@id="divSelectAll"]'}, 'second_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-info no-border hcss-btn-small js-update-report-options" data-dismiss="modal" id="btnDetailExport">\n  <i class="icon-signout"></i>&nbsp;&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right button#btnDetailExport.btn.btn-sm.btn-info.no-border.hcss-btn-small.js-update-report-options\n', 'css_selector': '#btnDetailExport', 'xpath': '//*[@id="btnDetailExport"]'}}}
+2024-10-30 19:20:34,348 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:20:34,352 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253DeIoFKyBIFCezNKg1n3ocZByRuimtQreJrwLPfJiEyDKLHt2V7uooZnyXa0eF6hYDsuzuujwPAb2QczJ9QVTr-3303TtwFJRZfwXDPmmTMYK_YHXXwZ5BPTfuHSYs2-_bzxhqjQ2ZHH4cl2LgNvyxjpyBjfU6f-4s733IeKkO_8PILTO0%26nonce%3D638659128337779553.NjM4YjExZDctYWMzOS00ZTJhLWFkYzUtYmFkN2RlODFmODMzZTIxYzZkYzktMGM2My00MDIwLWFjMzUtZTBmYzE1YjQ4MmEy%26acr_values%3Dam%253Atel
+2024-10-30 19:20:34,501 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_192034.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:26:03
+*******************************************************
+2024-10-30 19:26:03,721 - DEBUG - This is a debug message for testing.
+2024-10-30 19:26:03,721 - INFO - Starting main script
+2024-10-30 19:26:03,721 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:26:03,721 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:26:04,493 - INFO - Chrome driver setup complete
+2024-10-30 19:26:04,534 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:26:04,534 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:26:15,349 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:26:15,357 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:26:15,357 - DEBUG - Entering login function
+2024-10-30 19:26:15,357 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:26:15,361 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253D5eVoIBDNYjJvi-i10UaBE1NMfO1q8W8wqPbHw5K5fr1JA33XYuGBkQpffq5-LR2knNfakU85FOlBGnjRFSwGUPq62H_hYU7Jz7pneeVY76m4SklRLTrSbIshuERuKk46B-85TcypW5D8Z-mYgsd3p7oWpMoAXNbcbqdoR-sQzttOv2TU%26nonce%3D638659131748118024.Njc2ZGUxMzItYTAyMC00MzQ4LTk3ZmYtNjhiYjIxYTBmNDRjYmQ2NTBkYWUtMmM2MS00NDdmLWI0NjQtY2NmZTgwYjJkYzg1%26acr_values%3Dam%253Atel
+2024-10-30 19:26:15,525 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_192615.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:29:44
+*******************************************************
+2024-10-30 19:29:44,839 - DEBUG - This is a debug message for testing.
+2024-10-30 19:29:44,840 - INFO - Starting main script
+2024-10-30 19:29:44,840 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:29:44,840 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:29:45,612 - INFO - Chrome driver setup complete
+2024-10-30 19:29:45,654 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:29:45,654 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:29:56,289 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:29:56,299 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:29:56,299 - DEBUG - Entering login function
+2024-10-30 19:29:56,300 - ERROR - An unexpected error occurred Error in main_script: name 'Locators' is not defined
+2024-10-30 19:29:56,304 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253Di9I_nj9XcVxlvxG7dC1diJlstQAzeyd4h-_Kbu8t7fg8BNAvcpBxHZF3c40nLI5z3NY0ORzJ9L_tj-vpEDqPb7bK0kbeycIpkOsbr-Pme5Z0o2EJVMuBoPQWJLPjLOsGie3g9d8C2cmV3PSJAZFjRA3zgbM4dH65gyJY05z5kyCTKkoh%26nonce%3D638659133958000271.M2IxZTZlZjQtZDZmOC00ODhiLWEwN2MtNTA1MGUxMGM3YzU4NGI1MmY3MTctNTc3MC00N2VkLWEyY2YtOGFkNzBiYzc4ZGE2%26acr_values%3Dam%253Atel
+2024-10-30 19:29:56,468 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_192956.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:32:46
+*******************************************************
+2024-10-30 19:32:46,346 - DEBUG - This is a debug message for testing.
+2024-10-30 19:32:46,346 - INFO - Starting main script
+2024-10-30 19:32:46,347 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:32:46,347 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:32:47,115 - INFO - Chrome driver setup complete
+2024-10-30 19:32:47,163 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:32:47,163 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:32:57,845 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:32:57,851 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:32:57,851 - DEBUG - Entering login function
+2024-10-30 19:32:57,851 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:32:57,854 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253DXVIUYboHLndEdmkb2HGzs8i4KW5Eznje-NtAQBReqOd5sh8mU1KSmgOOjdykyl5LAOWSwuiLli6Pqj_XwuNyR36U8JGsXSM89omQX8CrcDDWazASrj-diNRNock2WkqOcP4bV91RvEnv7H99JLvQ6MMj2GaWfg0-ekpsJzU8VjwWLY2i%26nonce%3D638659135773646426.MjliY2Q0OTQtMmEzNy00YzQ5LTgxZGUtMzI2MGViMDViNTU5ZTBmMzJmMGItYzZjNS00ZGY1LWI0MmItMjYyOGRlNjM4ZGRj%26acr_values%3Dam%253Atel
+2024-10-30 19:32:58,075 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_193257.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:40:14
+*******************************************************
+2024-10-30 19:40:14,944 - DEBUG - This is a debug message for testing.
+2024-10-30 19:40:14,944 - INFO - Starting main script
+2024-10-30 19:40:14,944 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:40:14,944 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:40:15,748 - INFO - Chrome driver setup complete
+2024-10-30 19:40:15,824 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:40:15,824 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:40:16,464 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:40:16,492 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:40:16,492 - DEBUG - Entering login function
+2024-10-30 19:40:16,492 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:40:16,495 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253Db9ftW17jNIJjmodlo3V4ww6nR8mwcYu9jvsuLcpJt9zQuqLklemxRxclKBeNyobiwlJwzeyjhOzxDViRwny62_iGS1eQMgnMl838nZ9n9ysomKvITMxzqk4wUmUGI4ayUlapbylVSVLsQ9NyC6dgu6GKMxxP8FSiYxJec6YPH7FCiDwj%26nonce%3D638659140159583598.YWMyMWMyMmQtMTRjZi00OTQ3LWEyZTgtMzY2NjVjNzFkZDU2NjNkYmQ5ZWEtZGNhNC00NzEyLTk2MGYtY2FmNzRhOTMyMDE2%26acr_values%3Dam%253Atel
+2024-10-30 19:40:16,649 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_194016.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:45:00
+*******************************************************
+2024-10-30 19:45:00,086 - DEBUG - This is a debug message for testing.
+2024-10-30 19:45:00,086 - INFO - Starting main script
+2024-10-30 19:45:00,086 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:45:00,086 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:45:00,858 - INFO - Chrome driver setup complete
+2024-10-30 19:45:00,897 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:45:00,897 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:45:01,578 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:45:01,583 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:45:01,583 - DEBUG - Entering login function
+2024-10-30 19:45:01,583 - DEBUG - Selectors loaded: {'near_misses': {'page_url': 'https://safety.hcssapps.com/NearMiss/NearMiss', 'date_filter': {'date_input': {'inner_html': '<input type="text" class="datepicker" id="dateFilter" />', 'outer_html': '<div class="input-group date">\n  <input type="text" class="datepicker" id="dateFilter" />\n  <span class="input-group-addon">\n    <i class="fa fa-calendar"></i>\n  </span>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  div.input-group.date\n', 'css_selector': '#dateFilter', 'xpath': '//*[@id="dateFilter"]'}, 'apply_button': {'inner_html': '<button class="btn btn-primary" id="applyDateFilter">Apply</button>', 'outer_html': '<button class="btn btn-primary" id="applyDateFilter">Apply</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  button#applyDateFilter.btn.btn-primary\n', 'css_selector': '#applyDateFilter', 'xpath': '//*[@id="applyDateFilter"]'}}, 'first_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-white btn-primary hcss-btn-small exportBtn" id="createEXCELBtn">\n  <i class="icon-signout"></i>&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div.btn-group.row-fluid  button#createEXCELBtn.btn.btn-sm.btn-white.btn-primary.hcss-btn-small.exportBtn\n', 'css_selector': '#createEXCELBtn', 'xpath': '//*[@id="createEXCELBtn"]'}, 'select_all': {'inner_html': '<label>\n  <input class="ace ace-checkbox-2" data-val="true" id="chkselectAll" name="" type="checkbox" value="SelectAll">\n  <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n</label>\n', 'outer_html': '<div id="divSelectAll" class="span10 checkbox selectAll">\n  <label>\n    <input class="ace ace-checkbox-2" data-val="true" id="chkselectAll" name="" type="checkbox" value="SelectAll">\n    <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n  </label>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-body.optionsExcelModal div#divSelectAll.span10.checkbox.selectAll\n', 'css_selector': '#divSelectAll', 'xpath': '//*[@id="divSelectAll"]'}, 'second_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-info no-border hcss-btn-small js-update-report-options" data-dismiss="modal" id="btnExcelExport">\n  <i class="icon-signout"></i>&nbsp;&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right button#btnExcelExport.btn.btn-sm.btn-info.no-border.hcss-btn-small.js-update-report-options\n', 'css_selector': '#btnExcelExport', 'xpath': '//*[@id="btnExcelExport"]'}}, 'inspections_summary': {'page_url': 'https://safety.hcssapps.com/Inspection/Inspection', 'date_filter': {'date_input': {'inner_html': '<input type="text" class="datepicker" id="summaryDateFilter" />', 'outer_html': '<div class="input-group date">\n  <input type="text" class="datepicker" id="summaryDateFilter" />\n  <span class="input-group-addon">\n    <i class="fa fa-calendar"></i>\n  </span>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  div.input-group.date\n', 'css_selector': '#summaryDateFilter', 'xpath': '//*[@id="summaryDateFilter"]'}, 'apply_button': {'inner_html': '<button class="btn btn-primary" id="applySummaryDateFilter">Apply</button>', 'outer_html': '<button class="btn btn-primary" id="applySummaryDateFilter">Apply</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  button#applySummaryDateFilter.btn.btn-primary\n', 'css_selector': '#applySummaryDateFilter', 'xpath': '//*[@id="applySummaryDateFilter"]'}}, 'first_export_button': {'inner_html': '<button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown">\n  <i class="icon-signout"></i>&nbsp;Export\n</button>\n<ul class="dropdown-menu">\n  <li id="createSummaryExcel"><a href="#">Inspection Summary</a></li>\n  <li id="createDetailsExcel"><a href="#">Inspection Item Details</a></li>\n</ul>\n', 'outer_html': '<span class="dropdown exportBtn btn-group">\n  <button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown">\n    <i class="icon-signout"></i>&nbsp;Export\n  </button>\n  <ul class="dropdown-menu">\n    <li id="createSummaryExcel"><a href="#">Inspection Summary</a></li>\n    <li id="createDetailsExcel"><a href="#">Inspection Item Details</a></li>\n  </ul>\n</span>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.table div.row-fluid div.row-fluid.padtop div.span12  table#InspectionHistoryResultsGrid.table.table-striped div.btn-group.row-fluid  span.dropdown.exportBtn.btn-group\n', 'css_selector': '.dropdown', 'xpath': '/html/body/hcss-messages/div/div/div[2]/div/div/div/div[1]/div/div/div[2]/div/table/div[1]/span'}, 'select_all': {'inner_html': '<label>\n  <input class="ace ace-checkbox-2" data-val="true" id="chkSummarySelectAll" name="" type="checkbox" value="SelectAll">\n  <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n</label>\n', 'outer_html': '<div id="divSelectAll" class="span12 checkbox selectAll">\n  <label>\n    <input class="ace ace-checkbox-2" data-val="true" id="chkSummarySelectAll" name="" type="checkbox" value="SelectAll">\n    <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n  </label>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-body.optionsExcelModal div#divSelectAll.span12.checkbox.selectAll\n', 'css_selector': '#divSelectAll', 'xpath': '//*[@id="divSelectAll"]'}, 'second_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-info no-border hcss-btn-small js-update-report-options" data-dismiss="modal" id="btnSummaryExport">\n  <i class="icon-signout"></i>&nbsp;&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right button#btnSummaryExport.btn.btn-sm.btn-info.no-border.hcss-btn-small.js-update-report-options\n', 'css_selector': '#btnSummaryExport', 'xpath': '//*[@id="btnSummaryExport"]'}}, 'inspections_detail': {'page_url': 'https://safety.hcssapps.com/Inspection/Inspection', 'date_filter': {'date_input': {'inner_html': '<input type="text" class="datepicker" id="detailDateFilter" />', 'outer_html': '<div class="input-group date">\n  <input type="text" class="datepicker" id="detailDateFilter" />\n  <span class="input-group-addon">\n    <i class="fa fa-calendar"></i>\n  </span>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  div.input-group.date\n', 'css_selector': '#detailDateFilter', 'xpath': '//*[@id="detailDateFilter"]'}, 'apply_button': {'inner_html': '<button class="btn btn-primary" id="applyDetailDateFilter">Apply</button>', 'outer_html': '<button class="btn btn-primary" id="applyDetailDateFilter">Apply</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#dateFilterContainer  button#applyDetailDateFilter.btn.btn-primary\n', 'css_selector': '#applyDetailDateFilter', 'xpath': '//*[@id="applyDetailDateFilter"]'}}, 'first_export_button': {'inner_html': '<button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown"><i class="icon-signout"></i>&nbsp;Export</button>', 'outer_html': '<span class="dropdown exportBtn btn-group">\n  <button class="btn btn-sm btn-white btn-primary hcss-btn-small dropdown-toggle" type="button" data-toggle="dropdown">\n    <i class="icon-signout"></i>&nbsp;Export\n  </button>\n  <ul class="dropdown-menu">\n    <li id="createDetailExcel"><a href="#">Inspection Item Details</a></li>\n  </ul>\n</span>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right span.dropdown.exportBtn.btn-group\n', 'css_selector': '.dropdown', 'xpath': '/html/body/hcss-messages/div/div/div[2]/div/div/div/div[1]/div/div/div[2]/div/table/div[1]/span'}, 'select_all': {'inner_html': '<label>\n  <input class="ace ace-checkbox-2" data-val="true" id="chkDetailSelectAll" name="" type="checkbox" value="SelectAll">\n  <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n</label>\n', 'outer_html': '<div id="divSelectAll" class="span10 checkbox selectAll">\n  <label>\n    <input class="ace ace-checkbox-2" data-val="true" id="chkDetailSelectAll" name="" type="checkbox" value="SelectAll">\n    <span class="lbl bolder">&nbsp;&nbsp;Select All</span>\n  </label>\n</div>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-body.optionsExcelModal div#divSelectAll.span10.checkbox.selectAll\n', 'css_selector': '#divSelectAll', 'xpath': '//*[@id="divSelectAll"]'}, 'second_export_button': {'inner_html': '<i class="icon-signout"></i>&nbsp;&nbsp;Export', 'outer_html': '<button class="btn btn-sm btn-info no-border hcss-btn-small js-update-report-options" data-dismiss="modal" id="btnDetailExport">\n  <i class="icon-signout"></i>&nbsp;&nbsp;Export\n</button>\n', 'css_path': 'html body hcss-messages div#main-container.main-container.container-fluid  div.sidebar-and-main-content-wrapper div#main-content.main-content  div.page-content.bottom-margin-for-support-chat div.row-fluid div.span12  div.container div.row-fluid div.span12 div#nearMissResults div#optionsModalEXL.modal.hide.in  div.modal-footer div.pull-right button#btnDetailExport.btn.btn-sm.btn-info.no-border.hcss-btn-small.js-update-report-options\n', 'css_selector': '#btnDetailExport', 'xpath': '//*[@id="btnDetailExport"]'}}}
+2024-10-30 19:45:01,583 - ERROR - An unexpected error occurred Error in main_script: 'login'
+2024-10-30 19:45:01,587 - DEBUG - Current URL: https://identity.hcssapps.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dhcsscredentials%26redirect_uri%3Dhttps%253A%252F%252Fhcssapps.com%252F%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520credentials%2520oemgps%2520offline_access%2520ALL%2520billing%2520cred%253Areact%2520cred%253Aread%2520cred%253Awrite%2520cred%253Asudo%2520intelligence%2520setups%2520timecards%253Aread%2520heavyjob%253Aread%26state%3DOpenIdConnect.AuthenticationProperties%253DZr2iGeJ0dCMW5e1ra8SUpul_xHgsV5JcsVIyMJg5kGZD-9Iq5iZLD4tOBGuCaSTPjisq9EsRWnQK3jqYXui-82ih5FKrZ5xcz6VnqtxIYpBJTmpZpjGxW-SpLhSs4eFdlFSRmVNo6VKcmn0oyiHpqL54JB3mhbXKkmn0kOGprVjr3TMx%26nonce%3D638659143010787712.MjAyMTk0NTktYmQ3MC00YWNlLThjZDYtOTI4ZTU5NjNmZDc2ZWJhYjk0YjItMGI0NS00MDM1LThmY2QtMTdiMGRlNDg5ZjFk%26acr_values%3Dam%253Atel
+2024-10-30 19:45:01,808 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_194501.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 19:53:05
+*******************************************************
+2024-10-30 19:53:05,200 - DEBUG - This is a debug message for testing.
+2024-10-30 19:53:05,200 - INFO - Starting main script
+2024-10-30 19:53:05,200 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 19:53:05,200 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 19:53:06,005 - INFO - Chrome driver setup complete
+2024-10-30 19:53:06,049 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 19:53:06,049 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 19:53:07,168 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 19:53:07,190 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 19:53:07,191 - DEBUG - Entering login function
+2024-10-30 19:53:07,191 - DEBUG - Selectors loaded: {'login': {'username': 'input[name="username"]', 'password': 'input[name="password"]', 'next_button': 'button.login-button[type="submit"]', 'login_button': 'button[type="submit"]', 'error_message': '.message-container'}, 'first_export_button': '.dropdown', 'select_all': '#divSelectAll', 'second_export_button': {'inspection': {'summary': '#btnSummaryExport', 'detail': '#btnDetailsExport'}, 'near_misses': '#btnExcelExport'}, 'date_filter': {'date_input': '#{date_filter_id}', 'apply_button': '#{apply_button_id}', 'custom_option': '#dateRangeSelect > option[value="Custom"]'}, 'urls': {'inspections': 'https://safety.hcssapps.com/Inspection/Inspection', 'near_misses': 'https://safety.hcssapps.com/NearMiss/NearMiss'}}
+2024-10-30 19:53:07,191 - INFO - Attempting to log in
+2024-10-30 19:53:07,192 - INFO - Inspecting username field
+2024-10-30 19:53:07,478 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 19:53:07,478 - DEBUG - Entering username
+2024-10-30 19:53:07,588 - DEBUG - Username entered successfully. Time taken: 0.11 seconds
+2024-10-30 19:53:07,588 - DEBUG - Clicking Next button
+2024-10-30 19:53:07,871 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 19:53:07,908 - DEBUG - Successfully clicked Next button
+2024-10-30 19:53:07,908 - DEBUG - Inspecting password field
+2024-10-30 19:53:08,188 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 19:53:08,188 - DEBUG - Entering password
+2024-10-30 19:53:08,236 - DEBUG - Password entered successfully. Time taken: 0.05 seconds
+2024-10-30 19:53:08,236 - DEBUG - Clicking Login button
+2024-10-30 19:53:08,518 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 19:53:09,308 - DEBUG - Successfully clicked Login button
+2024-10-30 19:53:09,322 - INFO - Login successful
+2024-10-30 19:53:09,322 - DEBUG - Exiting login function
+2024-10-30 19:53:13,792 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 19:53:13,875 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 19:53:14,516 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 19:53:14,526 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 19:53:14,777 - ERROR - Unexpected error while inspecting Custom date option: WebDriver.find_element() takes from 1 to 3 positional arguments but 42 were given
+2024-10-30 19:53:14,777 - WARNING - Custom date option could not be inspected, cannot click.
+2024-10-30 19:53:14,777 - ERROR - Export failed Error in Inspection_export: 'Inspection'
+2024-10-30 19:53:14,781 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 19:53:14,904 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_195314.png
+
+
+    *******************************************************
+    *                NEW SCRIPT EXECUTION                 *
+    *******************************************************
+    
+Execution started at: 2024-10-30 20:00:20
+*******************************************************
+2024-10-30 20:00:20,650 - DEBUG - This is a debug message for testing.
+2024-10-30 20:00:20,650 - INFO - Starting main script
+2024-10-30 20:00:20,650 - DEBUG - Deleted all screenshots in screenshots
+2024-10-30 20:00:20,650 - DEBUG - Setting up Chrome driver with headless options
+2024-10-30 20:00:21,418 - INFO - Chrome driver setup complete
+2024-10-30 20:00:21,453 - DEBUG - Installed Google Chrome version: Google Chrome 127.0.6533.119
+2024-10-30 20:00:21,454 - DEBUG - Installed ChromeDriver version: ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})
+2024-10-30 20:00:22,282 - DEBUG - Navigating to https://identity.hcssapps.com/
+2024-10-30 20:00:22,288 - INFO - Successfully navigated to https://identity.hcssapps.com/.
+2024-10-30 20:00:22,289 - DEBUG - Entering login function
+2024-10-30 20:00:22,289 - DEBUG - Selectors loaded: {'login': {'username': 'input[name="username"]', 'password': 'input[name="password"]', 'next_button': 'button.login-button[type="submit"]', 'login_button': 'button[type="submit"]', 'error_message': '.message-container'}, 'first_export_button': '.dropdown', 'select_all': '#divSelectAll', 'second_export_button': {'inspection': {'summary': '#btnSummaryExport', 'detail': '#btnDetailsExport'}, 'near_misses': '#btnExcelExport'}, 'date_filter': {'date_input': '#{date_filter_id}', 'apply_button': '#{apply_button_id}', 'custom_option': '#dateRangeSelect > option[value="Custom"]'}, 'urls': {'inspections': 'https://safety.hcssapps.com/Inspection/Inspection', 'near_misses': 'https://safety.hcssapps.com/NearMiss/NearMiss'}}
+2024-10-30 20:00:22,289 - INFO - Attempting to log in
+2024-10-30 20:00:22,289 - INFO - Inspecting username field
+2024-10-30 20:00:22,596 - DEBUG - Inspecting Username field: Tag=input, Displayed=False, Enabled=True
+2024-10-30 20:00:22,596 - WARNING - Username field is not visible.
+2024-10-30 20:00:22,597 - DEBUG - Retrying...
+2024-10-30 20:00:22,881 - DEBUG - Inspecting Username field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 20:00:22,881 - DEBUG - Entering username
+2024-10-30 20:00:22,974 - DEBUG - Username entered successfully. Time taken: 0.09 seconds
+2024-10-30 20:00:22,974 - DEBUG - Clicking Next button
+2024-10-30 20:00:23,254 - DEBUG - Inspecting Next button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 20:00:23,294 - DEBUG - Successfully clicked Next button
+2024-10-30 20:00:23,294 - DEBUG - Inspecting password field
+2024-10-30 20:00:23,582 - DEBUG - Inspecting Password field: Tag=input, Displayed=True, Enabled=True
+2024-10-30 20:00:23,583 - DEBUG - Entering password
+2024-10-30 20:00:23,645 - DEBUG - Password entered successfully. Time taken: 0.06 seconds
+2024-10-30 20:00:23,645 - DEBUG - Clicking Login button
+2024-10-30 20:00:23,925 - DEBUG - Inspecting Login button: Tag=button, Displayed=True, Enabled=True
+2024-10-30 20:00:24,120 - DEBUG - Successfully clicked Login button
+2024-10-30 20:00:24,740 - INFO - Login successful
+2024-10-30 20:00:24,740 - DEBUG - Exiting login function
+2024-10-30 20:00:28,475 - DEBUG - Navigating to https://safety.hcssapps.com/Home/Dashboard
+2024-10-30 20:00:28,497 - INFO - Successfully navigated to https://safety.hcssapps.com/Home/Dashboard.
+2024-10-30 20:00:28,968 - DEBUG - Navigating to https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 20:00:28,978 - INFO - Successfully navigated to https://safety.hcssapps.com/Inspection/Inspection.
+2024-10-30 20:00:29,230 - ERROR - Unexpected error while inspecting Custom date option: WebDriver.find_element() takes from 1 to 3 positional arguments but 42 were given
+2024-10-30 20:00:29,230 - WARNING - Custom date option could not be inspected, cannot click.
+2024-10-30 20:00:29,230 - ERROR - Export failed Error in Inspection_export: 'Inspection'
+2024-10-30 20:00:29,235 - DEBUG - Current URL: https://safety.hcssapps.com/Inspection/Inspection
+2024-10-30 20:00:29,395 - INFO - Screenshot taken: screenshots/001_error_screenshot_20241030_200029.png

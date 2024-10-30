@@ -1,0 +1,24 @@
+login: &login
+  username: 'input[name="username"]'
+  password: 'input[name="password"]'
+  next_button: 'button.login-button[type="submit"]'
+  login_button: 'button[type="submit"]'
+  error_message: '.message-container'
+
+first_export_button: '.dropdown'
+select_all: '#divSelectAll'
+
+second_export_button: &second_export_button
+  inspection: &inspetion
+    summary: '#btnSummaryExport'
+    detail: '#btnDetailsExport'
+  near_misses: '#btnExcelExport'
+
+date_filter: &common_date_filter
+  date_input: '#{date_filter_id}'
+  apply_button: '#{apply_button_id}'
+  custom_option: '#dateRangeSelect > option[value="Custom"]'
+
+urls: &urls
+  inspections: 'https://safety.hcssapps.com/Inspection/Inspection'
+  near_misses: 'https://safety.hcssapps.com/NearMiss/NearMiss'

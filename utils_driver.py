@@ -6,23 +6,22 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from utils_logging import log_message
+from utils_logging import logger, handle_error
 
 # Constants
 DOWNLOAD_DIR = "downloads"
-MAX_RETRIES = 3
 TIMEOUT = 10  # seconds
 
 def log_browser_versions():
-    """Log the installed versions of Google Chrome and ChromeDriver."""
+
     chrome_version = os.popen('google-chrome --version').read().strip()
     chromedriver_version = os.popen('chromedriver --version').read().strip()
-    log_message("INFO", f"Installed Google Chrome version: {chrome_version}")
-    log_message("INFO", f"Installed ChromeDriver version: {chromedriver_version}")
+    logger.debug(f"Installed Google Chrome version: {chrome_version}")
+    logger.debug(f"Installed ChromeDriver version: {chromedriver_version}")
 
 def create_chrome_driver():
-    """Create a Chrome driver with headless options."""
-    log_message("INFO", "Setting up Chrome driver with headless options")
+
+    logger.debug("Setting up Chrome driver with headless options")
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -40,38 +39,48 @@ def create_chrome_driver():
     })
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
-    log_message("SUCCESS", "Chrome driver setup complete")
+    logger.info("Chrome driver setup complete")
     
     # Log versions after driver creation
     log_browser_versions()
 
     return driver
 
-def wait_for_download(download_path, file_prefixes, timeout=TIMEOUT):
-    """
-    Waits for a file to be downloaded in the specified download path.
+def navigate(driver, url):
 
-    :param download_path: Path to the downloads folder.
-    :param file_prefixes: List of prefixes for the expected filenames.
-    :param timeout: Maximum time to wait for the download in seconds.
-    :return: True if the file is downloaded, False otherwise.
-    """
+    try:
+        driver.get(url)
+        logger.debug(f"Navigating to {url}")
+
+        # Check if the current URL contains the target URL
+        if url not in driver.current_url:
+            logger.warning(f"Navigation failed: expected URL to contain '{url}', but got '{driver.current_url}'.")
+            return False  # Indicate failure
+
+        logger.info(f"Successfully navigated to {url}.")
+        return True  # Indicate success
+
+    except Exception as e:
+        handle_error(driver, "navigate", e, f"Error occurred while navigating to {url}")
+        return False  # Indicate failure
+
+def wait_for_download(download_path, file_prefixes, timeout=TIMEOUT):
+
     start_time = time.time()
-    log_message("INFO", f"Waiting for file download in '{download_path}' with prefixes: {file_prefixes}")
-    
+    logger.info(f"Waiting for file download in '{download_path}' with prefixes: {file_prefixes}")
+
     while time.time() - start_time < timeout:
         try:
             # Check for any files in the downloads directory
             for file_prefix in file_prefixes:
                 for filename in os.listdir(download_path):
                     if filename.startswith(file_prefix) and filename.endswith('.xlsx'):
-                        log_message("SUCCESS", f"File '{filename}' downloaded successfully.")
+                        logger.info(f"File '{filename}' downloaded successfully.")
                         return True
         except Exception as e:
-            log_message("ERROR", f"Error checking download directory: {e}")
-        
+            logger.error(f"Error checking download directory: {e}")
+
         time.sleep(1)  # Wait before checking again
 
-    log_message("ERROR", "File download timed out.")
+    logger.error("File download timed out.")
     return False
-

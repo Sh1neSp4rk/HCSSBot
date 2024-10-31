@@ -28,6 +28,10 @@ screenshot_counter = 1
 
 # Custom formatter for logging
 class CustomFormatter(logging.Formatter):
+    def __init__(self, driver=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.driver = driver  # Store the driver instance
+
     def format(self, record):
         # Check for "SUCCESS" in the message
         if "SUCCESS" in record.msg:
@@ -44,15 +48,18 @@ class CustomFormatter(logging.Formatter):
         # Format the message with the appropriate color
         message = f"{color}{record.msg}{COLORS['RESET']}"
 
+        # Take a screenshot if the level is ERROR
+        if record.levelname == "ERROR" and self.driver:
+            take_screenshot(self.driver, "error_occurred")
+
         # Update the record with the formatted level name
         record.levelname = level_name
         record.msg = message
-        
+
         # Call the parent class's format method
         return super().format(record)
 
 def take_screenshot(driver, step_name):
-
     global screenshot_counter
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     
@@ -61,34 +68,36 @@ def take_screenshot(driver, step_name):
 
     screenshot_path = f"{SCREENSHOT_DIR}/{screenshot_counter:03d}_{step_name}_{timestamp}.png"
     driver.save_screenshot(screenshot_path)
-    logger.info(f"Screenshot taken: {screenshot_path}")  # Updated logging
+    logger.info(f"Screenshot taken: {screenshot_path}")
 
     screenshot_counter += 1
 
 def delete_all_screenshots():
-
     if os.path.exists(SCREENSHOT_DIR):
         for filename in os.listdir(SCREENSHOT_DIR):
             file_path = os.path.join(SCREENSHOT_DIR, filename)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-        logger.debug(f"Deleted all screenshots in {SCREENSHOT_DIR}")  # Updated logging
+        logger.debug(f"Deleted all screenshots in {SCREENSHOT_DIR}")
     else:
         os.makedirs(SCREENSHOT_DIR)
-        logger.debug(f"Created screenshot directory: {SCREENSHOT_DIR}")  # Updated logging
+        logger.debug(f"Created screenshot directory: {SCREENSHOT_DIR}")
 
 def write_ascii_header(log_file):
-    header = """
-    *******************************************************
-    *                NEW SCRIPT EXECUTION                 *
-    *******************************************************
-    """
+    header = "NEW SCRIPT EXECUTION"
+    total_width = 55
+    padding = total_width - 4
+
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
     with open(log_file, 'a') as log:
-        log.write(f"\n{header}\n")
+        log.write("\n" + "*" * total_width + "\n")
+        log.write(f"* {header.center(padding)} *\n")
+        log.write("*" * total_width + "\n")
         log.write(f"Execution started at: {timestamp}\n")
-        log.write("*******************************************************\n")
-    return header  # Return the header for use in other functions
+        log.write("*" * total_width + "\n")
+        
+    return header
 
 def trim_log_file(log_file, header, max_runs=5):
     if not os.path.exists(log_file):
@@ -97,33 +106,25 @@ def trim_log_file(log_file, header, max_runs=5):
     with open(log_file, 'r') as f:
         lines = f.readlines()
 
-    # Find all positions of the actual header in the file
     run_indices = [i for i, line in enumerate(lines) if header in line]
+    
+    logger.debug(f"Found headers at indices: {run_indices}")
 
-    # If we have more runs than the max, trim the file
     if len(run_indices) > max_runs:
-        # Keep only the last max_runs sections
         start_index = run_indices[-max_runs]
         lines = lines[start_index:]
 
-        # Write the trimmed log back to the file
         with open(log_file, 'w') as f:
             f.writelines(lines)
-        logger.debug(f"Trimmed the log file to keep only the last {max_runs} runs.")
+        logger.debug(f"Trimmed the log file to keep only the last {max_runs} runs")
 
-def setup_logging(log_file='logs/app.log'):
-
+def setup_logging(log_file='logs/app.log', driver=None):
     log_dir = os.path.dirname(log_file)
     os.makedirs(log_dir, exist_ok=True)
     logger.debug(f"Log directory created: {log_dir}")
 
-    # Get the header from write_ascii_header
     header = write_ascii_header(log_file)
-
-    # Trim the log file to keep only the last 4 runs before writing the new one
-    logger.debug("Trimming log file")
     trim_log_file(log_file, header)
-    logger.debug("Log file trimmed")
 
     if not logger.hasHandlers():
         logger.setLevel(logging.DEBUG)
@@ -136,23 +137,30 @@ def setup_logging(log_file='logs/app.log'):
 
             # Console handler for colored output
             console_handler = logging.StreamHandler()
-            formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(message)s')
+            formatter = CustomFormatter(driver=driver, fmt='%(asctime)s - %(levelname)s - %(message)s')
             console_handler.setFormatter(formatter)
             logger.addHandler(console_handler)
 
-            # Set the log level for both handlers to DEBUG
             file_handler.setLevel(logging.DEBUG)
             console_handler.setLevel(logging.INFO)
 
             print(f"Logging set up. Logs will be written to: {log_file}")
-            logger.debug("This is a debug message for testing.")  # Only log this, not print it
+            logger.debug("This is a debug message for testing.")
         except Exception as e:
-            print(f"Failed to set up logging: {e}")
+            logger.error(f"Failed to set up logging: {e}")
 
+def log_args(func):
+    """Decorator to log function arguments."""
+    def wrapper(*args, **kwargs):
+        logger.debug(f"Called function: {func.__name__} with args: {args} and kwargs: {kwargs}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@log_args
 def handle_error(driver, function_name, error, custom_message=None):
-
     error_message = f"{custom_message} Error in {function_name}: {str(error)}"
-    logger.error(error_message)  # Log the error message with context
+    
+    # Take a screenshot when an error occurs
+    logger.error(error_message)
     logger.debug(f"Current URL: {driver.current_url}")  # Log the current URL for context
-    take_screenshot(driver, "error_screenshot")  # Optional: take a screenshot on error
     return False  # Indicate failure without exiting

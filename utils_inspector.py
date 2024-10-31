@@ -8,7 +8,7 @@ from selenium.common.exceptions import (
     StaleElementReferenceException,
     TimeoutException,
 )
-from utils_logging import logger  # Import the logger instance directly
+from utils_logging import logger, log_args  # Import the logger instance directly
 
 def click(driver, locator, description):
     try:
@@ -26,7 +26,8 @@ def click(driver, locator, description):
         logger.error(f"Error clicking {description}: {str(e)}")
         return False
 
-def inspect(driver, locator=None, description=None, expected_url=None, timeout=2, wait_between_retries=0.25):
+@log_args
+def inspect(driver, locator=None, description=None, expected_url=None, timeout=2, wait_between_retries=0.25, wait_for_disappear=False):
     if expected_url is not None:
         # If an expected URL is provided, check the current URL
         start_time = time.time()  # Record the start time
@@ -45,7 +46,6 @@ def inspect(driver, locator=None, description=None, expected_url=None, timeout=2
             time.sleep(wait_between_retries)
         
     else:
-        # Existing inspection logic for elements
         previous_displayed = None
         previous_enabled = None
         start_time = time.time()  # Record the start time
@@ -55,9 +55,19 @@ def inspect(driver, locator=None, description=None, expected_url=None, timeout=2
             if elapsed_time >= timeout:
                 logger.error(f"{description} could not be inspected after {timeout} seconds.")
                 return None  # Return None if the max duration is exceeded
-
+            
             time.sleep(wait_between_retries)
             try:
+                # Log the locator being used
+                logger.debug(f"Attempting to find element for {description} using locator: {locator}")
+                
+                 # If we are waiting for the element to disappear
+                if wait_for_disappear:
+                    # Wait until the element is no longer present
+                    WebDriverWait(driver, timeout).until(EC.invisibility_of_element_located(locator))
+                    logger.debug(f"{description} has disappeared.")
+                    return True  # Return True if the element has disappeared
+                
                 # Wait for the presence of the element
                 element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located(locator))
                 # Wait for the element to be stable (not stale)

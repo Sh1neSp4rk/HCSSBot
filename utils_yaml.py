@@ -7,7 +7,7 @@ def load_yaml(file_path):
     try:
         with open(file_path, 'r') as file:
             data = yaml.safe_load(file)
-            logger.info(f"Successfully loaded YAML file: {file_path}")  # Log successful load
+            logger.debug(f"Successfully loaded YAML file: {file_path}")  # Log successful load
             return data
     except FileNotFoundError:
         logger.error(f"Error: The file {file_path} was not found.")  # Log file not found

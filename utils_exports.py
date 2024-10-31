@@ -1,92 +1,113 @@
 # utils_exports.py
 
-import logging
 from datetime import datetime, timedelta
-from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
-from utils_logging import logger, handle_error
-from utils_driver import wait_for_download, DOWNLOAD_DIR  # Import the download path
+from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from utils_logging import logger, handle_error, log_args
+from utils_driver import wait_for_download
 from utils_inspector import click
-from utils_yaml import selectors  # Import the selectors from utils_yaml.py
+from utils_yaml import selectors
 
-logger = logging.getLogger(__name__)
-
-def export_data(driver, export_type, file_prefixes):
-    try:
-        logger.info(f"Starting {export_type} export.")
-        
-        # Get the appropriate selectors based on export type
-        export_button_selector = selectors['second_export_button'][export_type]
-
-        if click(driver, export_button_selector, f"export button for {export_type}"):
-            logger.info(f"Clicked the export button for {export_type}. Waiting for download...")
-
-            if wait_for_download(DOWNLOAD_DIR, file_prefixes):
-                logger.info(f"{export_type} export completed successfully.")
-                return True
-            else:
-                logger.error(f"{export_type} export failed. No file downloaded within the timeout.")
-                return False
-        else:
-            logger.error(f"Failed to click the export button for {export_type}.")
-            return False
-
-    except Exception as e:
-        logger.error(f"Error during {export_type} export: {str(e)}")
-        handle_error(driver, f"{export_type}_export", e, custom_message="Export failed")
+@log_args
+def get_export(driver, report_type):
+    logger.info(f"Performing {report_type} export.")
+    
+    locators = {
+        'url': (By.CSS_SELECTOR, selectors[report_type]['url']),
+        'date_field': (By.CSS_SELECTOR, selectors[report_type]['custom_date_field']['selector']),
+        'custom_option': (By.CSS_SELECTOR, selectors[report_type]['custom_date_field']['custom_option']),
+        'start_date': (By.CSS_SELECTOR, selectors[report_type]['date']['start']),
+        'end_date': (By.CSS_SELECTOR, selectors[report_type]['date']['end']),
+        'apply_button': (By.CSS_SELECTOR, selectors[report_type]['apply_button']),
+        'loader': (By.CSS_SELECTOR, selectors[report_type]['loader']),
+        'first_export': (By.CSS_SELECTOR, selectors[report_type]['export_buttons']['first']),
+        'second_export': (By.CSS_SELECTOR, selectors[report_type]['export_buttons']['second']),
+        'selection': (By.CSS_SELECTOR, selectors[report_type]['export_buttons']['selection']),
+        'select_all': (By.CSS_SELECTOR, selectors[report_type]['select_all']),
+    }
+    
+    # Apply date filter before exporting
+    if not apply_date_filter(driver, locators):
         return False
 
-def get_exports(driver, export_type, export_subtype):
-    logger.info(f"Performing {export_type} export.")
+    # Export data based on report type
+    return export_data(driver, locators)
+
+@log_args
+def apply_date_filter(driver, locators):
+    end_date = datetime.now().strftime("%m/%d/%Y")
+    start_date = (datetime.now() - timedelta(days=1)).strftime("%m/%d/%Y")
 
     try:
-        apply_date_filter(driver)
+        if click(driver, locators['date_field'], "date range dropdown"):
+            logger.debug("Date range dropdown clicked.")
 
-        file_prefixes = [f"{export_type}_{export_subtype}_export"] if export_subtype else [f"{export_type}_export"]
-        export_successful = export_data(driver, export_type, file_prefixes)
+            if click(driver, locators['custom_option'], "Custom date option"):
+                logger.debug("Selected 'Custom' date range.")
 
-        return export_successful
+            start_date_input = driver.find_element(*locators['start_date'])
+            start_date_input.clear()
+            start_date_input.send_keys(start_date)
+            logger.info(f"Start date set to: {start_date}")
 
-    except Exception as e:
-        logger.error(f"Error during {export_type} export: {str(e)}")
-        handle_error(driver, "get_export", e, custom_message=f"{export_type} export failed")
-        return False
+            end_date_input = driver.find_element(*locators['end_date'])
+            end_date_input.clear()
+            end_date_input.send_keys(end_date)
+            logger.info(f"End date set to: {end_date}")
 
-def apply_date_filter(driver):
-    end_date = datetime.now().strftime("%Y-%m-%d")
-    start_date = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
-
-    # Get date filter selectors from YAML
-    start_date_input_selector = selectors["date_filter"]["date_input"]
-    end_date_input_selector = selectors["date_filter"]["date_input"]  # Adjust if end date input selector is different
-    filter_button_selector = selectors["date_filter"]["apply_button"]
-    custom_option_selector = selectors["date_filter"]["custom_option"]
-
-    try:
-        # Select the 'Custom' option directly
-        if click(driver, custom_option_selector, "Custom date option"):
-            logger.debug("Selected 'Custom' date range.")
-            
-            # Click and set the start date
-            if click(driver, start_date_input_selector, "start date input"):
-                start_date_input = driver.find_element_by_css_selector(start_date_input_selector)
-                start_date_input.clear()
-                start_date_input.send_keys(start_date)
-                logger.debug(f"Start date set to: {start_date}")
-
-            # Click and set the end date
-            if click(driver, end_date_input_selector, "end date input"):
-                end_date_input = driver.find_element_by_css_selector(end_date_input_selector)
-                end_date_input.clear()
-                end_date_input.send_keys(end_date)
-                logger.debug(f"End date set to: {end_date}")
-
-            # Click the filter button
-            if click(driver, filter_button_selector, "filter button"):
+            if click(driver, locators['apply_button'], "filter button"):
                 logger.info("Date filter applied successfully.")
+                
+                # Wait for loader to indicate data load
+                wait_for_loader(driver, locators['loader'])
+                return True
 
-    except NoSuchElementException as e:
+    except (NoSuchElementException, ElementNotInteractableException) as e:
         logger.error(f"Error applying date filter: {str(e)}")
         handle_error(driver, "apply_date_filter", e, custom_message="Failed to apply date filter")
-    except ElementNotInteractableException as e:
-        logger.error(f"Element not interactable: {str(e)}")
-        handle_error(driver, "apply_date_filter", e, custom_message="Element not interactable when applying date filter")
+
+    return False
+
+@log_args
+def export_data(driver, report_selectors):
+    logger.debug(f"Exporting data for {report_selectors}")
+
+    # Click the first export button to open the dropdown
+    logger.debug("Clicking first export button to select export type.")
+    click(driver, report_selectors['export_buttons']['first'], "First export button")
+
+    # Conditionally select the appropriate export type if 'selection' is present
+    if report_selectors['export_buttons'].get('selection'):
+        logger.debug("Selecting specific export option.")
+        click(driver, report_selectors['export_buttons']['selection'], "Export selection")
+
+    # Select all options from the new dropdown
+    logger.debug("Selecting all options for export.")
+    click(driver, report_selectors['select_all'], "Select all options for export")
+
+    # Click the second export button to start the download
+    logger.debug("Clicking second export button to initiate download.")
+    click(driver, report_selectors['export_buttons']['second'], "Second export button")
+
+    # Wait for download to complete if necessary (you can adjust the timeout)
+    download_path = "your/download/path"  # Set your actual download path
+    file_prefixes = ["expected_prefix"]  # Specify the expected file prefixes
+    wait_for_download(download_path, file_prefixes)
+
+    return True
+
+def wait_for_loader(driver, loader_locator, timeout=10):
+    """Wait for the loader to appear and disappear, indicating a data load."""
+    try:
+        # Wait for loader to appear
+        WebDriverWait(driver, timeout).until(EC.visibility_of_element_located(loader_locator))
+        logger.debug("Loader appeared, waiting for it to disappear.")
+        
+        # Wait for loader to disappear
+        WebDriverWait(driver, timeout).until_not(EC.visibility_of_element_located(loader_locator))
+        logger.debug("Loader disappeared, data load complete.")
+
+    except TimeoutException:
+        logger.warning("Timeout waiting for loader to disappear.")

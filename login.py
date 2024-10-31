@@ -10,15 +10,12 @@ from utils_yaml import selectors
 
 # Load environment variables from .env file
 load_dotenv()
-logger.debug("Environment variables loaded")
 USERNAME = os.getenv("HCSS_USERNAME")
 PASSWORD = os.getenv("HCSS_PASSWORD")
-logger.debug(f"Loaded USERNAME: {USERNAME}, PASSWORD: {'*' * len(PASSWORD) if PASSWORD else 'None'}")
 
 
 def login(driver):
     logger.debug("Entering login function")
-    logger.debug(f"Selectors loaded: {selectors}")
 
     # Define locators using a dictionary
     locators = {
@@ -32,7 +29,7 @@ def login(driver):
     logger.info("Attempting to log in")
 
     # Inspect and populate username
-    logger.info("Inspecting username field")
+    logger.debug("Inspecting username field")
     if not inspect(driver, locators['username'], "Username field"):
         handle_error(driver, "login", Exception("Username field not found"), "Failed to inspect username field")
         return False
@@ -40,7 +37,7 @@ def login(driver):
     logger.debug("Entering username")
     start_time = time.time()
     driver.find_element(*locators['username']).send_keys(USERNAME)
-    logger.debug(f"Username entered successfully. Time taken: {time.time() - start_time:.2f} seconds")
+    logger.info(f"Username entered successfully. Time taken: {time.time() - start_time:.2f} seconds")
 
     # Click Next button
     logger.debug("Clicking Next button")
@@ -57,7 +54,7 @@ def login(driver):
     logger.debug("Entering password")
     start_time = time.time()
     driver.find_element(*locators['password']).send_keys(PASSWORD)
-    logger.debug(f"Password entered successfully. Time taken: {time.time() - start_time:.2f} seconds")
+    logger.info(f"Password entered successfully. Time taken: {time.time() - start_time:.2f} seconds")
 
     # Click Login button
     logger.debug("Clicking Login button")

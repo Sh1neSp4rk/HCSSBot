@@ -39,7 +39,7 @@ def create_chrome_driver():
     })
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
-    logger.info("Chrome driver setup complete")
+    logger.debug("Chrome driver setup complete")
     
     # Log versions after driver creation
     log_browser_versions()
@@ -64,19 +64,17 @@ def navigate(driver, url):
         handle_error(driver, "navigate", e, f"Error occurred while navigating to {url}")
         return False  # Indicate failure
 
-def wait_for_download(download_path, file_prefixes, timeout=TIMEOUT):
-
+def wait_for_download(download_path, timeout=TIMEOUT):
     start_time = time.time()
-    logger.info(f"Waiting for file download in '{download_path}' with prefixes: {file_prefixes}")
+    logger.info(f"Waiting for file download in '{download_path}'.")
 
     while time.time() - start_time < timeout:
         try:
-            # Check for any files in the downloads directory
-            for file_prefix in file_prefixes:
-                for filename in os.listdir(download_path):
-                    if filename.startswith(file_prefix) and filename.endswith('.xlsx'):
-                        logger.info(f"File '{filename}' downloaded successfully.")
-                        return True
+            # Check for any xlsx files in the downloads directory
+            for filename in os.listdir(download_path):
+                if filename.endswith('.xlsx'):
+                    logger.info(f"File '{filename}' downloaded successfully.")
+                    return True
         except Exception as e:
             logger.error(f"Error checking download directory: {e}")
 
